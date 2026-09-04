@@ -156,37 +156,53 @@ h2.t{font-family:"Markazi Text",serif;font-weight:700;font-size:clamp(30px,4vw,4
 <a class="cat" href="https://cafebattery.com/" rel="noopener"><img src="img/cat-charger.jpg" alt="شارژر و ماژول شارژ باتری" loading="lazy"><span class="go">↩</span><div><b>شارژر و ماژول</b><small>برد محافظ و نقطه‌جوش</small></div></a>
 </div>
 </div></section>
-<!-- BESTSELLERS -->
+<!-- BESTSELLERS RAIL -->
 <style>
-.grid-p{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:26px}
-.pd{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:.3s}
-.pd:hover{transform:translateY(-5px);box-shadow:var(--sh)}
-.pd .im{position:relative;aspect-ratio:1/.78;overflow:hidden;background:linear-gradient(150deg,#E7F7FB,#CDEFF6)}
+.best-bar{display:flex;align-items:end;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.arrows{display:flex;gap:8px}
+.arw{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--card);font-size:20px;line-height:1;cursor:pointer;color:var(--ink);transition:.25s;font-family:inherit}
+.arw:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.rail{display:grid;grid-auto-flow:column;grid-auto-columns:clamp(190px,22vw,238px);gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px 4px 20px;margin-top:22px;scrollbar-width:thin;scrollbar-color:#8FD3E0 transparent}
+.rail::-webkit-scrollbar{height:6px}
+.rail::-webkit-scrollbar-track{background:transparent}
+.rail::-webkit-scrollbar-thumb{background:#8FD3E0;border-radius:99px}
+.pd{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;transition:.3s;scroll-snap-align:start}
+.pd:hover{transform:translateY(-4px);box-shadow:var(--sh)}
+.pd .im{position:relative;aspect-ratio:1/.72;overflow:hidden;background:linear-gradient(150deg,#E7F7FB,#CDEFF6)}
 .pd .im img{width:100%;height:100%;object-fit:cover;transition:.5s}
 .pd:hover .im img{transform:scale(1.05)}
-.tag{position:absolute;top:12px;right:12px;background:var(--ink);color:#fff;font-size:12px;font-weight:800;padding:4px 14px;border-radius:999px;z-index:2}
+.tag{position:absolute;top:10px;right:10px;background:var(--ink);color:#fff;font-size:11px;font-weight:800;padding:3px 12px;border-radius:999px;z-index:2}
 .tag.hot{background:#EF5661}.tag.new{background:var(--green)}
-.pd .bd{padding:16px 18px 20px;display:flex;flex-direction:column;gap:6px;flex:1}
-.pd h3{font-size:15.5px;line-height:1.9}
-.pr{display:flex;align-items:baseline;gap:6px;margin-top:auto;padding-top:8px}
-.pr b{font-size:18px}.pr small{color:var(--mut);font-size:12px}
-.add{margin-top:10px;text-align:center;background:var(--ink);color:#fff;border-radius:12px;padding:10px;font-weight:800;font-size:14px}
+.pd .bd{padding:12px 14px 16px;display:flex;flex-direction:column;gap:4px;flex:1}
+.pd h3{font-size:13.5px;line-height:1.9}
+.pr{display:flex;align-items:baseline;gap:5px;margin-top:auto;padding-top:6px}
+.pr b{font-size:16px}.pr small{color:var(--mut);font-size:11px}
+.add{margin-top:8px;text-align:center;background:var(--ink);color:#fff;border-radius:10px;padding:8px;font-weight:800;font-size:13px}
 .add:hover{background:var(--amber-d)}
-@media(max-width:900px){.grid-p{grid-template-columns:repeat(2,1fr)}}
 </style>
 <section class="sec" id="best" style="padding-top:40px"><div class="wrap">
-<div class="cats-head"><div><span class="kicker">پرفروش‌ترین‌ها</span><h2 class="t">انتخاب اول مشتری‌های کافه باتری</h2></div><a class="link" href="https://cafebattery.com/" rel="noopener">مشاهده همه محصولات ←</a></div>
-<div class="grid-p">
-<article class="pd"><div class="im"><img src="img/hero.jpg" alt="باتری لیتیومی 18650" loading="lazy"><span class="tag hot">پرفروش</span></div><div class="bd"><h3>باتری لیتیومی ۱۸۶۵۰ مکسل ۲۰۰۰mAh</h3><div class="pr"><b>۳۰۹٬۰۰۰</b><small>تومان</small></div><a class="add" href="https://cafebattery.com/" rel="noopener">افزودن به سبد خرید</a></div></article>
-<article class="pd"><div class="im"><img src="img/prod-bms.jpg" alt="ماژول محافظ شارژ باتری لیتیومی" loading="lazy"><span class="tag">محبوب</span></div><div class="bd"><h3>ماژول محافظ شارژ باتری لیتیومی ۴ سل</h3><div class="pr"><b>۵۴٬۰۰۰</b><small>تومان</small></div><a class="add" href="https://cafebattery.com/" rel="noopener">افزودن به سبد خرید</a></div></article>
-<article class="pd"><div class="im"><img src="img/cat-coin.jpg" alt="باتری سکه ای" loading="lazy"><span class="tag">اصل</span></div><div class="bd"><h3>باتری سکه‌ای مکسل (بسته اصلی)</h3><div class="pr"><b>۸۶٬۰۰۰</b><small>تومان</small></div><a class="add" href="https://cafebattery.com/" rel="noopener">افزودن به سبد خرید</a></div></article>
-<article class="pd"><div class="im"><img src="img/cat-charger.jpg" alt="شارژر باتری های شارژی" loading="lazy"><span class="tag new">جدید</span></div><div class="bd"><h3>شارژر هوشمند باتری‌های قلمی و نیم‌قلمی</h3><div class="pr"><b>۱۲۰٬۰۰۰</b><small>تومان</small></div><a class="add" href="https://cafebattery.com/" rel="noopener">افزودن به سبد خرید</a></div></article>
-<article class="pd"><div class="im"><img src="img/hero.jpg" style="object-position:50% 90%" alt="براکت نگهدارنده باتری 18650" loading="lazy"><span class="tag">کاربردی</span></div><div class="bd"><h3>براکت نگهدارنده ۳تایی باتری ۱۸۶۵۰</h3><div class="pr"><b>۱۸٬۰۰۰</b><small>تومان</small></div><a class="add" href="https://cafebattery.com/" rel="noopener">افزودن به سبد خرید</a></div></article>
-<article class="pd"><div class="im"><img src="img/cat-laptop.jpg" alt="باتری لیتیومی تخت پاوربانکی" loading="lazy"><span class="tag">پیشنهاد</span></div><div class="bd"><h3>باتری لیتیومی 3.7 ولت تخت (پاوربانکی)</h3><div class="pr"><b>۲۷۹٬۰۰۰</b><small>تومان</small></div><a class="add" href="https://cafebattery.com/" rel="noopener">افزودن به سبد خرید</a></div></article>
-<article class="pd"><div class="im"><img src="img/prod-aa.jpg" alt="باتری قلمی آلکالاین" loading="lazy"><span class="tag">محبوب</span></div><div class="bd"><h3>باتری قلمی آلکالاین (بسته اصلی)</h3><div class="pr"><b>۱۹۵٬۰۰۰</b><small>تومان</small></div><a class="add" href="https://cafebattery.com/" rel="noopener">افزودن به سبد خرید</a></div></article>
-<article class="pd"><div class="im"><img src="img/pack.jpg" alt="عایق و ملزومات ساخت پک باتری" loading="lazy"><span class="tag">تخصصی</span></div><div class="bd"><h3>عایق و ملزومات ساخت پک ۱۸۶۵۰</h3><div class="pr"><b>۳۳۰٬۰۰۰</b><small>تومان</small></div><a class="add" href="https://cafebattery.com/" rel="noopener">افزودن به سبد خرید</a></div></article>
+<div class="best-bar"><div><span class="kicker">پرفروش‌ترین‌ها</span><h2 class="t">انتخاب اول مشتری‌های کافه باتری</h2></div>
+<div class="arrows"><button class="arw p" aria-label="قبلی">›</button><button class="arw n" aria-label="بعدی">‹</button><a class="link" href="https://cafebattery.com/" rel="noopener" style="align-self:center;margin-inline-start:8px">مشاهده همه ←</a></div></div>
 </div>
-</div></section>
+<div class="wrap"><div class="rail" id="brail">
+<article class="pd"><div class="im"><img src="img/prod-maxcell.jpg" alt="باتری لیتیومی 18650 مکسل" loading="lazy"><span class="tag hot">پرفروش</span></div><div class="bd"><h3>باتری لیتیومی ۱۸۶۵۰ مکسل ۲۰۰۰mAh</h3><div class="pr"><b>۳۰۹٬۰۰۰</b><small>تومان</small></div><a class="add" href="https://cafebattery.com/" rel="noopener">افزودن به سبد</a></div></article>
+<article class="pd"><div class="im"><img src="img/prod-module.jpg" alt="ماژول محافظ شارژ باتری لیتیومی تک سل" loading="lazy"><span class="tag">محبوب</span></div><div class="bd"><h3>ماژول محافظ شارژ باتری لیتیومی ۱ سل</h3><div class="pr"><b>۵۴٬۰۰۰</b><small>تومان</small></div><a class="add" href="https://cafebattery.com/" rel="noopener">افزودن به سبد</a></div></article>
+<article class="pd"><div class="im"><img src="img/cat-coin.jpg" alt="باتری سکه ای" loading="lazy"><span class="tag">اصل</span></div><div class="bd"><h3>باتری سکه‌ای مکسل (بسته اصلی)</h3><div class="pr"><b>۸۶٬۰۰۰</b><small>تومان</small></div><a class="add" href="https://cafebattery.com/" rel="noopener">افزودن به سبد</a></div></article>
+<article class="pd"><div class="im"><img src="img/cat-charger.jpg" alt="شارژر باتری های شارژی" loading="lazy"><span class="tag new">جدید</span></div><div class="bd"><h3>شارژر هوشمند باتری‌های قلمی و نیم‌قلمی</h3><div class="pr"><b>۱۲۰٬۰۰۰</b><small>تومان</small></div><a class="add" href="https://cafebattery.com/" rel="noopener">افزودن به سبد</a></div></article>
+<article class="pd"><div class="im"><img src="img/prod-braket3.jpg" alt="براکت نگهدارنده سه تایی باتری 18650" loading="lazy"><span class="tag">کاربردی</span></div><div class="bd"><h3>براکت نگهدارنده ۳تایی باتری ۱۸۶۵۰</h3><div class="pr"><b>۱۸٬۰۰۰</b><small>تومان</small></div><a class="add" href="https://cafebattery.com/" rel="noopener">افزودن به سبد</a></div></article>
+<article class="pd"><div class="im"><img src="img/cat-laptop.jpg" alt="باتری لیتیومی تخت پاوربانکی" loading="lazy"><span class="tag">پیشنهاد</span></div><div class="bd"><h3>باتری لیتیومی 3.7 ولت تخت (پاوربانکی)</h3><div class="pr"><b>۲۷۹٬۰۰۰</b><small>تومان</small></div><a class="add" href="https://cafebattery.com/" rel="noopener">افزودن به سبد</a></div></article>
+<article class="pd"><div class="im"><img src="img/prod-aa.jpg" alt="باتری نیم قلمی شارژی" loading="lazy"><span class="tag">محبوب</span></div><div class="bd"><h3>باتری نیم‌قلمی شارژی AAA ۸۰۰</h3><div class="pr"><b>۱۹۵٬۰۰۰</b><small>تومان</small></div><a class="add" href="https://cafebattery.com/" rel="noopener">افزودن به سبد</a></div></article>
+<article class="pd"><div class="im"><img src="img/prod-ayegh.jpg" alt="عایق پلاریته باتری 18650" loading="lazy"><span class="tag">تخصصی</span></div><div class="bd"><h3>عایق پلاریته توخالی باتری ۱۸۶۵۰</h3><div class="pr"><b>۳۳۰٬۰۰۰</b><small>تومان</small></div><a class="add" href="https://cafebattery.com/" rel="noopener">افزودن به سبد</a></div></article>
+<article class="pd"><div class="im"><img src="img/hero.jpg" style="object-position:50% 20%" alt="باتری 18650 پرتخلیه" loading="lazy"><span class="tag">پرتخلیه</span></div><div class="bd"><h3>باتری ۱۸۶۵۰ پرتخلیه 2000mAh مدل 15C</h3><div class="pr"><b>۳۷۴٬۰۰۰</b><small>تومان</small></div><a class="add" href="https://cafebattery.com/" rel="noopener">افزودن به سبد</a></div></article>
+<article class="pd"><div class="im"><img src="img/hero.jpg" style="object-position:50% 85%" alt="براکت تکی نگهدارنده باتری 18650" loading="lazy"><span class="tag">اقتصادی</span></div><div class="bd"><h3>براکت تکی نگهدارنده باتری ۱۸۶۵۰</h3><div class="pr"><b>۷٬۰۰۰</b><small>تومان</small></div><a class="add" href="https://cafebattery.com/" rel="noopener">افزودن به سبد</a></div></article>
+</div></div>
+<script>
+(function(){var r=document.getElementById('brail');if(!r)return;
+var bar=r.closest('section').querySelector('.arrows');if(!bar)return;
+bar.querySelector('.n').addEventListener('click',function(){r.scrollBy({left:-500,behavior:'smooth'})});
+bar.querySelector('.p').addEventListener('click',function(){r.scrollBy({left:500,behavior:'smooth'})});})();
+</script>
+</section>
 <!-- CUSTOM PACK -->
 <style>
 .pack{background:linear-gradient(150deg,#16424D,#0C262D);color:#fff;border-radius:36px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;box-shadow:var(--sh)}
