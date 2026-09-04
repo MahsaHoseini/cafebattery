@@ -1,51 +1,101 @@
-<!-- B2B + REVIEWS + FAQ -->
+<!-- BATTERY FINDER -->
 <style>
-.b2b{border:1px solid var(--line);border-radius:28px;padding:clamp(36px,5vw,64px);display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;background:linear-gradient(to left,#fff 55%,var(--teal-soft))}
-.b2b h2{font-family:"Markazi Text",serif;font-size:clamp(26px,3vw,38px);line-height:1.6}
-.b2b p{color:var(--mut);margin:10px 0 26px}
-.b2b ul{list-style:none;display:grid;gap:10px;margin-bottom:30px}
-.b2b ul li{font-size:14.5px;color:var(--ink2);padding-inline-start:26px;position:relative}
-.b2b ul li::before{content:"—";position:absolute;right:0;color:var(--teal)}
-.b2b img{width:100%;height:320px;object-fit:cover;border-radius:20px}
-.rev{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
-.rv{border:1px solid var(--line);border-radius:var(--r);padding:32px 30px;display:flex;flex-direction:column;gap:14px}
-.rv .q{font-family:"Markazi Text",serif;font-size:44px;line-height:1;color:var(--teal)}
-.rv p{font-size:15px;color:var(--ink2)}
-.rv .who{margin-top:auto;padding-top:14px;border-top:1px solid var(--line2);font-size:13.5px}
-.rv .who b{display:block;font-size:14px}
-.rv .who small{color:var(--mut)}
-@media(max-width:900px){.b2b{grid-template-columns:1fr}.b2b img{height:220px;order:-1}.rev{grid-template-columns:1fr}}
-.faq-wrap{max-width:800px}
-details.fq{border-bottom:1px solid var(--line);padding:6px 0}
-details.fq summary{cursor:pointer;padding:20px 4px;font-weight:700;font-size:16px;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px}
-details.fq summary::-webkit-details-marker{display:none}
-details.fq summary span.ic{font-weight:400;font-size:24px;color:var(--teal-d);flex:none;transition:.25s}
-details.fq[open] summary span.ic{transform:rotate(45deg)}
-details.fq .a{padding:0 4px 24px;color:var(--mut);font-size:15px;max-width:640px}
+.finder{background:#fff;border:1px solid var(--line);border-radius:28px;overflow:hidden;box-shadow:var(--sh)}
+.finder-top{background:var(--navy);color:#fff;padding:44px clamp(24px,4vw,56px) 0;position:relative;overflow:hidden}
+.finder-top::before{content:"";position:absolute;left:-80px;top:-80px;width:280px;height:280px;border-radius:50%;background:rgba(22,193,212,.18)}
+.finder-top::after{content:"";position:absolute;left:60px;bottom:-110px;width:200px;height:200px;border-radius:50%;background:rgba(244,197,66,.14)}
+.finder-top h2{font-size:clamp(24px,3vw,34px);font-weight:900;position:relative}
+.finder-top p{color:#B9C4D8;margin-top:6px;position:relative}
+.fsteps{display:flex;gap:8px;margin-top:28px;position:relative}
+.fstep{flex:1;text-align:center;font-size:13px;font-weight:700;color:#8B96AC;padding:12px 4px;border-bottom:3px solid rgba(255,255,255,.15);transition:.25s}
+.fstep.on{color:#fff;border-color:var(--yellow)}
+.fstep.done{color:var(--cyan);border-color:var(--cyan)}
+.finder-body{padding:clamp(24px,4vw,48px)}
+.fpanel{display:none}
+.fpanel.on{display:block;animation:fadeUp .35s ease}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.opts{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:22px 0 28px}
+.opt{border:1.5px solid var(--line);border-radius:14px;padding:18px 12px;text-align:center;font-weight:700;font-size:14px;cursor:pointer;transition:.2s;background:#fff;font-family:inherit;color:var(--ink)}
+.opt small{display:block;font-weight:400;color:var(--mut);font-size:12px;margin-top:2px}
+.opt:hover{border-color:var(--cyan)}
+.opt.sel{border-color:var(--cyan);background:var(--cyan-soft);box-shadow:0 0 0 3px var(--cyan-soft)}
+.fnav{display:flex;justify-content:space-between;gap:12px}
+.fresult{border:1.5px solid var(--line);border-radius:18px;padding:30px;display:flex;gap:22px;align-items:center;background:var(--bg);margin:22px 0 28px;flex-wrap:wrap}
+.fresult .ri{width:72px;height:72px;border-radius:20px;background:var(--navy);display:grid;place-items:center;flex:none}
+.fresult h3{font-size:19px}
+.fresult p{color:var(--mut);font-size:14px;margin-top:4px}
+.fresult .acts{margin-inline-start:auto;display:flex;gap:10px;flex-wrap:wrap}
+@media(max-width:900px){.opts{grid-template-columns:repeat(2,1fr)}.fresult .acts{margin-inline-start:0;width:100%}.fresult .acts a{flex:1}}
 </style>
-<section class="sec" style="background:var(--bg2)"><div class="wrap">
-<div class="b2b"><div><span class="eyebrow">باشگاه همکاران</span><h2>تعمیرکار یا فروشنده‌اید؟ عمده بخرید</h2>
-<p>قیمت همکاری، موجودی اولویت‌دار و فاکتور رسمی برای خریدهای عمده و سازمانی.</p>
-<ul><li>قیمت ویژه همکاران روی کل اجناس</li><li>موجودی اولویت‌دار و رزرو انبار</li><li>فاکتور رسمی و تسویه سازمانی</li></ul>
-<a class="btn btn-d" href="#contact">درخواست عضویت</a></div>
-<img src="img/cat-ebike.jpg" alt="خرید عمده باتری برای همکاران کافه باتری" loading="lazy">
+<section class="sec" id="finder"><div class="wrap">
+<div class="finder">
+<div class="finder-top"><h2>نمی‌دانید چه باتری‌ای مناسب شماست؟</h2><p>در ۳ مرحله باتری مناسب دستگاه خود را پیدا کنید.</p>
+<div class="fsteps"><div class="fstep on" data-s="1">۱ • دستگاه شما</div><div class="fstep" data-s="2">۲ • اطلاعات شما</div><div class="fstep" data-s="3">۳ • پیشنهاد ما</div></div></div>
+<div class="finder-body">
+<div class="fpanel on" data-p="1">
+<h3 style="font-size:18px">دستگاه خود را انتخاب کنید</h3>
+<div class="opts" id="devOpts">
+<button class="opt" data-dev="mobile">📱 موبایل<small>گوشی و تبلت</small></button>
+<button class="opt" data-dev="laptop">💻 لپ‌تاپ<small>پک و سلول داخلی</small></button>
+<button class="opt" data-dev="ups">🔋 UPS<small>برق اضطراری</small></button>
+<button class="opt" data-dev="tool">🪛 ابزار شارژی<small>دریل و جارو</small></button>
+<button class="opt" data-dev="ebike">🚲 دوچرخه برقی<small>پک‌های پرظرفیت</small></button>
+<button class="opt" data-dev="torch">🔦 چراغ قوه<small>شارژی و معمولی</small></button>
+<button class="opt" data-dev="coin">⌚ ساعت و سمعک<small>سکه‌ای و مینیاتوری</small></button>
+<button class="opt" data-dev="other">❓ سایر<small>دستگاه خاص</small></button>
+</div>
+<div class="fnav"><span></span><button class="btn btn-p" id="toStep2" disabled>مرحله بعد</button></div>
+</div>
+<div class="fpanel" data-p="2">
+<h3 style="font-size:18px">کدام اطلاعات را دارید؟</h3>
+<div class="opts" id="infoOpts" style="grid-template-columns:repeat(3,1fr)">
+<button class="opt" data-info="spec">📋 مشخصات باتری قبلی<small>ولتاژ و ظرفیت</small></button>
+<button class="opt" data-info="model">🏷️ فقط مدل دستگاه<small>بقیه با کارشناس</small></button>
+<button class="opt" data-info="none">💬 هیچکدام<small>مشاوره می‌خواهم</small></button>
+</div>
+<div class="fnav"><button class="btn btn-o" id="backTo1">مرحله قبل</button><button class="btn btn-p" id="toStep3" disabled>مشاهده پیشنهاد</button></div>
+</div>
+<div class="fpanel" data-p="3">
+<h3 style="font-size:18px">پیشنهاد کافه باتری برای شما</h3>
+<div class="fresult"><span class="ri"><svg width="34" height="34" viewBox="0 0 24 24"><rect x="2" y="7" width="17" height="10" rx="2.5" fill="#fff"/><rect x="19.5" y="10" width="2.5" height="4" rx="1" fill="#fff"/><path d="M12.6 8.4 10 12.2h2.3l-1 3.4 3.9-4.8h-2.4z" fill="#F4C542"/></svg></span>
+<div><h3 id="resTitle">باتری لیتیومی</h3><p id="resDesc">توضیح پیشنهاد</p></div>
+<div class="acts"><a class="btn btn-p" id="resCta" href="https://cafebattery.com/" rel="noopener">مشاهده دسته</a><a class="btn btn-o" href="#contact">مشاوره رایگان</a></div></div>
+<div class="fnav"><button class="btn btn-o" id="backTo2">مرحله قبل</button><button class="btn btn-o" id="restart">شروع دوباره</button></div>
+</div>
+</div>
 </div>
 </div></section>
-<section class="sec"><div class="wrap">
-<div class="sec-head"><span class="eyebrow">نظر مشتری‌ها</span><h2 class="t">اعتمادی که با هر سفارش بیشتر می‌شود</h2></div>
-<div class="rev">
-<div class="rv"><span class="q">«</span><p>برای دریل شارژیم پک ساختن؛ دقیقاً هم‌اندازه قبلی و قدرتش خیلی بهتر شده. مشاوره‌شون واقعاً تخصصی بود.</p><div class="who"><b>امیر ر.</b><small>تهران — ساخت پک دریل شارژی</small></div></div>
-<div class="rv"><span class="q">«</span><p>باتری UPS را با تست ظرفیت فرستادن؛ بسته‌بندی عالی و ارسال سریع به شهرستان. قیمتش هم از بقیه بهتر بود.</p><div class="who"><b>خانم محمدی</b><small>اصفهان — باتری UPS</small></div></div>
-<div class="rv"><span class="q">«</span><p>چند ساله باتری سمعک و سکه‌ای را از اینجا می‌گیرم؛ همیشه تاریخ تازه و اصل. خیالم راحت است.</p><div class="who"><b>رضا ک.</b><small>مشتری ثابت فروشگاه</small></div></div>
-</div>
-</div></section>
-<section class="sec" id="faq" style="padding-top:0"><div class="wrap">
-<div class="sec-head"><span class="eyebrow">سوالات پرتکرار</span><h2 class="t">پاسخ کوتاه، بدون حاشیه</h2></div>
-<div class="faq-wrap">
-<details class="fq" open><summary>چطور باتری مناسب دستگاهم را پیدا کنم؟ <span class="ic">+</span></summary><div class="a">مدل دستگاه یا مشخصات باتری قبلی (ولتاژ و ظرفیت) را جست‌وجو کنید یا برای پشتیبانی بفرستید؛ کارشناسان دقیق‌ترین گزینه سازگار را معرفی می‌کنند.</div></details>
-<details class="fq"><summary>آیا امکان ساخت سفارشی پک باتری وجود دارد؟ <span class="ic">+</span></summary><div class="a">بله؛ پک با ولتاژ، ظرفیت و ابعاد دلخواه با سلول‌های اصلی، نقطه‌جوش صنعتی و برد محافظ استاندارد ساخته و تست‌شده تحویل داده می‌شود.</div></details>
-<details class="fq"><summary>ارسال به شهرستان چقدر طول می‌کشد؟ <span class="ic">+</span></summary><div class="a">سفارش‌ها با بسته‌بندی ایمن مخصوص باتری، معمولاً همان روز یا روز بعد با پست و تیپاکس ارسال می‌شوند.</div></details>
-<details class="fq"><summary>باتری‌ها ضمانت اصالت و ظرفیت دارند؟ <span class="ic">+</span></summary><div class="a">بله؛ همه اقلام اصلی و آکبند هستند و ظرفیت واقعی سلول‌ها تست و تضمین می‌شود.</div></details>
-<details class="fq"><summary>شرایط خرید همکاران چیست؟ <span class="ic">+</span></summary><div class="a">تعمیرکاران، فروشندگان و شرکت‌ها با عضویت در باشگاه همکاران از قیمت عمده، موجودی اولویت‌دار و فاکتور رسمی بهره‌مند می‌شوند.</div></details>
-</div>
-</div></section>
+<script>
+(function(){
+var dev=null,info=null;
+var rec={
+mobile:{t:'باتری موبایل',d:'متناسب با مدل گوشی شما؛ اصل با ضمانت سلامت باتری.'},
+laptop:{t:'باتری لپ‌تاپ',d:'پک داخلی یا سلول جایگزین، دقیقاً سازگار با مدل لپ‌تاپ شما.'},
+ups:{t:'باتری UPS و برق اضطراری',d:'با آمپرساعت مناسب توان مصرفی؛ کارشناس محاسبه می‌کند.'},
+tool:{t:'باتری ابزار شارژی',d:'پک آماده یا ساخت سفارشی هم‌اندازه باتری قبلی ابزار شما.'},
+ebike:{t:'پک سفارشی دوچرخه برقی',d:'ولتاژ و ظرفیت دلخواه با سلول اصلی و برد محافظ استاندارد.'},
+torch:{t:'باتری چراغ قوه',d:'لیتیومی شارژی یا آلکالاین، بسته به مدل چراغ شما.'},
+coin:{t:'باتری سکه‌ای و سمعک',d:'اصل با تاریخ تولید تازه؛ مناسب ساعت، سمعک و ریموت.'},
+other:{t:'مشاوره تخصصی رایگان',d:'دستگاه خاص دارید؟ مدل را بفرستید تا دقیق راهنمایی‌تان کنیم.'}};
+function go(n){document.querySelectorAll('.fpanel').forEach(function(p){p.classList.toggle('on',p.dataset.p==n)});
+document.querySelectorAll('.fstep').forEach(function(s){var i=+s.dataset.s;s.classList.toggle('on',i===n);s.classList.toggle('done',i<n)});}
+document.querySelectorAll('#devOpts .opt').forEach(function(b){b.addEventListener('click',function(){
+document.querySelectorAll('#devOpts .opt').forEach(function(x){x.classList.remove('sel')});b.classList.add('sel');dev=b.dataset.dev;
+document.getElementById('toStep2').disabled=false;});});
+document.querySelectorAll('#infoOpts .opt').forEach(function(b){b.addEventListener('click',function(){
+document.querySelectorAll('#infoOpts .opt').forEach(function(x){x.classList.remove('sel')});b.classList.add('sel');info=b.dataset.info;
+document.getElementById('toStep3').disabled=false;});});
+document.getElementById('toStep2').addEventListener('click',function(){if(dev)go(2)});
+document.getElementById('backTo1').addEventListener('click',function(){go(1)});
+document.getElementById('backTo2').addEventListener('click',function(){go(2)});
+document.getElementById('restart').addEventListener('click',function(){dev=info=null;
+document.querySelectorAll('.opt').forEach(function(x){x.classList.remove('sel')});
+document.getElementById('toStep2').disabled=true;document.getElementById('toStep3').disabled=true;go(1);});
+document.getElementById('toStep3').addEventListener('click',function(){if(!dev||!info)return;
+var r=rec[dev];document.getElementById('resTitle').textContent=r.t;
+var extra=info==='spec'?' چون مشخصات باتری قبلی را دارید، تطبیق دقیق در کمتر از یک دقیقه انجام می‌شود.':info==='model'?' مدل دستگاه را در جست‌وجو وارد کنید یا برای کارشناس بفرستید.':' کارشناس ما در کمتر از چند ساعت پاسخ می‌دهد.';
+document.getElementById('resDesc').textContent=r.d+extra;
+document.getElementById('resCta').textContent=dev==='other'||dev==='ebike'?'گفت‌وگو با کارشناس':'مشاهده دسته';
+document.getElementById('resCta').href=(dev==='other')?'#contact':(dev==='ebike'?'#pack':'https://cafebattery.com/');go(3);});
+})();
+</script>

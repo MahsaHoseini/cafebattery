@@ -1,0 +1,54 @@
+<!-- MAGAZINE -->
+<style>
+.agrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.acard{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;display:flex;flex-direction:column;transition:.22s}
+.acard:hover{box-shadow:var(--sh);transform:translateY(-4px)}
+.acard img{height:210px;object-fit:cover;width:100%}
+.acard .bd{padding:24px 26px 28px;display:flex;flex-direction:column;gap:10px;flex:1}
+.acat{font-size:12px;font-weight:800;color:var(--cyan-d)}
+.acard h3{font-size:17px;line-height:1.9}
+.acard p{font-size:14px;color:var(--mut)}
+.ameta{margin-top:auto;padding-top:14px;border-top:1px solid var(--line2);display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:var(--mut)}
+.ameta a{font-weight:800;color:var(--navy)}
+@media(max-width:900px){.agrid{grid-template-columns:1fr}.acard img{height:180px}}
+/* NEWS */
+.news{margin-top:64px;border:1px solid var(--line);border-radius:var(--r-lg);background:#fff;overflow:hidden}
+.news-h{display:flex;justify-content:space-between;align-items:center;padding:20px 28px;border-bottom:1px solid var(--line)}
+.news-h h3{font-size:17px}
+.nrow{display:flex;align-items:center;gap:16px;padding:16px 28px;border-bottom:1px solid var(--line2);font-size:14.5px;transition:.2s}
+.nrow:last-child{border-bottom:0}
+.nrow:hover{background:var(--bg)}
+.nrow time{font-size:12px;color:var(--mut);white-space:nowrap;background:var(--bg);border-radius:8px;padding:4px 12px}
+.nrow .t{flex:1;font-weight:600}
+.nrow i{font-style:normal;color:#B9C4D0}
+/* CONSULT CTA */
+.consult{background:linear-gradient(135deg,var(--cyan-soft) 0%,#D8F1F6 50%,var(--yellow-soft) 130%);border-radius:30px;padding:clamp(36px,5vw,64px);display:grid;grid-template-columns:1.2fr .8fr;gap:36px;align-items:center;border:1px solid #C9EDF3}
+.consult h2{font-size:clamp(24px,3vw,36px);font-weight:900;line-height:1.7}
+.consult p{color:#3E5A63;margin:10px 0 28px;max-width:480px}
+.consult .btns{display:flex;gap:12px;flex-wrap:wrap}
+.consult img{width:100%;height:300px;object-fit:cover;border-radius:22px;box-shadow:var(--sh)}
+@media(max-width:900px){.consult{grid-template-columns:1fr}.consult img{height:200px;order:-1}}
+</style>
+<section class="sec alt" id="mag"><div class="wrap">
+<div class="sec-head split"><div><span class="kicker">آموزش</span><h2 class="t">دانشنامه باتری</h2><p class="sub">راهنمای انتخاب، استفاده و نگهداری از انواع باتری</p></div><a class="tlink" href="https://cafebattery.com/" rel="noopener">همه مقالات <i>←</i></a></div>
+<div class="agrid">
+<article class="acard"><img src="img/pack.jpg" alt="مقایسه باتری لیتیومی و لیتیوم فسفات" loading="lazy"><div class="bd"><span class="acat">راهنمای خرید</span><h3>Li-ion یا LiFePO4؛ کدام باتری مناسب شماست؟</h3><p>تفاوت طول عمر، وزن، قیمت و کاربرد این دو تکنولوژی محبوب را شفاف مقایسه می‌کنیم.</p><div class="ameta"><span>۷ دقیقه مطالعه</span><a href="https://cafebattery.com/" rel="noopener">خواندن مقاله ←</a></div></div></article>
+<article class="acard"><img src="img/cat-ups.jpg" alt="انتخاب باتری مناسب UPS" loading="lazy"><div class="bd"><span class="acat">برق اضطراری</span><h3>چطور باتری مناسب UPS را انتخاب کنیم؟</h3><p>محاسبه آمپرساعت، تعداد باتری و نکاتی که فروشنده‌ها معمولاً نمی‌گویند.</p><div class="ameta"><span>۵ دقیقه مطالعه</span><a href="https://cafebattery.com/" rel="noopener">خواندن مقاله ←</a></div></div></article>
+<article class="acard"><img src="img/prod-bms.jpg" alt="تشخیص باتری سالم و باکیفیت" loading="lazy"><div class="bd"><span class="acat">تخصصی</span><h3>راهنمای تشخیص باتری سالم و باکیفیت</h3><p>از تست ظرفیت تا خواندن دیتاشیت؛ چطور باتری تقلبی را از اصلی جدا کنیم؟</p><div class="ameta"><span>۶ دقیقه مطالعه</span><a href="https://cafebattery.com/" rel="noopener">خواندن مقاله ←</a></div></div></article>
+</div>
+<div class="news" id="news">
+<div class="news-h"><h3>جدیدترین اخبار</h3><a class="tlink" href="https://cafebattery.com/" rel="noopener" style="font-size:13.5px">آرشیو اخبار <i>←</i></a></div>
+<a class="nrow" href="https://cafebattery.com/" rel="noopener"><time>۱۸ تیر ۱۴۰۴</time><span class="t">باتری‌های لیتیومی در سال ۲۰۲۵؛ چه چیزی تغییر کرد؟</span><i>←</i></a>
+<a class="nrow" href="https://cafebattery.com/" rel="noopener"><time>۸ تیر ۱۴۰۴</time><span class="t">راهنمای نگهداری باتری UPS در فصل گرما</span><i>←</i></a>
+<a class="nrow" href="https://cafebattery.com/" rel="noopener"><time>۲ تیر ۱۴۰۴</time><span class="t">سرویس جدید: ساخت سفارشی پک باتری در کافه باتری</span><i>←</i></a>
+</div>
+</div></section>
+<!-- CONSULT -->
+<section class="sec"><div class="wrap">
+<div class="consult">
+<div><span class="kicker" style="background:#fff">مشاوره خرید</span><h2>برای انتخاب باتری مناسب مطمئن نیستید؟</h2>
+<p>کارشناسان کافه باتری برای انتخاب بهترین گزینه کنار شما هستند؛ رایگان و بدون تعارف.</p>
+<div class="btns"><a class="btn btn-p" href="#contact">مشاوره رایگان</a><a class="btn btn-o" href="tel:+982166711243">تماس با ما</a></div></div>
+<img src="img/cat-charger.jpg" alt="مشاوره تخصصی انتخاب باتری در کافه باتری" loading="lazy">
+</div>
+</div></section>
