@@ -1,42 +1,51 @@
 <!-- B2B + REVIEWS + FAQ -->
 <style>
-.b2b{background:linear-gradient(135deg,#38D6EE,var(--amber));border-radius:32px;padding:clamp(28px,4vw,48px);display:flex;align-items:center;gap:24px;flex-wrap:wrap;color:#06303A;box-shadow:var(--sh)}
-.b2b h2{font-family:"Markazi Text",serif;font-size:clamp(24px,3vw,36px);line-height:1.7}
-.b2b p{font-weight:600;opacity:.8}
-.b2b .btn-d{margin-inline-start:auto}
-.rev{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
-.rv{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px}
-.rv .stars{color:var(--amber);letter-spacing:2px}
-.rv p{font-size:14.5px;color:var(--ink2);margin:10px 0}
-.rv b{font-size:14px}.rv small{color:var(--mut)}
-@media(max-width:900px){.rev{grid-template-columns:1fr}.b2b .btn-d{margin-inline-start:0}}
-details.fq{background:var(--card);border:1px solid var(--line);border-radius:16px;margin-top:12px;overflow:hidden}
-details.fq summary{cursor:pointer;padding:18px 22px;font-weight:800;font-size:15.5px;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.b2b{border:1px solid var(--line);border-radius:28px;padding:clamp(36px,5vw,64px);display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;background:linear-gradient(to left,#fff 55%,var(--teal-soft))}
+.b2b h2{font-family:"Markazi Text",serif;font-size:clamp(26px,3vw,38px);line-height:1.6}
+.b2b p{color:var(--mut);margin:10px 0 26px}
+.b2b ul{list-style:none;display:grid;gap:10px;margin-bottom:30px}
+.b2b ul li{font-size:14.5px;color:var(--ink2);padding-inline-start:26px;position:relative}
+.b2b ul li::before{content:"—";position:absolute;right:0;color:var(--teal)}
+.b2b img{width:100%;height:320px;object-fit:cover;border-radius:20px}
+.rev{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+.rv{border:1px solid var(--line);border-radius:var(--r);padding:32px 30px;display:flex;flex-direction:column;gap:14px}
+.rv .q{font-family:"Markazi Text",serif;font-size:44px;line-height:1;color:var(--teal)}
+.rv p{font-size:15px;color:var(--ink2)}
+.rv .who{margin-top:auto;padding-top:14px;border-top:1px solid var(--line2);font-size:13.5px}
+.rv .who b{display:block;font-size:14px}
+.rv .who small{color:var(--mut)}
+@media(max-width:900px){.b2b{grid-template-columns:1fr}.b2b img{height:220px;order:-1}.rev{grid-template-columns:1fr}}
+.faq-wrap{max-width:800px}
+details.fq{border-bottom:1px solid var(--line);padding:6px 0}
+details.fq summary{cursor:pointer;padding:20px 4px;font-weight:700;font-size:16px;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px}
 details.fq summary::-webkit-details-marker{display:none}
-details.fq summary::after{content:"+";font-size:24px;color:var(--amber-d);flex:none}
-details.fq[open] summary::after{content:"–"}
-details.fq .a{padding:0 22px 20px;color:var(--ink2);font-size:14.5px}
-.faq-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:30px;align-items:start}
-@media(max-width:900px){.faq-grid{grid-template-columns:1fr}}
+details.fq summary span.ic{font-weight:400;font-size:24px;color:var(--teal-d);flex:none;transition:.25s}
+details.fq[open] summary span.ic{transform:rotate(45deg)}
+details.fq .a{padding:0 4px 24px;color:var(--mut);font-size:15px;max-width:640px}
 </style>
-<section class="sec" style="padding-top:0"><div class="wrap">
-<div class="b2b"><div><h2>تعمیرکار یا فروشنده‌ای؟ عضو باشگاه همکاران شو 🤝</h2><p>قیمت همکاری، موجودی اولویت‌دار و فاکتور رسمی برای خریدهای عمده.</p></div><a class="btn btn-d" href="#contact">عضویت در باشگاه همکاران</a></div>
-</div></section>
-<section class="sec" style="padding-top:0"><div class="wrap">
-<span class="kicker">نظر مشتری‌ها</span><h2 class="t">اعتمادی که با هر سفارش بیشتر می‌شود</h2>
-<div class="rev">
-<div class="rv"><div class="stars">★★★★★</div><p>«برای دریل شارژمم پک ساختن؛ دقیقاً هم‌اندازه قبلی و قدرتش خیلی بهتر شده. مشاوره‌شون هم واقعاً تخصصی بود.»</p><b>امیر ر.</b> <small>• تهران</small></div>
-<div class="rv"><div class="stars">★★★★★</div><p>«باتری UPS رو با تست ظرفیت فرستادن؛ بسته‌بندی عالی و ارسال سریع به شهرستان. قیمتش هم از بقیه بهتر بود.»</p><b>خانم محمدی</b> <small>• اصفهان</small></div>
-<div class="rv"><div class="stars">★★★★★</div><p>«چند ساله باتری سمعک و سکه‌ای رو از اینجا می‌گیرم؛ همیشه تاریخ تازه و اصل. خیالم راحته.»</p><b>رضا ک.</b> <small>• مشتری ثابت</small></div>
+<section class="sec" style="background:var(--bg2)"><div class="wrap">
+<div class="b2b"><div><span class="eyebrow">باشگاه همکاران</span><h2>تعمیرکار یا فروشنده‌اید؟ عمده بخرید</h2>
+<p>قیمت همکاری، موجودی اولویت‌دار و فاکتور رسمی برای خریدهای عمده و سازمانی.</p>
+<ul><li>قیمت ویژه همکاران روی کل اجناس</li><li>موجودی اولویت‌دار و رزرو انبار</li><li>فاکتور رسمی و تسویه سازمانی</li></ul>
+<a class="btn btn-d" href="#contact">درخواست عضویت</a></div>
+<img src="img/cat-ebike.jpg" alt="خرید عمده باتری برای همکاران کافه باتری" loading="lazy">
 </div>
 </div></section>
-<section class="sec" id="faq" style="padding-top:0"><div class="wrap faq-grid">
-<div><span class="kicker">سوالات پرتکرار</span><h2 class="t">سؤالی داری؟ اینجا جوابش هست</h2><p class="sub">پیدا نکردی؟ مستقیم بپرس؛ شنبه تا چهارشنبه ۱۰:۳۰ تا ۱۵:۳۰ پاسخگوییم.</p><br><a class="btn btn-d" href="tel:+982166711243">تماس: ۰۲۱۶۶۷۱۱۲۴۳</a></div>
-<div>
-<details class="fq" open><summary>چطور باتری مناسب دستگاهم را پیدا کنم؟</summary><div class="a">مدل دستگاه یا مشخصات باتری قبلی (ولتاژ و ظرفیت) را جست‌وجو کن یا برای پشتیبانی بفرست؛ کارشناسان دقیق‌ترین گزینه سازگار را معرفی می‌کنند.</div></details>
-<details class="fq"><summary>آیا امکان ساخت سفارشی پک باتری وجود دارد؟</summary><div class="a">بله؛ پک با ولتاژ، ظرفیت و ابعاد دلخواه با سلول‌های اصلی، نقطه‌جوش صنعتی و برد محافظ استاندارد ساخته و تست‌شده تحویل داده می‌شود.</div></details>
-<details class="fq"><summary>ارسال به شهرستان چقدر طول می‌کشد؟</summary><div class="a">سفارش‌ها با بسته‌بندی ایمن مخصوص باتری، معمولاً همان روز یا روز بعد با پست و تیپاکس ارسال می‌شوند.</div></details>
-<details class="fq"><summary>باتری‌ها ضمانت اصالت و ظرفیت دارند؟</summary><div class="a">بله؛ همه اقلام اصلی و آکبند هستند و ظرفیت واقعی سلول‌ها تست و تضمین می‌شود تا دقیقاً همان چیزی را بگیری که سفارش داده‌ای.</div></details>
-<details class="fq"><summary>شرایط خرید همکاران چیست؟</summary><div class="a">تعمیرکاران، فروشندگان و شرکت‌ها با عضویت در باشگاه همکاران از قیمت عمده، موجودی اولویت‌دار و فاکتور رسمی بهره‌مند می‌شوند.</div></details>
+<section class="sec"><div class="wrap">
+<div class="sec-head"><span class="eyebrow">نظر مشتری‌ها</span><h2 class="t">اعتمادی که با هر سفارش بیشتر می‌شود</h2></div>
+<div class="rev">
+<div class="rv"><span class="q">«</span><p>برای دریل شارژیم پک ساختن؛ دقیقاً هم‌اندازه قبلی و قدرتش خیلی بهتر شده. مشاوره‌شون واقعاً تخصصی بود.</p><div class="who"><b>امیر ر.</b><small>تهران — ساخت پک دریل شارژی</small></div></div>
+<div class="rv"><span class="q">«</span><p>باتری UPS را با تست ظرفیت فرستادن؛ بسته‌بندی عالی و ارسال سریع به شهرستان. قیمتش هم از بقیه بهتر بود.</p><div class="who"><b>خانم محمدی</b><small>اصفهان — باتری UPS</small></div></div>
+<div class="rv"><span class="q">«</span><p>چند ساله باتری سمعک و سکه‌ای را از اینجا می‌گیرم؛ همیشه تاریخ تازه و اصل. خیالم راحت است.</p><div class="who"><b>رضا ک.</b><small>مشتری ثابت فروشگاه</small></div></div>
+</div>
+</div></section>
+<section class="sec" id="faq" style="padding-top:0"><div class="wrap">
+<div class="sec-head"><span class="eyebrow">سوالات پرتکرار</span><h2 class="t">پاسخ کوتاه، بدون حاشیه</h2></div>
+<div class="faq-wrap">
+<details class="fq" open><summary>چطور باتری مناسب دستگاهم را پیدا کنم؟ <span class="ic">+</span></summary><div class="a">مدل دستگاه یا مشخصات باتری قبلی (ولتاژ و ظرفیت) را جست‌وجو کنید یا برای پشتیبانی بفرستید؛ کارشناسان دقیق‌ترین گزینه سازگار را معرفی می‌کنند.</div></details>
+<details class="fq"><summary>آیا امکان ساخت سفارشی پک باتری وجود دارد؟ <span class="ic">+</span></summary><div class="a">بله؛ پک با ولتاژ، ظرفیت و ابعاد دلخواه با سلول‌های اصلی، نقطه‌جوش صنعتی و برد محافظ استاندارد ساخته و تست‌شده تحویل داده می‌شود.</div></details>
+<details class="fq"><summary>ارسال به شهرستان چقدر طول می‌کشد؟ <span class="ic">+</span></summary><div class="a">سفارش‌ها با بسته‌بندی ایمن مخصوص باتری، معمولاً همان روز یا روز بعد با پست و تیپاکس ارسال می‌شوند.</div></details>
+<details class="fq"><summary>باتری‌ها ضمانت اصالت و ظرفیت دارند؟ <span class="ic">+</span></summary><div class="a">بله؛ همه اقلام اصلی و آکبند هستند و ظرفیت واقعی سلول‌ها تست و تضمین می‌شود.</div></details>
+<details class="fq"><summary>شرایط خرید همکاران چیست؟ <span class="ic">+</span></summary><div class="a">تعمیرکاران، فروشندگان و شرکت‌ها با عضویت در باشگاه همکاران از قیمت عمده، موجودی اولویت‌دار و فاکتور رسمی بهره‌مند می‌شوند.</div></details>
 </div>
 </div></section>

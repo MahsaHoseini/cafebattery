@@ -1,43 +1,79 @@
 </head>
 <body>
-<!-- HERO -->
-<section class="hero" aria-label="معرفی کافه باتری">
-<header class="top">
-<div class="logo"><span class="ic" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24"><rect x="7" y="8" width="13" height="9" rx="2" fill="#12333B"/><rect x="4.5" y="10.5" width="2.5" height="4" rx="1" fill="#12333B"/><path d="M13.5 9.5 11 13h2.4L12 15.5 15.5 11H13z" fill="#00BFD6"/></svg></span>کافه باتری</div>
-<nav class="nav" aria-label="ناوبری اصلی">
+<!-- TOPBAR + HEADER + HERO -->
+<style>
+.topbar{background:var(--ink);color:#C9D9DD;font-size:12.5px;text-align:center;padding:8px 16px;letter-spacing:.2px}
+.topbar b{color:#fff}
+header.nav{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line2)}
+.nav-in{display:flex;align-items:center;gap:28px;padding:16px var(--padx);max-width:1240px;margin-inline:auto}
+.logo{display:flex;align-items:center;gap:10px;font-weight:900;font-size:19px}
+.logo .mk{width:34px;height:34px;border-radius:10px;background:var(--ink);display:grid;place-items:center;flex:none}
+.nav-links{display:flex;gap:26px;font-size:14.5px;color:var(--ink2);margin-inline-start:8px}
+.nav-links a:hover{color:var(--teal-d)}
+.nav-cta{margin-inline-start:auto;display:flex;align-items:center;gap:18px}
+.nav-tel{font-weight:800;font-size:15px;letter-spacing:.3px}
+.nav-tel small{display:block;font-size:11px;color:var(--mut);font-weight:400;letter-spacing:0}
+.btn-sm{padding:10px 26px;font-size:14px}
+.hero{padding:72px 0 88px;position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:64px;align-items:center}
+.hero h1{font-family:"Markazi Text",serif;font-size:clamp(38px,4.8vw,62px);line-height:1.55;font-weight:700}
+.hero h1 .u{position:relative;white-space:nowrap}
+.hero h1 .u::after{content:"";position:absolute;right:0;left:0;bottom:8px;height:10px;background:var(--teal-soft);z-index:-1;border-radius:4px}
+.hero h1 .u b{position:relative;z-index:1;font-weight:700}
+.hero .lead{color:var(--mut);font-size:17px;max-width:480px;margin:18px 0 30px}
+.search{display:flex;border:1px solid var(--line);border-radius:999px;padding:5px 6px 5px 5px;max-width:480px;background:#fff;transition:.25s}
+.search:focus-within{border-color:var(--teal)}
+.search input{flex:1;border:0;outline:0;background:transparent;font-family:inherit;font-size:14.5px;padding:10px 20px;color:var(--ink);min-width:0}
+.search button{background:var(--ink);color:#fff;border:0;border-radius:999px;padding:11px 30px;font-family:inherit;font-weight:700;font-size:14px;cursor:pointer}
+.hero-ctas{display:flex;align-items:center;gap:26px;margin-top:26px}
+.hero-fig{position:relative}
+.hero-fig .ph{border-radius:28px;overflow:hidden}
+.hero-fig img{width:100%;height:520px;object-fit:cover}
+.hero-fig .cap{position:absolute;bottom:20px;right:20px;left:20px;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-radius:16px;padding:14px 22px;display:flex;align-items:center;gap:16px;font-size:14px}
+.hero-fig .cap b{font-size:22px;font-weight:900}
+.hero-fig .cap small{color:var(--mut);display:block;font-size:12.5px;line-height:1.9}
+.hero-fig .cap .sep{width:1px;align-self:stretch;background:var(--line)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);margin-top:72px;border-top:1px solid var(--line2);padding-top:36px;gap:20px;max-width:760px}
+.stat b{display:block;font-size:30px;font-weight:900;letter-spacing:.2px}
+.stat b em{font-style:normal;color:var(--teal)}
+.stat span{color:var(--mut);font-size:13.5px}
+@media(max-width:900px){
+.nav-links{display:none}
+.nav-tel{display:none}
+.hero{padding:44px 0 60px}
+.hero-grid{grid-template-columns:1fr;gap:36px}
+.hero-fig img{height:300px}
+.stats{grid-template-columns:repeat(2,1fr);gap:24px;margin-top:48px}
+.hero-ctas{flex-wrap:wrap;gap:18px}
+}
+</style>
+<div class="topbar">ارسال به سراسر کشور با بسته‌بندی ایمن مخصوص باتری — <b>مشاوره تخصصی رایگان</b></div>
+<header class="nav"><div class="nav-in">
+<div class="logo"><span class="mk" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24"><rect x="7" y="8" width="13" height="9" rx="2" fill="#fff"/><rect x="4.5" y="10.5" width="2.5" height="4" rx="1" fill="#fff"/><path d="M13.5 9.5 11 13h2.4L12 15.5 15.5 11H13z" fill="#00BFD6"/></svg></span>کافه باتری</div>
+<nav class="nav-links" aria-label="ناوبری اصلی">
 <a href="#cats">دسته‌بندی‌ها</a><a href="#best">پرفروش‌ها</a><a href="#pack">ساخت پک</a><a href="#faq">سوالات پرتکرار</a><a href="#contact">تماس</a>
 </nav>
-<div class="cta"><a class="btn btn-o" href="#contact">مشاوره رایگان</a><a class="btn btn-a" href="#best">مشاهده فروشگاه</a></div>
-</header>
+<div class="nav-cta"><a class="nav-tel" href="tel:+982166711243"><small>مشاوره و سفارش</small><span dir="ltr">021-66711243</span></a><a class="btn btn-d btn-sm" href="#best">خرید باتری</a></div>
+</div></header>
+<section class="hero"><div class="wrap">
 <div class="hero-grid">
 <div>
-<h1>هر باتری‌ای که لازم داری، <em>اصل و تست‌شده</em> اینجاست</h1>
-<p class="lead">از باتری لیتیومی ۱۸۶۵۰ و UPS تا باتری ابزار شارژی، لپ‌تاپ، دوچرخه برقی و سکه‌ای — با ضمانت اصالت، مشاوره تخصصی رایگان و ارسال به سراسر کشور.</p>
-<form class="search" role="search" action="https://cafebattery.com/" method="get" onsubmit="return true">
-<input type="search" name="s" placeholder="دنبال چه باتری‌ای می‌گردی؟ (مثلاً 18650، UPS، سکه‌ای…)" aria-label="جست‌وجوی باتری">
+<h1>انرژیِ مطمئن،<br>برای <span class="u"><b>هر دستگاهی</b></span> که داری</h1>
+<p class="lead">مرجع تخصصی باتری؛ از سلول لیتیومی و UPS تا باتری ابزار شارژی و سکه‌ای. اصل، تست‌شده، با مشاوره‌ای که واقعاً بلد است.</p>
+<form class="search" role="search" action="https://cafebattery.com/" method="get">
+<input type="search" name="s" placeholder="مدل دستگاه یا باتری را بنویسید…" aria-label="جست‌وجوی باتری">
 <button type="submit">جست‌وجو</button>
 </form>
-<div class="chips"><span>✓ ضمانت اصالت کالا</span><span>✓ تست واقعی ظرفیت</span><span>✓ ساخت سفارشی پک</span><span>✓ ارسال سراسری</span></div>
+<div class="hero-ctas"><a class="tlink" href="#pack">ساخت سفارشی پک باتری <i>←</i></a></div>
 </div>
-<div class="hero-art">
-<div class="ph"><img src="img/hero.jpg" alt="سلول‌های باتری لیتیومی 18650 و 21700 در فروشگاه کافه باتری" fetchpriority="high"></div>
-<div class="float f1"><span class="dot"></span>موجود در انبار • آماده ارسال</div>
-<div class="float f2">⚡ بیش از ۵۰۰ مدل باتری تخصصی</div>
+<figure class="hero-fig">
+<div class="ph"><img src="img/hero.jpg" alt="سلول‌های باتری لیتیومی 18650 و 21700 در کافه باتری" fetchpriority="high"></div>
+<figcaption class="cap"><div><b>۵۰۰+</b><small>مدل باتری تخصصی</small></div><span class="sep"></span><div><b>۱۰۰٪</b><small>اصالت تضمین‌شده</small></div><span class="sep"></span><div><b>۲۰</b><small>دسته تخصصی</small></div></figcaption>
+</figure>
 </div>
+<div class="stats">
+<div class="stat"><b>۵۰۰<em>+</em></b><span>مدل باتری تخصصی در انبار</span></div>
+<div class="stat"><b>۲۰</b><span>دسته‌بندی از خانگی تا صنعتی</span></div>
+<div class="stat"><b>۱۰۰<em>٪</em></b><span>تست واقعی ظرفیت سلول‌ها</span></div>
 </div>
-</section>
-<!-- TRUST STRIP -->
-<style>
-.strip{background:var(--bg)}
-.strip-in{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;padding:26px 0 0}
-.st{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;display:flex;gap:12px;align-items:center;box-shadow:0 10px 26px -18px rgba(19,26,38,.3)}
-.st b{display:block;font-size:15px}.st small{color:var(--mut);font-size:13px}
-.st .e{font-size:26px}
-@media(max-width:900px){.strip-in{grid-template-columns:repeat(2,1fr)}}
-</style>
-<div class="strip"><div class="wrap strip-in">
-<div class="st"><span class="e">🛡️</span><div><b>ضمانت اصالت</b><small>فقط سلول اصلی و آکبند</small></div></div>
-<div class="st"><span class="e">🔬</span><div><b>تست واقعی ظرفیت</b><small>کیفیت تضمین‌شده مکسل و برندها</small></div></div>
-<div class="st"><span class="e">🚚</span><div><b>ارسال ایمن سراسری</b><small>بسته‌بندی استاندارد باتری</small></div></div>
-<div class="st"><span class="e">🎧</span><div><b>مشاوره تخصصی رایگان</b><small>شنبه تا چهارشنبه ۱۰:۳۰ تا ۱۵:۳۰</small></div></div>
-</div></div>
+</div></section>

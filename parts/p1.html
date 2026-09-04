@@ -13,8 +13,8 @@
 <meta property="og:description" content="هر باتری‌ای که لازم داری، اینجاست: لیتیومی، UPS، ابزار شارژی، لپ‌تاپ، دوچرخه برقی، سکه‌ای و شارژر + ساخت سفارشی پک باتری.">
 <meta property="og:url" content="https://cafebattery.com/">
 <meta property="og:image" content="img/hero.jpg">
-<meta name="theme-color" content="#0C262D">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><rect x='7' y='8' width='13' height='9' rx='2' fill='%2300BFD6'/><rect x='4.5' y='10.5' width='2.5' height='4' rx='1' fill='%2300BFD6'/><path d='M13.5 9.5 11 13h2.4L12 15.5 15.5 11H13z' fill='%2312333B'/></svg>">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><rect x='7' y='8' width='13' height='9' rx='2' fill='%2300BFD6'/><rect x='4.5' y='10.5' width='2.5' height='4' rx='1' fill='%2300BFD6'/><path d='M13.5 9.5 11 13h2.4L12 15.5 15.5 11H13z' fill='%230E2A32'/></svg>">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"ElectronicsStore","name":"کافه باتری","url":"https://cafebattery.com/","image":"img/hero.jpg","description":"فروش تخصصی انواع باتری خانگی، صنعتی و پزشکی + ساخت سفارشی پک باتری","telephone":"+98-21-66711243","email":"cafebattry@gmail.com","address":{"@type":"PostalAddress","addressLocality":"تهران","streetAddress":"خیابان جمهوری، پاساژ امجد، طبقه زیر همکف، پلاک ۳۹، فروشگاه کافه باتری","addressCountry":"IR"},"openingHours":"Sa-We 10:30-15:30","priceRange":"IRT"}
 </script>
@@ -27,62 +27,33 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
---ink:#12333B;--ink2:#2B3A40;--mut:#5D7680;
---bg:#F4FAFB;--card:#fff;--amber:#00BFD6;--amber-d:#0E8FA3;--amber-soft:#DFF5F9;
---green:#15803D;--line:rgba(18,51,59,.12);
---padx:clamp(20px,4vw,72px);
---r:22px;
---sh:0 18px 45px -20px rgba(19,26,38,.25);
+--ink:#0E2A32;--ink2:#33484F;--mut:#677D85;
+--bg:#ffffff;--bg2:#F4F9FA;--card:#fff;
+--teal:#00BFD6;--teal-d:#0B8FA0;--teal-soft:#E6F7FA;
+--red:#EF5661;
+--line:#E3ECEE;--line2:#EEF4F5;
+--padx:clamp(20px,5vw,88px);
+--r:20px;
 }
 html{scroll-behavior:smooth}
-body{font-family:"Vazirmatn",Tahoma,sans-serif;background:var(--bg);color:var(--ink);line-height:2;overflow-x:hidden}
+body{font-family:"Vazirmatn",Tahoma,sans-serif;background:var(--bg);color:var(--ink);line-height:2.1;overflow-x:hidden;font-size:16px}
 img{max-width:100%;display:block}
 a{text-decoration:none;color:inherit}
-.wrap{padding-inline:var(--padx);max-width:1280px;margin-inline:auto}
-.sec{padding:72px 0}
-.kicker{display:inline-flex;align-items:center;gap:8px;background:var(--amber-soft);color:var(--amber-d);font-weight:800;font-size:14px;padding:6px 18px;border-radius:999px;border:1px solid #B9E7F0}
-h2.t{font-family:"Markazi Text",serif;font-weight:700;font-size:clamp(30px,4vw,46px);line-height:1.5;margin:14px 0 6px}
-.sub{color:var(--mut);max-width:640px}
-/* ===== HERO (header merged, curved bottom) ===== */
-.hero{background:radial-gradient(900px 480px at 85% -5%,rgba(0,191,214,.35),transparent 60%),radial-gradient(700px 420px at 8% 10%,rgba(0,191,214,.14),transparent 60%),linear-gradient(160deg,#16424D 0%,#0C262D 70%);color:#fff;border-radius:0 0 44px 44px;position:relative;overflow:hidden}
-.hero::after{content:"";position:absolute;inset:auto -10% -70px -10%;height:130px;background:var(--bg);border-radius:50% 50% 0 0/100% 100% 0 0;opacity:.07}
-.top{display:flex;align-items:center;gap:18px;padding:20px var(--padx);max-width:1280px;margin-inline:auto}
-.logo{display:flex;align-items:center;gap:10px;font-weight:900;font-size:20px}
-.logo .ic{width:42px;height:42px;border-radius:13px;background:linear-gradient(135deg,#38D6EE,var(--amber-d));display:grid;place-items:center;flex:none}
-.nav{display:flex;gap:26px;margin-inline-start:18px;font-size:15px;color:#CBD3E0}
-.nav a:hover{color:var(--amber)}
-.top .cta{margin-inline-start:auto;display:flex;gap:10px}
-.btn{display:inline-flex;align-items:center;gap:8px;font-weight:800;border-radius:14px;padding:12px 26px;font-size:15px;border:1px solid transparent;cursor:pointer;transition:.25s}
-.btn-a{background:linear-gradient(135deg,#38D6EE,var(--amber));color:#06303A}
-.btn-a:hover{transform:translateY(-2px);box-shadow:0 14px 30px -10px rgba(0,191,214,.5)}
-.btn-o{border-color:rgba(255,255,255,.3);color:#fff}
-.btn-o:hover{border-color:var(--amber);color:var(--amber)}
+.wrap{padding-inline:var(--padx);max-width:1240px;margin-inline:auto}
+.sec{padding:96px 0}
+.eyebrow{display:inline-block;font-size:13px;font-weight:700;color:var(--teal-d);letter-spacing:.5px;margin-bottom:14px}
+.eyebrow::before{content:"";display:inline-block;width:26px;height:2px;background:var(--teal);vertical-align:middle;margin-left:10px;border-radius:2px}
+h2.t{font-family:"Markazi Text",serif;font-weight:700;font-size:clamp(30px,3.6vw,44px);line-height:1.55}
+.sub{color:var(--mut);max-width:600px;margin-top:10px;font-size:16px}
+.sec-head{max-width:680px;margin-bottom:48px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:700;border-radius:999px;padding:14px 36px;font-size:15px;cursor:pointer;transition:.25s;border:1px solid transparent;font-family:inherit}
 .btn-d{background:var(--ink);color:#fff}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center;padding:34px var(--padx) 96px;max-width:1280px;margin-inline:auto}
-.hero h1{font-family:"Markazi Text",serif;font-size:clamp(34px,4.6vw,58px);line-height:1.6;font-weight:700}
-.hero h1 em{font-style:normal;color:var(--amber)}
-.hero p.lead{color:#B9C2D2;margin:14px 0 24px;max-width:520px}
-.search{display:flex;background:#fff;border-radius:16px;padding:6px;max-width:520px;box-shadow:var(--sh)}
-.search input{flex:1;border:0;outline:0;background:transparent;font-family:inherit;font-size:15px;padding:10px 16px;color:var(--ink)}
-.search button{background:var(--ink);color:#fff;border:0;border-radius:12px;padding:10px 26px;font-family:inherit;font-weight:800;cursor:pointer}
-.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
-.chips span{font-size:13px;color:#D8DEE9;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);padding:6px 16px;border-radius:999px}
-.hero-art{position:relative}
-.hero-art .ph{border-radius:28px;overflow:hidden;box-shadow:0 40px 80px -30px rgba(0,0,0,.6);border:1px solid rgba(255,255,255,.15)}
-.hero-art img{width:100%;height:420px;object-fit:cover}
-.float{position:absolute;background:rgba(255,255,255,.96);color:var(--ink);border-radius:16px;padding:10px 18px;font-size:13px;font-weight:800;box-shadow:var(--sh);display:flex;align-items:center;gap:8px;backdrop-filter:blur(6px)}
-.f1{top:22px;right:-14px}
-.f2{bottom:26px;left:-14px}
-.dot{width:10px;height:10px;border-radius:50%;background:#22C55E;box-shadow:0 0 0 5px rgba(34,197,94,.2)}
-@media(max-width:900px){
-.nav{display:none}
-.top{padding:14px 16px;gap:10px}
-.logo{font-size:17px}.logo .ic{width:36px;height:36px}
-.top .cta{margin-inline-start:0}
-.top .btn-o{display:none}
-.btn{padding:10px 18px;font-size:14px}
-.hero-grid{grid-template-columns:1fr;padding-bottom:80px}
-.hero-art img{height:260px}
-.f1{right:8px}.f2{left:8px}
-}
+.btn-d:hover{background:#1A3D46}
+.btn-g{border-color:var(--line);color:var(--ink);background:#fff}
+.btn-g:hover{border-color:var(--ink)}
+.tlink{font-weight:700;font-size:15px;color:var(--ink);display:inline-flex;align-items:center;gap:8px}
+.tlink i{font-style:normal;color:var(--teal-d);transition:.25s}
+.tlink:hover i{transform:translateX(-5px)}
+::selection{background:var(--teal-soft)}
+@media(max-width:900px){.sec{padding:64px 0}}
 </style>

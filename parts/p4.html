@@ -1,33 +1,36 @@
 <!-- CUSTOM PACK -->
 <style>
-.pack{background:linear-gradient(150deg,#16424D,#0C262D);color:#fff;border-radius:36px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;box-shadow:var(--sh)}
-.pack .tx{padding:clamp(28px,4vw,56px)}
-.pack h2{font-family:"Markazi Text",serif;font-size:clamp(26px,3.4vw,40px);line-height:1.7}
-.pack h2 em{font-style:normal;color:var(--amber)}
-.pack p{color:#B9C2D2;margin:12px 0 20px}
-.steps{display:grid;gap:10px;margin:0 0 24px}
-.steps li{list-style:none;display:flex;gap:12px;align-items:center;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:10px 16px;font-size:14.5px}
-.steps b{background:var(--amber);color:#06303A;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;flex:none;font-size:14px}
-.pack img{width:100%;height:100%;object-fit:cover;min-height:340px}
-@media(max-width:900px){.pack{grid-template-columns:1fr}.pack img{min-height:220px;order:-1}}
+.pack{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.pack img{width:100%;height:560px;object-fit:cover;border-radius:28px}
+.steps{list-style:none;margin:30px 0;display:grid;gap:0;border-top:1px solid var(--line)}
+.steps li{display:flex;gap:20px;padding:20px 0;border-bottom:1px solid var(--line);align-items:flex-start}
+.steps .num{font-family:"Markazi Text",serif;font-size:26px;color:var(--teal);line-height:1.4;min-width:36px}
+.steps b{display:block;font-size:15.5px}
+.steps p{color:var(--mut);font-size:14px;margin-top:2px}
 /* WHY */
-.why{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
-.wh{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:28px 24px}
-.wh .n{font-family:"Markazi Text",serif;font-size:40px;color:var(--amber);line-height:1}
-.wh h3{margin:8px 0 4px;font-size:17px}.wh p{color:var(--mut);font-size:14.5px}
-@media(max-width:900px){.why{grid-template-columns:1fr}}
+.why{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:96px;border:1px solid var(--line);border-radius:24px;overflow:hidden}
+.wh{padding:40px 36px;border-inline-start:1px solid var(--line2)}
+.wh:first-child{border-inline-start:0}
+.wh h3{font-size:17px;margin-bottom:8px}
+.wh p{color:var(--mut);font-size:14.5px}
+.wh .k{font-size:12.5px;font-weight:700;color:var(--teal-d);display:block;margin-bottom:12px;letter-spacing:.3px}
+@media(max-width:900px){.pack{grid-template-columns:1fr;gap:32px}.pack img{height:280px;order:-1}.why{grid-template-columns:1fr}.wh{border-inline-start:0;border-top:1px solid var(--line2)}.wh:first-child{border-top:0}}
 </style>
-<section class="sec" style="padding-top:20px"><div class="wrap">
-<div class="pack" id="pack">
-<div class="tx"><span class="kicker">ساخت سفارشی پک باتری</span><h2>پک موردنیازت را <em>دقیقاً هم‌اندازه دستگاهت</em> می‌سازیم</h2>
-<p>ولتاژ، ظرفیت و ابعاد را بگو؛ با سلول اصلی، نقطه‌جوش صنعتی و برد محافظ استاندارد تحویل بگیر. مناسب دوچرخه برقی، ابزار شارژی، تجهیزات پزشکی و UPS.</p>
-<ol class="steps"><li><b>۱</b>مشخصات دستگاهت را ارسال کن (عکس باتری قبلی کافیست)</li><li><b>۲</b>پیش‌فاکتور شفاف با سلول اصلی دریافت کن</li><li><b>۳</b>پک تست‌شده را با ضمانت تحویل بگیر</li></ol>
-<a class="btn btn-a" href="#contact">سفارش ساخت پک باتری</a></div>
+<section class="sec" id="pack"><div class="wrap">
+<div class="pack">
+<div><span class="eyebrow">ساخت سفارشی پک باتری</span><h2 class="t">پکی که دقیقاً اندازه دستگاه شماست</h2>
+<p class="sub">ولتاژ، ظرفیت و ابعاد را بگویید؛ با سلول اصلی، نقطه‌جوش صنعتی و برد محافظ استاندارد تحویل بگیرید.</p>
+<ol class="steps">
+<li><span class="num">۱</span><div><b>مشخصات را بفرستید</b><p>عکس باتری قبلی یا مدل دستگاه کافی است.</p></div></li>
+<li><span class="num">۲</span><div><b>پیش‌فاکتور شفاف بگیرید</b><p>نوع سلول، ظرفیت واقعی و هزینه مشخص.</p></div></li>
+<li><span class="num">۳</span><div><b>پک تست‌شده تحویل بگیرید</b><p>با ضمانت ظرفیت و اصالت سلول‌ها.</p></div></li>
+</ol>
+<a class="btn btn-d" href="#contact">سفارش ساخت پک</a></div>
 <img src="img/cat-drill.jpg" alt="ساخت سفارشی پک باتری ابزار شارژی در کافه باتری" loading="lazy">
 </div>
 <div class="why">
-<div class="wh"><div class="n">۰۱</div><h3>تخصص واقعی باتری</h3><p>نه فروشگاه عمومی؛ فقط باتری. از شیمی سلول تا برد محافظ را می‌شناسیم و درست راهنمایی‌ات می‌کنیم.</p></div>
-<div class="wh"><div class="n">۰۲</div><h3>قیمت منصفانه + باشگاه همکاران</h3><p>خرید تکی با قیمت رقابتی و برای تعمیرکاران و فروشندگان، فروش ویژه همکاران با شرایط اختصاصی.</p></div>
-<div class="wh"><div class="n">۰۳</div><h3>پشتیبانی بعد از خرید</h3><p>نحوه شارژ، نگهداری و عیب‌یابی باتری را بعد از خرید هم پیگیری می‌کنیم؛ تنها نیستی.</p></div>
+<div class="wh"><span class="k">تخصص</span><h3>فقط باتری، ولی عمیق</h3><p>فروشگاه عمومی نیستیم؛ از شیمی سلول تا برد محافظ را می‌شناسیم و درست راهنمایی می‌کنیم.</p></div>
+<div class="wh"><span class="k">قیمت</span><h3>منصفانه برای تکی و عمده</h3><p>قیمت رقابتی برای خرید تکی و شرایط ویژه باشگاه همکاران برای تعمیرکاران و فروشندگان.</p></div>
+<div class="wh"><span class="k">پشتیبانی</span><h3>بعد از خرید تنها نیستید</h3><p>نحوه شارژ، نگهداری و عیب‌یابی باتری را بعد از خرید هم پیگیری می‌کنیم.</p></div>
 </div>
 </div></section>
