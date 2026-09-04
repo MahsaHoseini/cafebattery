@@ -133,27 +133,39 @@ h2.t{font-family:"Markazi Text",serif;font-weight:700;font-size:clamp(30px,4vw,4
 <style>
 .cats-head{display:flex;align-items:end;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .link{font-weight:800;color:var(--amber-d);font-size:15px}
-.grid-c{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:26px}
-.cat{position:relative;border-radius:var(--r);overflow:hidden;min-height:230px;display:flex;align-items:end;color:#fff;box-shadow:var(--sh)}
-.cat img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:.5s}
-.cat:hover img{transform:scale(1.06)}
-.cat::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(10,14,22,.88) 8%,rgba(10,14,22,.25) 55%,transparent)}
-.cat div{position:relative;z-index:1;padding:18px}
-.cat b{font-size:17px;display:block}.cat small{color:#E3E8F0;font-size:13px}
-.cat .go{position:absolute;z-index:1;top:14px;left:14px;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.18);backdrop-filter:blur(6px);display:grid;place-items:center;border:1px solid rgba(255,255,255,.35)}
-@media(max-width:900px){.grid-c{grid-template-columns:repeat(2,1fr)}.cat{min-height:180px}}
+.grid-c{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-top:22px}
+.cat{position:relative;border-radius:16px;overflow:hidden;background:var(--card);border:1px solid var(--line);display:flex;flex-direction:column;color:var(--ink);transition:.25s}
+.cat:hover{transform:translateY(-3px);box-shadow:0 14px 28px -16px rgba(18,51,59,.35);border-color:#8FD3E0}
+.cat img{position:static;width:100%;height:84px;object-fit:cover}
+.cat::after{display:none}
+.cat div{padding:8px 6px 12px;text-align:center}
+.cat b{font-size:13px;display:block;line-height:1.9}.cat small{display:none}
+.cat .go{display:none}
+@media(max-width:900px){.grid-c{grid-template-columns:repeat(auto-fill,minmax(105px,1fr));gap:8px}.cat img{height:68px}.cat b{font-size:12px}}
 </style>
 <section class="sec" id="cats" style="padding-bottom:20px"><div class="wrap">
-<div class="cats-head"><div><span class="kicker">دسته‌بندی محصولات</span><h2 class="t">دقیقاً همان باتری که دستگاهت می‌خواهد</h2><p class="sub">۹ دسته تخصصی؛ از مصارف خانگی تا صنعتی و پزشکی.</p></div><a class="link" href="https://cafebattery.com/" rel="noopener">مشاهده همه دسته‌ها ←</a></div>
+<div class="cats-head"><div><span class="kicker">دسته‌بندی محصولات</span><h2 class="t">دقیقاً همان باتری که دستگاهت می‌خواهد</h2><p class="sub">۲۰ دسته تخصصی؛ از مصارف خانگی تا صنعتی و پزشکی — همه‌اش همین‌جاست.</p></div></div>
 <div class="grid-c">
-<a class="cat" href="https://cafebattery.com/" rel="noopener"><img src="img/pack.jpg" alt="باتری لیتیومی 18650 و سلول لیتیوم یون" loading="lazy"><span class="go">↩</span><div><b>باتری لیتیومی</b><small>۱۸۶۵۰، لیتیوم‌یون و فسفات</small></div></a>
-<a class="cat" href="https://cafebattery.com/" rel="noopener"><img src="img/cat-ups.jpg" alt="باتری UPS و برق اضطراری" loading="lazy"><span class="go">↩</span><div><b>باتری UPS و برق اضطراری</b><small>آسانسور، دیتالاگر و PLC</small></div></a>
-<a class="cat" href="https://cafebattery.com/" rel="noopener"><img src="img/cat-drill.jpg" alt="باتری دریل شارژی و ابزار شارژی" loading="lazy"><span class="go">↩</span><div><b>باتری ابزار شارژی</b><small>دریل، جارو و ماشین اصلاح</small></div></a>
-<a class="cat" href="https://cafebattery.com/" rel="noopener"><img src="img/cat-laptop.jpg" alt="باتری لپ تاپ" loading="lazy"><span class="go">↩</span><div><b>باتری لپ‌تاپ</b><small>پک داخلی و سلول جایگزین</small></div></a>
-<a class="cat" href="https://cafebattery.com/" rel="noopener"><img src="img/cat-ebike.jpg" alt="باتری دوچرخه برقی و اسکوتر" loading="lazy"><span class="go">↩</span><div><b>دوچرخه و اسکوتر برقی</b><small>پک‌های پرظرفیت لیتیومی</small></div></a>
-<a class="cat" href="https://cafebattery.com/" rel="noopener"><img src="img/cat-solar.jpg" alt="باتری صفحات خورشیدی" loading="lazy"><span class="go">↩</span><div><b>باتری خورشیدی</b><small>ذخیره انرژی پاک</small></div></a>
-<a class="cat" href="https://cafebattery.com/" rel="noopener"><img src="img/cat-coin.jpg" alt="باتری سکه ای ساعت و سمعک" loading="lazy"><span class="go">↩</span><div><b>باتری سکه‌ای و سمعک</b><small>اصل با تاریخ تازه</small></div></a>
-<a class="cat" href="https://cafebattery.com/" rel="noopener"><img src="img/cat-charger.jpg" alt="شارژر و ماژول شارژ باتری" loading="lazy"><span class="go">↩</span><div><b>شارژر و ماژول</b><small>برد محافظ و نقطه‌جوش</small></div></a>
+<a class="cat" href="https://cafebattery.com/" rel="noopener"><img src="img/hero.jpg" alt="باتری لیتیومی" loading="lazy"><div><b>باتری لیتیومی</b></div></a>
+<a class="cat" href="https://cafebattery.com/" rel="noopener"><img src="img/cat-ups.jpg" alt="باتری UPS و برق اضطراری" loading="lazy"><div><b>باتری UPS</b></div></a>
+<a class="cat" href="https://cafebattery.com/" rel="noopener"><img src="img/pack.jpg" alt="باتری PLC و تجهیزات صنعتی" loading="lazy"><div><b>باتری PLC</b></div></a>
+<a class="cat" href="https://cafebattery.com/" rel="noopener"><img src="img/prod-module.jpg" alt="باتری POS و کارتخوان" loading="lazy"><div><b>باتری POS و کارتخوان</b></div></a>
+<a class="cat" href="https://cafebattery.com/" rel="noopener"><img src="img/cat-ups.jpg" style="object-position:20% 50%" alt="باتری آسانسور" loading="lazy"><div><b>باتری آسانسور</b></div></a>
+<a class="cat" href="https://cafebattery.com/" rel="noopener"><img src="img/prod-aa.jpg" alt="باتری آلکالاین" loading="lazy"><div><b>باتری آلکالاین</b></div></a>
+<a class="cat" href="https://cafebattery.com/" rel="noopener"><img src="img/cat-drill.jpg" alt="باتری ابزار شارژی" loading="lazy"><div><b>باتری ابزار شارژی</b></div></a>
+<a class="cat" href="https://cafebattery.com/" rel="noopener"><img src="img/cat-laptop.jpg" alt="باتری لپ تاپ" loading="lazy"><div><b>باتری لپ‌تاپ</b></div></a>
+<a class="cat" href="https://cafebattery.com/" rel="noopener"><img src="img/cat-ebike.jpg" alt="باتری دوچرخه و اسکوتر برقی" loading="lazy"><div><b>دوچرخه و اسکوتر برقی</b></div></a>
+<a class="cat" href="https://cafebattery.com/" rel="noopener"><img src="img/cat-ebike.jpg" style="object-position:50% 15%" alt="باتری ماشین کنترلی و کوادکوپتر" loading="lazy"><div><b>کنترلی و کوادکوپتر</b></div></a>
+<a class="cat" href="https://cafebattery.com/" rel="noopener"><img src="img/cat-solar.jpg" alt="باتری خورشیدی" loading="lazy"><div><b>باتری خورشیدی</b></div></a>
+<a class="cat" href="https://cafebattery.com/" rel="noopener"><img src="img/cat-coin.jpg" alt="باتری سکه ای و سمعک" loading="lazy"><div><b>سکه‌ای و سمعک</b></div></a>
+<a class="cat" href="https://cafebattery.com/" rel="noopener"><img src="img/cat-coin.jpg" style="object-position:50% 85%" alt="باتری تجهیزات پزشکی" loading="lazy"><div><b>تجهیزات پزشکی</b></div></a>
+<a class="cat" href="https://cafebattery.com/" rel="noopener"><img src="img/prod-maxcell.jpg" alt="باتری چراغ قوه" loading="lazy"><div><b>باتری چراغ قوه</b></div></a>
+<a class="cat" href="https://cafebattery.com/" rel="noopener"><img src="img/cat-drill.jpg" style="object-position:50% 25%" alt="باتری جارو شارژی و ماشین اصلاح" loading="lazy"><div><b>جارو شارژی و اصلاح</b></div></a>
+<a class="cat" href="https://cafebattery.com/" rel="noopener"><img src="img/cat-charger.jpg" style="object-position:50% 8%" alt="باتری بیسیم" loading="lazy"><div><b>باتری بیسیم</b></div></a>
+<a class="cat" href="https://cafebattery.com/" rel="noopener"><img src="img/cat-laptop.jpg" style="object-position:50% 70%" alt="باتری پاور بانک" loading="lazy"><div><b>باتری پاوربانک</b></div></a>
+<a class="cat" href="https://cafebattery.com/" rel="noopener"><img src="img/hero.jpg" style="object-position:50% 10%" alt="باتری نیکل کادمیوم" loading="lazy"><div><b>نیکل کادمیوم</b></div></a>
+<a class="cat" href="https://cafebattery.com/" rel="noopener"><img src="img/cat-charger.jpg" alt="شارژر باتری" loading="lazy"><div><b>شارژر و آداپتور</b></div></a>
+<a class="cat" href="https://cafebattery.com/" rel="noopener"><img src="img/prod-bms.jpg" alt="ماژول و ملزومات ساخت پک باتری" loading="lazy"><div><b>ماژول و ملزومات پک</b></div></a>
 </div>
 </div></section>
 <!-- BESTSELLERS RAIL -->
