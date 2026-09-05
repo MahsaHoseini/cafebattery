@@ -1,97 +1,47 @@
-<!-- BATTERY FINDER -->
+<!-- SPEC EDUCATION -->
 <style>
-.finder{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden}
-.finder-top{background:var(--primary);color:#fff;padding:40px clamp(24px,4vw,52px) 0}
-.finder-top h2{font-size:clamp(22px,2.8vw,30px);font-weight:800}
-.finder-top p{color:#B9C6D8;margin-top:6px;font-size:14.5px}
-.fsteps{display:flex;gap:8px;margin-top:26px}
-.fstep{flex:1;text-align:center;font-size:13px;font-weight:700;color:#8B98AC;padding:12px 4px;border-bottom:3px solid rgba(255,255,255,.16)}
-.fstep.on{color:#fff;border-color:var(--yl)}
-.fstep.done{color:var(--teal);border-color:var(--teal)}
-.finder-body{padding:clamp(24px,4vw,44px)}
-.fpanel{display:none}
-.fpanel.on{display:block}
-.fpanel h3{font-size:17px}
-.opts{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:20px 0 26px}
-.opt{border:1px solid var(--line);border-radius:var(--r);padding:16px 12px;text-align:center;font-weight:700;font-size:14px;cursor:pointer;transition:.2s;background:#fff;font-family:inherit;color:var(--ink)}
-.opt small{display:block;font-weight:400;color:var(--mut);font-size:12px;margin-top:2px}
-.opt:hover{border-color:var(--teal)}
-.opt.sel{border-color:var(--teal);background:var(--teal-soft)}
-.fnav{display:flex;justify-content:space-between;gap:12px}
-.fresult{border:1px solid var(--line);border-radius:var(--r);padding:26px;display:flex;gap:20px;align-items:center;background:var(--bg);margin:20px 0 26px;flex-wrap:wrap}
-.fresult .ri{width:64px;height:64px;border-radius:14px;background:var(--primary);display:grid;place-items:center;flex:none}
-.fresult h3{font-size:18px}
-.fresult p{color:var(--mut);font-size:14px;margin-top:4px}
-.fresult .acts{margin-inline-start:auto;display:flex;gap:10px;flex-wrap:wrap}
-@media(max-width:900px){.opts{grid-template-columns:repeat(2,1fr)}.fresult .acts{margin-inline-start:0;width:100%}.fresult .acts a{flex:1}}
+.specgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;background:#fff}
+.sp{padding:30px 28px;border-inline-start:1px solid var(--line2)}
+.sp:first-child{border-inline-start:0}
+.sp .n{font-size:12px;font-weight:800;color:var(--acc-d);letter-spacing:1px}
+.sp h3{font-size:17px;margin:8px 0 6px}
+.sp p{font-size:13.5px;color:var(--mut)}
+@media(max-width:900px){.specgrid{grid-template-columns:1fr 1fr}.sp:nth-child(3){border-inline-start:0}.sp{border-top:1px solid var(--line2)}.sp:nth-child(-n+2){border-top:0}}
 </style>
-<section class="sec alt" id="finder"><div class="wrap">
-<div class="finder">
-<div class="finder-top"><h2>نمی‌دانید کدام باتری مناسب شماست؟</h2><p>چند سؤال کوتاه پاسخ دهید تا محصولات مناسب شما را پیدا کنیم.</p>
-<div class="fsteps"><div class="fstep on" data-s="1">۱ • دستگاه یا کاربرد</div><div class="fstep" data-s="2">۲ • نوع و ظرفیت</div><div class="fstep" data-s="3">۳ • محصولات پیشنهادی</div></div></div>
-<div class="finder-body">
-<div class="fpanel on" data-p="1">
-<h3>دستگاه یا کاربرد را انتخاب کنید</h3>
-<div class="opts" id="devOpts">
-<button class="opt" data-dev="car">خودرو<small>سواری و موتور</small></button>
-<button class="opt" data-dev="ups">برق اضطراری<small>UPS و آسانسور</small></button>
-<button class="opt" data-dev="solar">خورشیدی<small>پنل و ذخیره‌ساز</small></button>
-<button class="opt" data-dev="medical">پزشکی<small>سمعک و درمانی</small></button>
-<button class="opt" data-dev="cam">دوربین و امنیت<small>عکاسی و نظارتی</small></button>
-<button class="opt" data-dev="digital">دیجیتال<small>موبایل و لپ‌تاپ</small></button>
-<button class="opt" data-dev="tool">ابزار شارژی<small>دریل و جارو</small></button>
-<button class="opt" data-dev="other">سایر<small>کاربرد خاص</small></button>
-</div>
-<div class="fnav"><span></span><button class="btn btn-p" id="toStep2" disabled>مرحله بعد</button></div>
-</div>
-<div class="fpanel" data-p="2">
-<h3>درباره نوع و ظرفیت چه می‌دانید؟</h3>
-<div class="opts" id="infoOpts" style="grid-template-columns:repeat(3,1fr)">
-<button class="opt" data-info="spec">مشخصات فنی را می‌دانم<small>ولتاژ، ظرفیت، ابعاد</small></button>
-<button class="opt" data-info="model">فقط مدل دستگاه<small>تطبیق با کارشناس</small></button>
-<button class="opt" data-info="none">هیچکدام<small>راهنمایی می‌خواهم</small></button>
-</div>
-<div class="fnav"><button class="btn btn-o" id="backTo1">مرحله قبل</button><button class="btn btn-p" id="toStep3" disabled>مشاهده پیشنهاد</button></div>
-</div>
-<div class="fpanel" data-p="3">
-<h3>پیشنهاد کافه باتری برای شما</h3>
-<div class="fresult"><span class="ri"><svg width="32" height="32" viewBox="0 0 24 24"><rect x="2" y="7" width="17" height="10" rx="2.5" fill="#fff"/><rect x="19.5" y="10" width="2.5" height="4" rx="1" fill="#fff"/><path d="M12.6 8.4 10 12.2h2.3l-1 3.4 3.9-4.8h-2.4z" fill="#F4B942"/></svg></span>
-<div><h3 id="resTitle">باتری خودرو</h3><p id="resDesc">توضیح پیشنهاد</p></div>
-<div class="acts"><a class="btn btn-p" id="resCta" href="https://cafebattery.com/" rel="noopener">مشاهده محصولات</a><a class="btn btn-o" href="#mag">راهنمای خرید</a></div></div>
-<div class="fnav"><button class="btn btn-o" id="backTo2">مرحله قبل</button><button class="btn btn-o" id="restart">شروع دوباره</button></div>
-</div>
-</div>
+<section class="sec solid" id="specs"><div class="wrap">
+<div class="sec-head"><span class="eyebrow">دانش فنی</span><h2 class="t">قبل از خرید این مشخصات را بررسی کنید</h2></div>
+<div class="specgrid">
+<div class="sp"><span class="n">۰۱ / VOLTAGE</span><h3>ولتاژ (V)</h3><p>ولتاژ باتری باید دقیقاً با نیاز دستگاه یکی باشد؛ ولتاژ اشتباه به دستگاه آسیب می‌زند.</p></div>
+<div class="sp"><span class="n">۰۲ / CAPACITY</span><h3>ظرفیت (mAh / Ah)</h3><p>ظرفیت بالاتر یعنی شارژدهی طولانی‌تر؛ در همان ولتاژ و ابعاد، ظرفیت بیشتر بهتر است.</p></div>
+<div class="sp"><span class="n">۰۳ / CHEMISTRY</span><h3>شیمی باتری</h3><p>لیتیومی، سربی یا نیکل؛ هر شیمی شارژر و شرایط نگهداری خودش را می‌خواهد.</p></div>
+<div class="sp"><span class="n">۰۴ / SIZE</span><h3>سایز و ابعاد</h3><p>کدهایی مثل 18650، AA یا CR2032 همان ابعادند؛ باتری باید دقیقاً در جای خود بنشیند.</p></div>
 </div>
 </div></section>
-<script>
-(function(){
-var dev=null,info=null;
-var rec={
-car:{t:'باتری خودرو',d:'بر اساس آمپراژ و ابعاد باتری فعلی خودروی شما.'},
-ups:{t:'باتری UPS و برق اضطراری',d:'با محاسبه توان مصرفی؛ کارشناس ظرفیت دقیق را مشخص می‌کند.'},
-solar:{t:'باتری خورشیدی',d:'متناسب با ظرفیت پنل و مصرف روزانه شما.'},
-medical:{t:'باتری تجهیزات پزشکی',d:'اصل با تاریخ تازه؛ مناسب سمعک و دستگاه‌های درمانی.'},
-cam:{t:'باتری دوربین و امنیت',d:'سازگار با مدل دوربین یا سیستم نظارتی شما.'},
-digital:{t:'باتری لوازم دیجیتال',d:'متناسب با مدل موبایل، لپ‌تاپ یا ابزار شما.'},
-tool:{t:'باتری ابزار شارژی',d:'پک آماده یا ساخت سفارشی هم‌اندازه باتری قبلی.'},
-other:{t:'مشاوره تخصصی رایگان',d:'کاربرد خاص دارید؟ با کارشناس در میان بگذارید.'}};
-function go(n){document.querySelectorAll('.fpanel').forEach(function(p){p.classList.toggle('on',p.dataset.p==n)});
-document.querySelectorAll('.fstep').forEach(function(s){var i=+s.dataset.s;s.classList.toggle('on',i===n);s.classList.toggle('done',i<n)});}
-document.querySelectorAll('#devOpts .opt').forEach(function(b){b.addEventListener('click',function(){
-document.querySelectorAll('#devOpts .opt').forEach(function(x){x.classList.remove('sel')});b.classList.add('sel');dev=b.dataset.dev;
-document.getElementById('toStep2').disabled=false;});});
-document.querySelectorAll('#infoOpts .opt').forEach(function(b){b.addEventListener('click',function(){
-document.querySelectorAll('#infoOpts .opt').forEach(function(x){x.classList.remove('sel')});b.classList.add('sel');info=b.dataset.info;
-document.getElementById('toStep3').disabled=false;});});
-document.getElementById('toStep2').addEventListener('click',function(){if(dev)go(2)});
-document.getElementById('backTo1').addEventListener('click',function(){go(1)});
-document.getElementById('backTo2').addEventListener('click',function(){go(2)});
-document.getElementById('restart').addEventListener('click',function(){dev=info=null;
-document.querySelectorAll('.opt').forEach(function(x){x.classList.remove('sel')});
-document.getElementById('toStep2').disabled=true;document.getElementById('toStep3').disabled=true;go(1);});
-document.getElementById('toStep3').addEventListener('click',function(){if(!dev||!info)return;
-var r=rec[dev];document.getElementById('resTitle').textContent=r.t;
-var extra=info==='spec'?' چون مشخصات فنی را می‌دانید، تطبیق دقیق در کمتر از یک دقیقه انجام می‌شود.':info==='model'?' مدل دستگاه را در جست‌وجوی بالای صفحه وارد کنید.':' کارشناس ما شما را تا انتخاب نهایی همراهی می‌کند.';
-document.getElementById('resDesc').textContent=r.d+extra;go(3);});
-})();
-</script>
+<!-- COMPARISON -->
+<style>
+.cmp{border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;background:#fff}
+.cmprow{display:grid;grid-template-columns:1.1fr 1fr 1fr 1fr}
+.cmprow>div{padding:20px 24px;border-inline-start:1px solid var(--line2);border-top:1px solid var(--line2);font-size:14px}
+.cmprow>div:first-child{border-inline-start:0;color:var(--mut);font-size:13px}
+.cmprow.head>div{border-top:0;padding:24px}
+.cmprow.head img{height:120px;object-fit:cover;width:100%;border-radius:var(--r);margin-bottom:14px;background:var(--bg)}
+.cmprow.head b{display:block;font-size:14.5px;line-height:1.9}
+.cmprow.head small{color:var(--mut);font-size:12.5px}
+.cmprow .pr{font-weight:800;font-size:16.5px;color:var(--ink)}
+.cmprow .pr small{font-weight:400;color:var(--mut);font-size:11.5px}
+@media(max-width:900px){.cmprow{grid-template-columns:1fr 1fr 1fr}.cmprow>div{padding:12px;font-size:12.5px}.cmprow>div:first-child{display:none}.cmprow.head img{height:80px}}
+</style>
+<section class="sec plain" id="compare"><div class="wrap">
+<div class="sec-head split"><div><span class="eyebrow">تصمیم آگاهانه</span><h2 class="t">مقایسه قبل از خرید</h2><p class="sub">سه سلول پرتکرار 3.7 ولتی، کنار هم؛ از روی مشخصات واقعی.</p></div><a class="tlink" href="https://cafebattery.com/" rel="noopener">جزئیات در فروشگاه <i>←</i></a></div>
+<div class="cmp" role="table" aria-label="مقایسه سه باتری لیتیومی">
+<div class="cmprow head" role="row"><div></div>
+<div role="columnheader"><img src="img/prod-maxcell.jpg" alt="باتری Maxcell 18650" loading="lazy"><b>Maxcell 18650 — ۲۰۰۰mAh</b><small>مصارف عمومی</small></div>
+<div role="columnheader"><img src="img/hero.jpg" style="object-position:50% 20%" alt="باتری 18650 پرتخلیه" loading="lazy"><b>۱۸۶۵۰ پرتخلیه — 15C</b><small>ابزار و دوچرخه</small></div>
+<div role="columnheader"><img src="img/cat-laptop.jpg" alt="باتری لیتیومی تخت" loading="lazy"><b>لیتیومی تخت 3.7V</b><small>پاوربانک و پروژه</small></div></div>
+<div class="cmprow" role="row"><div>ظرفیت</div><div>۲۰۰۰mAh</div><div>۲۰۰۰mAh</div><div>—</div></div>
+<div class="cmprow" role="row"><div>ولتاژ</div><div>3.7V</div><div>3.7V</div><div>3.7V</div></div>
+<div class="cmprow" role="row"><div>ویژگی شاخص</div><div>تعادل قیمت و کارایی</div><div>دشارژ 15C پیوسته</div><div>فرم تخت کم‌حجم</div></div>
+<div class="cmprow" role="row"><div>بهترین کاربرد</div><div>پک‌سازی عمومی</div><div>مصارف پرمصرف</div><div>پاوربانک</div></div>
+<div class="cmprow" role="row"><div>قیمت</div><div class="pr">۳۰۹٬۰۰۰ <small>تومان</small></div><div class="pr">۳۷۴٬۰۰۰ <small>تومان</small></div><div class="pr">۲۷۹٬۰۰۰ <small>تومان</small></div></div>
+</div>
+</div></section>

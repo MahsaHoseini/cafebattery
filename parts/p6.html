@@ -1,53 +1,65 @@
-<!-- FEATURED BRAND -->
+<!-- BRAND STORIES -->
 <style>
-.brandpanel{background:#fff;border:1px solid var(--line);border-radius:20px;padding:clamp(28px,4vw,52px);display:grid;grid-template-columns:.9fr 1.1fr;gap:44px;align-items:center}
-.brandmark{display:flex;align-items:center;gap:16px;margin-bottom:18px}
-.brandmark .lg{background:var(--primary);color:#fff;font-weight:900;font-size:17px;letter-spacing:2px;padding:10px 26px;border-radius:10px}
-.brandmark span{font-size:13px;color:var(--mut)}
-.brandpanel h2{font-size:clamp(22px,2.6vw,30px);font-weight:800;line-height:1.7}
-.brandpanel>p{color:var(--mut);font-size:14.5px;margin:10px 0 24px;max-width:420px}
-.bfeats{display:grid;gap:0;border-top:1px solid var(--line2);margin-bottom:28px}
-.bfeats li{list-style:none;display:flex;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line2);font-size:14px}
-.bfeats .tk{width:26px;height:26px;border-radius:8px;background:var(--teal-soft);display:grid;place-items:center;flex:none}
-.bprods{display:grid;gap:12px}
-.bprod{display:flex;gap:16px;align-items:center;border:1px solid var(--line);border-radius:var(--r);padding:12px 16px 12px 12px;transition:.2s}
-.bprod:hover{border-color:var(--teal)}
-.bprod img{width:84px;height:84px;object-fit:cover;border-radius:8px;flex:none}
-.bprod b{display:block;font-size:14px}
-.bprod small{color:var(--mut);font-size:12.5px}
-.bprod .pr2{margin-inline-start:auto;text-align:left;font-weight:800;color:var(--primary);font-size:16px;white-space:nowrap}
-.bprod .pr2 small{display:block;font-weight:400;font-size:11.5px}
-@media(max-width:900px){.brandpanel{grid-template-columns:1fr;gap:28px}}
+.brands{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.brandc{border:1px solid var(--line);border-radius:var(--r-lg);background:#fff;padding:26px;transition:.18s}
+.brandc:hover{border-color:var(--ink)}
+.brandc .lg{display:inline-block;background:var(--ink);color:#fff;font-weight:900;font-size:15px;letter-spacing:2px;padding:8px 22px;border-radius:7px;margin-bottom:12px}
+.brandc p{font-size:13.5px;color:var(--mut);margin-bottom:18px}
+.bitem{display:flex;gap:12px;align-items:center;padding:10px 0;border-top:1px solid var(--line2);font-size:13.5px}
+.bitem img{width:52px;height:52px;object-fit:cover;border-radius:7px;flex:none;background:var(--bg)}
+.bitem b{display:block;font-size:13px}
+.bitem small{color:var(--mut);font-size:12px}
+.brandc .go{display:inline-block;margin-top:16px;font-size:13px;font-weight:700;border-bottom:1px solid var(--line);padding-bottom:2px}
+.brandc .go:hover{border-color:var(--ink)}
+@media(max-width:1100px){.brands{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:900px){.brands{grid-template-columns:1fr 1fr;gap:12px}.brandc{padding:18px}}
 </style>
-<section class="sec" id="maxcell"><div class="wrap">
-<div class="brandpanel">
-<div><div class="brandmark"><span class="lg">Maxcell</span><span>برند منتخب</span></div>
-<h2>ظرفیت واقعی، عملکرد پایدار</h2>
-<p>سلول‌های Maxcell با ظرفیت تست‌شده؛ انتخاب اول تعمیرکاران برای پک‌سازی و مصارف حساس.</p>
-<ul class="bfeats">
-<li><span class="tk"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#128489" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12 5 5L20 6"/></svg></span>ظرفیت واقعی — تست‌شده با دستگاه</li>
-<li><span class="tk"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#128489" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12 5 5L20 6"/></svg></span>عملکرد پایدار در دشارژ مداوم</li>
-<li><span class="tk"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#128489" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12 5 5L20 6"/></svg></span>طول عمر بالا در سیکل‌های شارژ</li>
-</ul>
-<a class="btn btn-p" href="https://cafebattery.com/" rel="noopener">مشاهده محصولات این برند</a></div>
-<div class="bprods">
-<a class="bprod" href="https://cafebattery.com/" rel="noopener"><img src="img/prod-maxcell.jpg" alt="باتری لیتیومی Maxcell 18650" loading="lazy"><div><b>باتری لیتیومی Maxcell 18650</b><small>۲۰۰۰mAh • پرتخلیه 15C</small></div><span class="pr2">۳۰۹٬۰۰۰<small>تومان</small></span></a>
-<a class="bprod" href="https://cafebattery.com/" rel="noopener"><img src="img/cat-coin.jpg" alt="باتری سکه ای Maxcell" loading="lazy"><div><b>باتری سکه‌ای Maxcell CR2032</b><small>بسته اصلی • 3V</small></div><span class="pr2">۸۶٬۰۰۰<small>تومان</small></span></a>
-<a class="bprod" href="https://cafebattery.com/" rel="noopener"><img src="img/prod-aa.jpg" alt="باتری آلکالاین Maxcell" loading="lazy"><div><b>باتری آلکالاین Maxcell (۴تایی)</b><small>سایز AA • ماندگاری بالا</small></div><span class="pr2">۱۹۵٬۰۰۰<small>تومان</small></span></a>
-</div>
+<section class="sec solid" id="brands"><div class="wrap">
+<div class="sec-head"><span class="eyebrow">کاتالوگ برند</span><h2 class="t">برندهای منتخب</h2></div>
+<div class="brands">
+<div class="brandc"><span class="lg">Maxcell</span><p>سلول لیتیومی با ظرفیت واقعی تست‌شده.</p>
+<a class="bitem" href="https://cafebattery.com/" rel="noopener"><img src="img/prod-maxcell.jpg" alt="Maxcell 18650" loading="lazy"><div><b>لیتیومی ۱۸۶۵۰ — ۲۰۰۰mAh</b><small>۳۰۹٬۰۰۰ تومان</small></div></a>
+<a class="go" href="https://cafebattery.com/" rel="noopener">محصولات Maxcell ←</a></div>
+<div class="brandc"><span class="lg">Varta</span><p>آلکالاین ماندگار برای مصارف روزمره.</p>
+<a class="bitem" href="https://cafebattery.com/" rel="noopener"><img src="img/prod-aa.jpg" alt="Varta AA" loading="lazy"><div><b>قلمی آلکالاین — ۴تایی</b><small>۱۹۵٬۰۰۰ تومان</small></div></a>
+<a class="go" href="https://cafebattery.com/" rel="noopener">محصولات Varta ←</a></div>
+<div class="brandc"><span class="lg">Toshiba</span><p>سکه‌ای‌های دقیق برای ساعت و سمعک.</p>
+<a class="bitem" href="https://cafebattery.com/" rel="noopener"><img src="img/cat-coin.jpg" alt="Toshiba CR2032" loading="lazy"><div><b>سکه‌ای CR2032</b><small>۸۶٬۰۰۰ تومان</small></div></a>
+<a class="go" href="https://cafebattery.com/" rel="noopener">محصولات Toshiba ←</a></div>
+<div class="brandc"><span class="lg">Eveready</span><p>شارژ و انرژی قابل اتکا برای خانه.</p>
+<a class="bitem" href="https://cafebattery.com/" rel="noopener"><img src="img/cat-charger.jpg" alt="شارژر Eveready" loading="lazy"><div><b>شارژر قلمی و نیم‌قلمی</b><small>۱۲۰٬۰۰۰ تومان</small></div></a>
+<a class="go" href="https://cafebattery.com/" rel="noopener">محصولات Eveready ←</a></div>
 </div>
 </div></section>
-<!-- NEW PRODUCTS -->
-<section class="sec alt" id="new"><div class="wrap">
-<div class="sec-head split"><div><span class="kicker">تازه رسیده‌ها</span><h2 class="t">جدیدترین محصولات</h2></div><a class="tlink" href="https://cafebattery.com/" rel="noopener">مشاهده همه محصولات <i>←</i></a></div>
-<div class="pgrid">
-<article class="pcard"><div class="im"><img src="img/prod-module.jpg" alt="ماژول محافظ شارژ باتری لیتیومی" loading="lazy"><span class="off" style="background:var(--green)">جدید</span><button class="wish" aria-label="افزودن به علاقه‌مندی‌ها" aria-pressed="false"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#17212B" stroke-width="1.8"><path d="M12 20.5C7 16.5 3.5 13.3 3.5 9.6 3.5 7 5.5 5 8 5c1.6 0 3.1.8 4 2.1C12.9 5.8 14.4 5 16 5c2.5 0 4.5 2 4.5 4.6 0 3.7-3.5 6.9-8.5 10.9z"/></svg></button></div>
-<div class="bd"><span class="brand">کافه باتری (تست‌شده)</span><h3>ماژول محافظ شارژ ۱ سل (BMS)</h3><div class="spec">جریان 3A • مناسب ساخت پک</div><div class="avail"><span class="d"></span>موجود در انبار</div><div class="price"><span class="now">۵۴٬۰۰۰</span><small>تومان</small></div><button class="addbtn">افزودن به سبد خرید</button></div></article>
-<article class="pcard"><div class="im"><img src="img/prod-braket3.jpg" alt="براکت سه تایی باتری 18650" loading="lazy"><span class="off" style="background:var(--green)">جدید</span><button class="wish" aria-label="افزودن به علاقه‌مندی‌ها" aria-pressed="false"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#17212B" stroke-width="1.8"><path d="M12 20.5C7 16.5 3.5 13.3 3.5 9.6 3.5 7 5.5 5 8 5c1.6 0 3.1.8 4 2.1C12.9 5.8 14.4 5 16 5c2.5 0 4.5 2 4.5 4.6 0 3.7-3.5 6.9-8.5 10.9z"/></svg></button></div>
-<div class="bd"><span class="brand">کافه باتری (تست‌شده)</span><h3>براکت نگهدارنده ۳تایی باتری ۱۸۶۵۰</h3><div class="spec">مونتاژ آسان • مناسب پک‌سازی</div><div class="avail"><span class="d"></span>موجود در انبار</div><div class="price"><span class="now">۱۸٬۰۰۰</span><small>تومان</small></div><button class="addbtn">افزودن به سبد خرید</button></div></article>
-<article class="pcard"><div class="im"><img src="img/prod-ayegh.jpg" alt="عایق باتری 18650" loading="lazy"><span class="off" style="background:var(--green)">جدید</span><button class="wish" aria-label="افزودن به علاقه‌مندی‌ها" aria-pressed="false"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#17212B" stroke-width="1.8"><path d="M12 20.5C7 16.5 3.5 13.3 3.5 9.6 3.5 7 5.5 5 8 5c1.6 0 3.1.8 4 2.1C12.9 5.8 14.4 5 16 5c2.5 0 4.5 2 4.5 4.6 0 3.7-3.5 6.9-8.5 10.9z"/></svg></button></div>
-<div class="bd"><span class="brand">کافه باتری (تست‌شده)</span><h3>عایق پلاریته توخالی باتری ۱۸۶۵۰</h3><div class="spec">ضد اتصال • بسته اقتصادی</div><div class="avail"><span class="d"></span>موجود در انبار</div><div class="price"><span class="now">۳۳۰٬۰۰۰</span><small>تومان</small></div><button class="addbtn">افزودن به سبد خرید</button></div></article>
-<article class="pcard"><div class="im"><img src="img/hero.jpg" style="object-position:50% 20%" alt="باتری 18650 پرتخلیه" loading="lazy"><span class="off" style="background:var(--green)">جدید</span><button class="wish" aria-label="افزودن به علاقه‌مندی‌ها" aria-pressed="false"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#17212B" stroke-width="1.8"><path d="M12 20.5C7 16.5 3.5 13.3 3.5 9.6 3.5 7 5.5 5 8 5c1.6 0 3.1.8 4 2.1C12.9 5.8 14.4 5 16 5c2.5 0 4.5 2 4.5 4.6 0 3.7-3.5 6.9-8.5 10.9z"/></svg></button></div>
-<div class="bd"><span class="brand">Maxcell</span><h3>باتری ۱۸۶۵۰ پرتخلیه 2000mAh مدل 15C</h3><div class="spec">دشارژ 15C • ابزار و دوچرخه</div><div class="avail"><span class="d"></span>موجود در انبار</div><div class="price"><span class="now">۳۷۴٬۰۰۰</span><small>تومان</small></div><button class="addbtn">افزودن به سبد خرید</button></div></article>
+<!-- EDITORIAL -->
+<style>
+.agrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.acard{border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;background:#fff;display:flex;flex-direction:column;transition:.18s}
+.acard:hover{border-color:var(--ink)}
+.acard img{height:200px;object-fit:cover;width:100%}
+.acard .bd{padding:22px 24px 24px;display:flex;flex-direction:column;gap:8px;flex:1}
+.acat{font-size:11.5px;font-weight:800;color:var(--acc-d);letter-spacing:.3px}
+.acard h3{font-size:16px;line-height:1.9}
+.acard p{font-size:13.5px;color:var(--mut)}
+.ameta{margin-top:auto;padding-top:12px;border-top:1px solid var(--line2);font-size:13px;font-weight:700}
+.ameta a:hover{color:var(--acc-d)}
+@media(max-width:900px){.agrid{grid-template-columns:1fr}.acard img{height:170px}}
+/* TRUST */
+.trustline{display:flex;gap:0;border-block:1px solid var(--line2);margin-top:72px;flex-wrap:wrap}
+.trustline div{flex:1;min-width:200px;display:flex;align-items:center;gap:10px;font-size:13px;color:var(--mut);padding:16px 4px}
+.trustline b{color:var(--ink);font-weight:700}
+</style>
+<section class="sec plain" id="mag"><div class="wrap">
+<div class="sec-head split"><div><span class="eyebrow">محتوای آموزشی</span><h2 class="t">راهنمای انتخاب</h2><p class="sub">مطالبی که به تصمیم خرید کمک می‌کنند.</p></div><a class="tlink" href="https://cafebattery.com/" rel="noopener">همه مقالات <i>←</i></a></div>
+<div class="agrid">
+<article class="acard"><img src="img/pack.jpg" alt="باتری‌های لیتیومی" loading="lazy"><div class="bd"><span class="acat">بررسی تخصصی</span><h3>باتری‌های لیتیومی در سال ۲۰۲۵؛ چه چیزی تغییر کرد؟</h3><p>مروری بر بهبود چگالی انرژی و ایمنی نسل جدید سلول‌ها و اثر آن بر انتخاب شما.</p><div class="ameta"><a href="https://cafebattery.com/" rel="noopener">خواندن در مجله کافه باتری ←</a></div></div></article>
+<article class="acard"><img src="img/cat-ups.jpg" alt="باتری UPS" loading="lazy"><div class="bd"><span class="acat">برق اضطراری</span><h3>باتری UPS؛ قلب تپنده برق اضطراری شما</h3><p>نقش باتری در عملکرد یو‌پی‌اس و نشانه‌های زمان تعویض آن.</p><div class="ameta"><a href="https://cafebattery.com/" rel="noopener">خواندن در مجله کافه باتری ←</a></div></div></article>
+<article class="acard"><img src="img/cat-drill.jpg" alt="آموزش ساخت پک باتری" loading="lazy"><div class="bd"><span class="acat">آموزش تصویری</span><h3>کلیپ‌های آموزش ساخت پک باتری</h3><p>مراحل عملی ساخت پک با نقطه‌جوش و برد محافظ، قدم‌به‌قدم و تصویری.</p><div class="ameta"><a href="https://cafebattery.com/" rel="noopener">تماشای آموزش‌ها ←</a></div></div></article>
+</div>
+<div class="trustline">
+<div><b>اصالت کالا</b> — تست واقعی ظرفیت</div>
+<div><b>ارسال سراسری</b> — بسته‌بندی ایمن</div>
+<div><b>مشاوره تخصصی</b> — شنبه تا چهارشنبه</div>
+<div><b>پرداخت امن</b> — درگاه رسمی بانکی</div>
 </div>
 </div></section>
