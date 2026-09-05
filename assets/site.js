@@ -34,7 +34,10 @@ function prodById(id){return (window.PRODUCTS||[]).find(function(p){return p.id=
 function renderDrawer(){
 var box=document.getElementById('drawerItems');if(!box)return;
 var c=getCart();
-if(!c.length){box.innerHTML='<div class="empty">سبد خرید خالی است.<br><a href="products.html" style="color:var(--org-d);font-weight:800">مشاهده محصولات ←</a></div>'}
+function host(){
+ var p=location.pathname;return p.indexOf('/product/')>=0?'../':'';
+}
+if(!c.length){box.innerHTML='<div class="empty">سبد خرید خالی است.<br><a href="'+host()+'products.html" style="color:var(--org-d);font-weight:800">مشاهده محصولات ←</a></div>'}
 else{box.innerHTML=c.map(function(i){var p=prodById(i.id);if(!p)return '';
 var img=p.img?('<img src="'+IB()+p.img+'" alt="">'):'';
 return '<div class="citem">'+img+'<div><b>'+esc(p.name)+'</b><small>'+fmtP(p.price)+' تومان</small>'
