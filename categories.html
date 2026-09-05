@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>دسته‌بندی‌ها | کافه باتری</title>
+<meta name="description" content="دسته‌بندی محصولات کافه باتری با تعداد واقعی کالا: ماژول، باتری لیتیومی، شارژر، UPS و...">
+<link rel="icon" href="img/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+.cgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.ccard{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;transition:.2s;display:flex;flex-direction:column}
+.ccard:hover{border-color:var(--org);box-shadow:var(--sh);transform:translateY(-3px)}
+.ccard img{height:150px;object-fit:cover;width:100%;background:var(--bg)}
+.ccard .bd{padding:16px 18px 20px;text-align:center}
+.ccard b{font-size:15px;display:block}
+.ccard small{color:var(--mut);font-size:12.5px}
+.ccard .go{margin-top:10px;display:inline-block;font-size:13px;font-weight:800;color:var(--org-d)}
+@media(max-width:1100px){.cgrid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:900px){.cgrid{grid-template-columns:repeat(2,1fr);gap:12px}.ccard img{height:110px}}
+</style>
+</head>
+<body>
+<header class="hdr"><div class="hdr-in">
+<div class="logo"><a href="index.html" style="display:flex;align-items:center;gap:11px"><span class="mk" aria-hidden="true"><svg width="23" height="23" viewBox="0 0 24 24"><rect x="2" y="7" width="17" height="10" rx="2.5" fill="#fff"/><rect x="19.5" y="10" width="2.5" height="4" rx="1" fill="#fff"/><path d="M12.6 8.4 10 12.2h2.3l-1 3.4 3.9-4.8h-2.4z" fill="#FF6A00"/></svg></span><div><b>کافه باتری</b><small>مرجع تخصصی خرید باتری</small></div></a></div>
+<nav class="hnav" aria-label="ناوبری اصلی">
+<a href="index.html">صفحه اصلی</a><a href="products.html">محصولات</a><a href="categories.html" class="on">دسته‌بندی‌ها</a><a href="index.html#finder">راهنمای خرید</a><a href="index.html#mag">مقالات</a><a href="index.html#contact">درباره ما</a>
+</nav>
+<div class="hacts">
+<button class="hicon" aria-label="سبد خرید" onclick="openDrawer()"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2l2.4 12.2a1.5 1.5 0 0 0 1.5 1.2h8.9a1.5 1.5 0 0 0 1.5-1.2L21 8H6"/><circle cx="10" cy="21" r="1.3"/><circle cx="18" cy="21" r="1.3"/></svg><em class="bdg" id="cartCount" hidden>۰</em></button>
+<button class="hicon burger" id="burger" aria-label="منو" aria-expanded="false"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+</div>
+</div>
+<div class="mnav" id="mnav"><a href="index.html">صفحه اصلی</a><a href="products.html">محصولات</a><a href="categories.html">دسته‌بندی‌ها</a><a href="index.html#finder">راهنمای خرید</a><a href="index.html#contact">درباره ما</a></div>
+</header>
+<main class="wrap page">
+<nav class="crumb" aria-label="مسیر"><a href="index.html">خانه</a>‹<b>دسته‌بندی‌ها</b></nav>
+<h1 style="font-size:24px;font-weight:900;margin-bottom:6px">دسته‌بندی محصولات</h1>
+<p style="color:var(--mut);font-size:14px;margin-bottom:26px" id="catCount"></p>
+<div class="cgrid" id="cgrid"></div>
+</main>
+<footer>
+<div class="foot">
+<div><div class="logo"><div><b>کافه باتری</b></div></div><p class="ab">مرجع تخصصی فروش انواع باتری با گارانتی معتبر.</p><div class="soc"><a href="https://www.instagram.com/cafebattery/" aria-label="اینستاگرام">◈</a><a href="https://www.aparat.com/cafebattery" aria-label="آپارات">▶</a><a href="https://wa.me/message/EVUFYBSEXDVXM1" aria-label="واتساپ">✆</a></div></div>
+<div><h4>دسترسی سریع</h4><a href="products.html">محصولات</a><a href="categories.html">دسته‌بندی‌ها</a></div>
+<div><h4>خدمات مشتریان</h4><a href="products.html">پیگیری سفارش</a><a href="index.html#services">گارانتی و خدمات</a></div>
+<div><h4>راهنمای خرید</h4><a href="index.html#finder">راهنمای انتخاب باتری</a><a href="index.html#contact">تماس با ما</a></div>
+<div><h4>اطلاعات تماس</h4><a class="tel" href="tel:+982166711243"><bdi>021-66711243</bdi></a><a href="index.html#contact">تهران، خیابان جمهوری، پاساژ امجد، پلاک ۳۹</a></div>
+</div>
+<div class="copy">تمامی حقوق متعلق به فروشگاه کافه باتری می‌باشد.</div>
+</footer>
+<script src="data/products.js"></script>
+<script src="assets/site.js"></script>
+<script>
+(function(){
+var list=CATS.filter(function(c){return c.count>0});
+document.getElementById('catCount').textContent=fa(list.length)+' دسته‌بندی فعال با '+fa(PRODUCTS.length)+' محصول';
+document.getElementById('cgrid').innerHTML=list.map(function(c){
+var img=c.img?('<img src="'+c.img+'" alt="'+c.name+'" loading="lazy">'):'<img src="img/noimg.svg" alt="'+c.name+'" loading="lazy">';
+return '<a class="ccard" href="products.html?cat='+encodeURIComponent(c.name)+'">'+img+'<div class="bd"><b>'+c.name+'</b><small>'+fa(c.count)+' محصول</small><br><span class="go">مشاهده محصولات ‹</span></div></a>'}).join('');
+})();
+</script>
+</body>
+</html>

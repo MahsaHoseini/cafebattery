@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>فروشگاه | کافه باتری</title>
+<meta name="description" content="فروشگاه کافه باتری؛ جست‌وجو و فیلتر انواع باتری، شارژر و ماژول با قیمت واقعی و موجودی انبار.">
+<link rel="icon" href="img/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+.shop{display:grid;grid-template-columns:270px 1fr;gap:22px;align-items:start}
+.filters{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:22px;position:sticky;top:76px}
+.fblock{border-bottom:1px solid var(--line2);padding:16px 0}
+.fblock:first-child{padding-top:0}
+.fblock:last-child{border:0}
+.fblock h4{font-size:13.5px;margin-bottom:12px}
+.fcheck{display:flex;align-items:center;gap:9px;font-size:13px;padding:5px 0;cursor:pointer;color:var(--ink2)}
+.fcheck input{accent-color:var(--org);width:16px;height:16px}
+.fcheck small{color:var(--mut);margin-inline-start:auto}
+.fscroll{max-height:220px;overflow-y:auto}
+.frow2{display:flex;gap:8px}
+.frow2 .inp{padding:9px 12px;font-size:13px}
+.shophead{display:flex;align-items:center;gap:14px;margin-bottom:18px;flex-wrap:wrap}
+.shophead h1{font-size:22px;font-weight:900}
+.shophead .count{font-size:13px;color:var(--mut)}
+.shophead select{margin-inline-start:auto}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.chipx{font-size:12px;background:var(--navy);color:#fff;border-radius:999px;padding:5px 14px;display:inline-flex;gap:8px;align-items:center}
+.chipx button{border:0;background:none;color:#fff;cursor:pointer;font-family:inherit}
+.pager{display:flex;gap:8px;justify-content:center;margin-top:28px;flex-wrap:wrap}
+.pager button{min-width:42px;height:42px;border-radius:12px;border:1px solid var(--line);background:#fff;font-family:inherit;font-weight:800;cursor:pointer;font-size:14px}
+.pager button.on,.pager button:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+.fab-filter{display:none}
+@media(max-width:1100px){.pgrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:900px){
+.shop{grid-template-columns:1fr}
+.filters{position:fixed;top:0;bottom:0;right:0;width:min(330px,88vw);z-index:80;overflow-y:auto;border-radius:0;transform:translateX(105%);transition:.3s;padding-top:60px}
+.filters.open{transform:none}
+.fab-filter{display:inline-flex}
+}
+</style>
+</head>
+<body>
+<header class="hdr"><div class="hdr-in">
+<div class="logo"><a href="index.html" style="display:flex;align-items:center;gap:11px"><span class="mk" aria-hidden="true"><svg width="23" height="23" viewBox="0 0 24 24"><rect x="2" y="7" width="17" height="10" rx="2.5" fill="#fff"/><rect x="19.5" y="10" width="2.5" height="4" rx="1" fill="#fff"/><path d="M12.6 8.4 10 12.2h2.3l-1 3.4 3.9-4.8h-2.4z" fill="#FF6A00"/></svg></span><div><b>کافه باتری</b><small>مرجع تخصصی خرید باتری</small></div></a></div>
+<nav class="hnav" aria-label="ناوبری اصلی">
+<a href="index.html">صفحه اصلی</a><a href="products.html" class="on">محصولات</a><a href="categories.html">دسته‌بندی‌ها</a><a href="index.html#finder">راهنمای خرید</a><a href="index.html#mag">مقالات</a><a href="index.html#contact">درباره ما</a>
+</nav>
+<div class="hacts">
+<button class="hicon" id="searchBtn" aria-label="جست‌وجو" aria-expanded="false"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
+<button class="hicon" aria-label="حساب کاربری" onclick="toast('به‌زودی: ورود و ثبت‌نام')"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-3.5 4.5-5 8-5s6.5 1.5 8 5"/></svg></button>
+<button class="hicon" aria-label="سبد خرید" onclick="openDrawer()"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2l2.4 12.2a1.5 1.5 0 0 0 1.5 1.2h8.9a1.5 1.5 0 0 0 1.5-1.2L21 8H6"/><circle cx="10" cy="21" r="1.3"/><circle cx="18" cy="21" r="1.3"/></svg><em class="bdg" id="cartCount" hidden>۰</em></button>
+<button class="hicon burger" id="burger" aria-label="منو" aria-expanded="false"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+</div>
+</div>
+<div class="mnav" id="mnav"><a href="index.html">صفحه اصلی</a><a href="products.html">محصولات</a><a href="categories.html">دسته‌بندی‌ها</a><a href="index.html#finder">راهنمای خرید</a><a href="index.html#mag">مقالات</a><a href="index.html#contact">درباره ما</a></div>
+</header>
+<main class="wrap page">
+<nav class="crumb" aria-label="مسیر"><a href="index.html">خانه</a>‹<b>فروشگاه</b></nav>
+<div class="shop">
+<aside class="filters" id="filters" aria-label="فیلترها">
+<div class="fblock"><h4>جست‌وجو</h4><input class="inp" id="fQ" placeholder="نام محصول..."></div>
+<div class="fblock"><h4>دسته‌بندی</h4><div class="fscroll" id="fCats"></div></div>
+<div class="fblock"><h4>برند</h4><div id="fBrands"></div></div>
+<div class="fblock"><h4>بازه قیمت (تومان)</h4><div class="frow2"><input class="inp" id="fMin" inputmode="numeric" placeholder="از"><input class="inp" id="fMax" inputmode="numeric" placeholder="تا"></div></div>
+<div class="fblock"><h4>وضعیت</h4><label class="fcheck"><input type="checkbox" id="fStock"> فقط موجود در انبار</label></div>
+<div class="fblock"><button class="btn btn-o" style="width:100%" onclick="applyFromPanel()">اعمال فیلتر</button>
+<button class="btn btn-w" style="width:100%;margin-top:8px" onclick="clearAll()">حذف همه</button></div>
+</aside>
+<div>
+<div class="shophead">
+<h1 id="shopTitle">همه محصولات</h1><span class="count" id="resCount"></span>
+<button class="btn btn-w fab-filter" onclick="document.getElementById('filters').classList.add('open')">فیلترها</button>
+<select class="inp" id="fSort" style="width:auto"><option value="new">جدیدترین</option><option value="cheap">ارزان‌ترین</option><option value="exp">گران‌ترین</option><option value="name">نام (الفبا)</option></select>
+</div>
+<div class="chips" id="activeChips"></div>
+<div class="pgrid" id="grid"></div>
+<div class="pager" id="pager"></div>
+</div>
+</div>
+</main>
+<footer>
+<div class="foot">
+<div><div class="logo"><div><b>کافه باتری</b></div></div><p class="ab">مرجع تخصصی فروش انواع باتری با گارانتی معتبر.</p><div class="soc"><a href="https://www.instagram.com/cafebattery/" aria-label="اینستاگرام">◈</a><a href="https://www.aparat.com/cafebattery" aria-label="آپارات">▶</a><a href="https://wa.me/message/EVUFYBSEXDVXM1" aria-label="واتساپ">✆</a></div></div>
+<div><h4>دسترسی سریع</h4><a href="products.html">محصولات</a><a href="categories.html">دسته‌بندی‌ها</a><a href="index.html#mag">مقالات</a></div>
+<div><h4>خدمات مشتریان</h4><a href="products.html">پیگیری سفارش</a><a href="index.html#services">گارانتی و خدمات</a></div>
+<div><h4>راهنمای خرید</h4><a href="index.html#finder">راهنمای انتخاب باتری</a><a href="index.html#contact">تماس با ما</a></div>
+<div><h4>اطلاعات تماس</h4><a class="tel" href="tel:+982166711243"><bdi>021-66711243</bdi></a><a href="index.html#contact">تهران، خیابان جمهوری، پاساژ امجد، پلاک ۳۹</a></div>
+</div>
+<div class="copy">تمامی حقوق متعلق به فروشگاه کافه باتری می‌باشد.</div>
+</footer>
+<script src="data/products.js"></script>
+<script src="assets/site.js"></script>
+<script>
+var PER=24, PAGE=1, F={q:'',cats:[],brands:[],min:'',max:'',stock:false,sort:'new'};
+function numFa(s){return Number(String(s||'').replace(/[۰-۹]/g,function(d){return '۰۱۲۳۴۵۶۷۸۹'.indexOf(d)}).replace(/[^0-9]/g,''))||''}
+function init(){
+var q=new URLSearchParams(location.search);
+F.q=q.get('q')||'';F.sort=q.get('sort')||'new';F.stock=q.get('stock')==='1';
+F.min=numFa(q.get('min'));F.max=numFa(q.get('max'));
+F.cats=(q.get('cat')||'').split(',').filter(Boolean);
+F.brands=(q.get('brand')||'').split(',').filter(Boolean);
+PAGE=+q.get('page')||1;
+document.getElementById('fQ').value=F.q;
+document.getElementById('fSort').value=F.sort;
+document.getElementById('fStock').checked=F.stock;
+document.getElementById('fMin').value=F.min===''? '':Number(F.min).toLocaleString('en-US');
+document.getElementById('fMax').value=F.max===''? '':Number(F.max).toLocaleString('en-US');
+// cats
+var box=document.getElementById('fCats');
+box.innerHTML=CATS.filter(function(c){return c.count>1}).map(function(c){
+var on=F.cats.indexOf(c.name)>=0;
+return '<label class="fcheck"><input type="checkbox" data-cat="'+c.name.replace(/"/g,'')+'"'+(on?' checked':'')+'> '+c.name+' <small>'+fa(c.count)+'</small></label>'}).join('');
+// brands
+var bb=[...new Set(PRODUCTS.map(function(p){return p.brand}))];
+document.getElementById('fBrands').innerHTML=bb.map(function(b){
+var on=F.brands.indexOf(b)>=0;
+return '<label class="fcheck"><input type="checkbox" data-brand="'+b+'"'+(on?' checked':'')+'> '+b+'</label>'}).join('');
+render();
+}
+function readPanel(){
+F.q=document.getElementById('fQ').value.trim();
+F.cats=[...document.querySelectorAll('#fCats input:checked')].map(function(i){return i.dataset.cat});
+F.brands=[...document.querySelectorAll('#fBrands input:checked')].map(function(i){return i.dataset.brand});
+F.min=numFa(document.getElementById('fMin').value);F.max=numFa(document.getElementById('fMax').value);
+F.stock=document.getElementById('fStock').checked;F.sort=document.getElementById('fSort').value;PAGE=1;
+document.getElementById('filters').classList.remove('open');render();
+}
+function applyFromPanel(){readPanel()}
+function clearAll(){location.href='products.html'}
+function filtered(){
+var r=PRODUCTS.filter(function(p){
+if(F.q && p.name.indexOf(F.q)<0)return false;
+if(F.cats.length && !F.cats.some(function(c){return p.cats.indexOf(c)>=0}))return false;
+if(F.brands.length && F.brands.indexOf(p.brand)<0)return false;
+if(F.min!=='' && p.price<+F.min)return false;
+if(F.max!=='' && p.price>+F.max)return false;
+if(F.stock && !p.stock)return false;
+return true});
+if(F.sort==='cheap')r.sort(function(a,b){return a.price-b.price});
+else if(F.sort==='exp')r.sort(function(a,b){return b.price-a.price});
+else if(F.sort==='name')r.sort(function(a,b){return a.name.localeCompare(b.name,'fa')});
+else r.sort(function(a,b){return b.id-a.id});
+return r;
+}
+function render(){
+var r=filtered(),pages=Math.max(1,Math.ceil(r.length/PER));
+if(PAGE>pages)PAGE=pages;
+var s=(PAGE-1)*PER,items=r.slice(s,s+PER);
+document.getElementById('grid').innerHTML=items.length?items.map(prodCard).join(''):'<div class="empty" style="grid-column:1/-1">محصولی با این فیلترها پیدا نشد.<br><a href="products.html" style="color:var(--org-d);font-weight:800">حذف فیلترها</a></div>';
+document.getElementById('resCount').textContent=fa(r.length)+' محصول';
+var t=F.cats.length===1?('دسته «'+F.cats[0]+'»'):'همه محصولات';
+if(F.q)t='جست‌وجو: «'+F.q+'»';
+document.getElementById('shopTitle').textContent=t;
+var ch=[];
+F.cats.forEach(function(c){ch.push({t:c,k:'c'})});F.brands.forEach(function(b){ch.push({t:b,k:'b'})});
+if(F.q)ch.push({t:'«'+F.q+'»',k:'q'});if(F.stock)ch.push({t:'فقط موجود',k:'s'});
+if(F.min!==''||F.max!=='')ch.push({t:'قیمت',k:'p'});
+document.getElementById('activeChips').innerHTML=ch.map(function(c,i){return '<span class="chipx">'+c.t+' <button onclick="rmChip('+i+')" aria-label="حذف">✕</button></span>'}).join('');
+window._chips=ch;
+var pg=document.getElementById('pager'),h='';
+if(pages>1){for(var i=1;i<=pages;i++){h+='<button class="'+(i===PAGE?'on':'')+'" onclick="goPage('+i+')">'+fa(i)+'</button>'}}
+pg.innerHTML=h;paintWishes();
+var u=new URLSearchParams();if(F.q)u.set('q',F.q);if(F.cats.length)u.set('cat',F.cats.join(','));if(F.brands.length)u.set('brand',F.brands.join(','));
+if(F.min!=='')u.set('min',F.min);if(F.max!=='')u.set('max',F.max);if(F.stock)u.set('stock','1');if(F.sort!=='new')u.set('sort',F.sort);if(PAGE>1)u.set('page',PAGE);
+history.replaceState(null,'',u.toString()?('products.html?'+u.toString()):'products.html');
+}
+function rmChip(i){var c=window._chips[i];if(c.k==='c')F.cats=F.cats.filter(function(x){return x!==c.t});
+if(c.k==='b')F.brands=F.brands.filter(function(x){return x!==c.t});
+if(c.k==='q'){F.q='';document.getElementById('fQ').value=''}
+if(c.k==='s'){F.stock=false;document.getElementById('fStock').checked=false}
+if(c.k==='p'){F.min='';F.max='';document.getElementById('fMin').value='';document.getElementById('fMax').value=''}
+PAGE=1;init2();}
+function goPage(i){PAGE=i;render();window.scrollTo({top:0,behavior:'smooth'})}
+function init2(){
+document.querySelectorAll('#fCats input').forEach(function(el){el.checked=F.cats.indexOf(el.dataset.cat)>=0});
+document.querySelectorAll('#fBrands input').forEach(function(el){el.checked=F.brands.indexOf(el.dataset.brand)>=0});
+render();}
+document.getElementById('fSort').addEventListener('change',function(){F.sort=this.value;PAGE=1;render()});
+var deb;document.getElementById('fQ').addEventListener('input',function(){clearTimeout(deb);var v=this.value;deb=setTimeout(function(){F.q=v.trim();PAGE=1;render()},450)});
+document.getElementById('searchBtn').addEventListener('click',function(){var q=prompt('جست‌وجو در محصولات:','');if(q!=null){F.q=q.trim();document.getElementById('fQ').value=F.q;PAGE=1;render()}});
+init();
+</script>
+</body>
+</html>
