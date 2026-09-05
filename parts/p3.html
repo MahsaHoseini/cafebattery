@@ -1,56 +1,50 @@
-<!-- CATEGORIES -->
+<!-- MAIN CATEGORIES -->
 <style>
-.cgrid{display:grid;grid-template-columns:repeat(6,1fr);gap:16px;margin-top:8px}
-.ccat{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:28px 16px 24px;text-align:center;transition:.22s;display:flex;flex-direction:column;align-items:center;gap:6px}
-.ccat:hover{border-color:var(--cyan);box-shadow:var(--sh);transform:translateY(-4px)}
-.ccat .ic{width:64px;height:64px;border-radius:18px;background:var(--cyan-soft);display:grid;place-items:center;margin-bottom:10px;transition:.22s}
-.ccat:hover .ic{background:var(--navy)}
-.ccat:hover .ic svg *{stroke:#fff}
-.ccat b{font-size:14.5px}
-.ccat small{color:var(--mut);font-size:12px}
-@media(max-width:1100px){.cgrid{grid-template-columns:repeat(4,1fr)}}
-@media(max-width:900px){.cgrid{display:grid;grid-auto-flow:column;grid-auto-columns:150px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 4px 16px;margin-inline:calc(var(--padx) * -1);padding-inline:var(--padx);scrollbar-width:none}.cgrid::-webkit-scrollbar{display:none}.ccat{scroll-snap-align:start}}
+.catgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.catcard{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;transition:.2s;display:flex;flex-direction:column}
+.catcard:hover{border-color:var(--teal)}
+.catcard img{height:180px;object-fit:cover;width:100%}
+.catcard .bd{padding:20px 22px 22px}
+.catcard h3{font-size:16.5px}
+.catcard p{font-size:13.5px;color:var(--mut);margin:4px 0 14px}
+.catcard .go{font-size:13.5px;font-weight:700;color:var(--teal-d);display:inline-flex;align-items:center;gap:8px}
+.catcard .go i{font-style:normal;transition:transform .2s}
+.catcard:hover .go i{transform:translateX(-4px)}
+.catmore{margin-top:26px;text-align:center}
+@media(max-width:900px){.catgrid{grid-template-columns:1fr 1fr;gap:12px}.catcard img{height:120px}.catcard .bd{padding:14px 16px 16px}.catcard p{display:none}}
 </style>
 <section class="sec" id="cats"><div class="wrap">
-<div class="sec-head"><span class="kicker">دسته‌بندی‌ها</span><h2 class="t">چه نوع باتری‌ای نیاز دارید؟</h2><p class="sub">محصول مناسب خود را سریع‌تر پیدا کنید</p></div>
-<div class="cgrid">
-<a class="ccat" href="https://cafebattery.com/" rel="noopener"><span class="ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#0E9AA8" stroke-width="1.7" stroke-linecap="round"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M10.5 5.5h3"/></svg></span><b>باتری موبایل</b><small>انواع گوشی</small></a>
-<a class="ccat" href="https://cafebattery.com/" rel="noopener"><span class="ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#0E9AA8" stroke-width="1.7" stroke-linecap="round"><rect x="4" y="4" width="16" height="11" rx="1.5"/><path d="M2 19.5h20"/></svg></span><b>باتری لپ‌تاپ</b><small>پک و سلول</small></a>
-<a class="ccat" href="https://cafebattery.com/" rel="noopener"><span class="ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#0E9AA8" stroke-width="1.7" stroke-linecap="round"><rect x="2.5" y="7" width="19" height="12" rx="2.5"/><circle cx="12" cy="13" r="3.5"/><path d="M8 7l1.2-2.5h5.6L16 7"/></svg></span><b>باتری دوربین</b><small>عکاسی و فیلم‌برداری</small></a>
-<a class="ccat" href="https://cafebattery.com/" rel="noopener"><span class="ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#0E9AA8" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></span><b>باتری تلفن</b><small>بیسیم و رومیزی</small></a>
-<a class="ccat" href="https://cafebattery.com/" rel="noopener"><span class="ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#0E9AA8" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="13" height="10" rx="1.5"/><path d="M16 10.5h2.5v3H16M13 9.5 11.5 12H13l-1 2.5 3-3.5H13.5z"/></svg></span><b>باتری UPS</b><small>برق اضطراری</small></a>
-<a class="ccat" href="https://cafebattery.com/" rel="noopener"><span class="ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#0E9AA8" stroke-width="1.7" stroke-linecap="round"><rect x="8" y="6" width="8" height="15" rx="3"/><path d="M10.5 3.5h3M12.8 9.5 11 12.5h2l-1 3 3.2-4H13z"/></svg></span><b>باتری لیتیومی</b><small>۱۸۶۵۰ و لیتیوم‌یون</small></a>
-<a class="ccat" href="https://cafebattery.com/" rel="noopener"><span class="ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#0E9AA8" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="6" width="8" height="15" rx="3"/><path d="M12 9.5c-1.8 0-3 1.2-3 2.6 0 1.9 2.4 2.1 2.4 3.5M12 8v8.5M14.5 10.5c.4 2.5-.5 4.5-2.5 5.5"/></svg></span><b>باتری LiFePO4</b><small>لیتیوم فسفات</small></a>
-<a class="ccat" href="https://cafebattery.com/" rel="noopener"><span class="ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#0E9AA8" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16v-4l2-5h12l2 5v4"/><path d="M4 12h16M7 20v-4M17 20v-4"/><circle cx="7.5" cy="18" r="1.6"/><circle cx="16.5" cy="18" r="1.6"/></svg></span><b>باتری خودرو</b><small>سرب اسیدی ۱۲ ولت</small></a>
-<a class="ccat" href="https://cafebattery.com/" rel="noopener"><span class="ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#0E9AA8" stroke-width="1.7" stroke-linecap="round"><rect x="3" y="12" width="18" height="8" rx="1.5" transform="rotate(-12 12 16)"/><path d="M7 13.5l10-4M10 16l3.5-1.5M13 17.5l3.5-1.5M18 3.5a2.5 2.5 0 1 0 0 .01"/></svg></span><b>باتری خورشیدی</b><small>ذخیره انرژی پاک</small></a>
-<a class="ccat" href="https://cafebattery.com/" rel="noopener"><span class="ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#0E9AA8" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 7V3.5M15 7V3.5M7 7h10v5a5 5 0 0 1-10 0zM12 17v4"/></svg></span><b>شارژرها</b><small>شارژر و آداپتور</small></a>
-<a class="ccat" href="https://cafebattery.com/" rel="noopener"><span class="ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#0E9AA8" stroke-width="1.7" stroke-linecap="round"><rect x="2.5" y="8" width="16" height="8" rx="2"/><path d="M21.5 10.5v5M6.5 11v2M10 11v2M13.5 11v2"/></svg></span><b>باتری Ni-Cd</b><small>نیکل کادمیوم</small></a>
-<a class="ccat" href="https://cafebattery.com/" rel="noopener"><span class="ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#0E9AA8" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="18" height="11" rx="1.5"/><path d="M7.5 9V6.5M16.5 9V6.5M7.5 12.5 10 15l4.5-5"/></svg></span><b>باتری سرب اسیدی</b><small>صنعتی و ساکن</small></a>
+<div class="sec-head"><span class="kicker">دسته‌بندی‌های اصلی</span><h2 class="t">چه نوع باتری‌ای نیاز دارید؟</h2></div>
+<div class="catgrid">
+<a class="catcard" href="https://cafebattery.com/" rel="noopener"><img src="img/usecase-car.jpg" alt="باتری خودرو" loading="lazy"><div class="bd"><h3>باتری خودرو</h3><p>سرب اسیدی ۱۲ ولت برای خودرو، موتور و حمل‌ونقل</p><span class="go">مشاهده محصولات <i>←</i></span></div></a>
+<a class="catcard" href="https://cafebattery.com/" rel="noopener"><img src="img/cat-ups.jpg" alt="باتری UPS" loading="lazy"><div class="bd"><h3>باتری UPS</h3><p>برق اضطراری برای تجهیزات حساس به قطعی</p><span class="go">مشاهده محصولات <i>←</i></span></div></a>
+<a class="catcard" href="https://cafebattery.com/" rel="noopener"><img src="img/hero.jpg" alt="باتری لیتیومی" loading="lazy"><div class="bd"><h3>باتری لیتیومی</h3><p>سلول ۱۸۶۵۰، لیتیوم‌یون و لیتیوم فسفات</p><span class="go">مشاهده محصولات <i>←</i></span></div></a>
+<a class="catcard" href="https://cafebattery.com/" rel="noopener"><img src="img/pack.jpg" alt="باتری صنعتی" loading="lazy"><div class="bd"><h3>باتری صنعتی</h3><p>PLC، دیتالاگر، ابزار شارژی و مصارف سنگین</p><span class="go">مشاهده محصولات <i>←</i></span></div></a>
+<a class="catcard" href="https://cafebattery.com/" rel="noopener"><img src="img/cat-coin.jpg" alt="باتری تجهیزات پزشکی" loading="lazy"><div class="bd"><h3>تجهیزات پزشکی</h3><p>سکه‌ای، سمعک و باتری دستگاه‌های درمانی</p><span class="go">مشاهده محصولات <i>←</i></span></div></a>
+<a class="catcard" href="https://cafebattery.com/" rel="noopener"><img src="img/cat-laptop.jpg" alt="باتری لوازم الکترونیکی" loading="lazy"><div class="bd"><h3>لوازم الکترونیکی</h3><p>لپ‌تاپ، موبایل، دوربین و شارژر</p><span class="go">مشاهده محصولات <i>←</i></span></div></a>
 </div>
-<div style="text-align:center;margin-top:30px"><a class="btn btn-o" href="https://cafebattery.com/" rel="noopener">مشاهده همه دسته‌بندی‌ها</a></div>
-</section>
+<div class="catmore"><a class="btn btn-o" href="https://cafebattery.com/" rel="noopener">مشاهده همه دسته‌بندی‌ها</a></div>
+</div></section>
 <!-- USE CASES -->
 <style>
-.ucases{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.ucase{position:relative;border-radius:var(--r-lg);overflow:hidden;min-height:380px;display:flex;align-items:flex-end;color:#fff}
-.ucase img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:.5s}
-.ucase:hover img{transform:scale(1.05)}
-.ucase::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(10,20,35,.88) 5%,rgba(10,20,35,.25) 55%,transparent)}
-.ucase div{position:relative;z-index:1;padding:26px}
-.ucase .n{font-size:12px;font-weight:800;color:var(--yellow);letter-spacing:.5px}
-.ucase h3{font-size:20px;margin:6px 0}
-.ucase p{font-size:13.5px;color:#D7E0E8;line-height:2}
-.ucase .go{margin-top:14px;display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:800}
-.ucase .go i{font-style:normal;transition:.22s}
-.ucase:hover .go i{transform:translateX(-5px)}
-@media(max-width:900px){.ucases{grid-template-columns:1fr 1fr}.ucase{min-height:250px}.ucase div{padding:18px}.ucase h3{font-size:16px}.ucase p{display:none}}
+.uclist{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.uc{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;transition:.2s;display:flex;flex-direction:column}
+.uc:hover{border-color:var(--teal)}
+.uc img{height:160px;object-fit:cover;width:100%}
+.uc .bd{padding:20px 22px 22px}
+.uc .n{font-size:12px;font-weight:800;color:var(--teal-d)}
+.uc h3{font-size:16.5px;margin:4px 0}
+.uc p{font-size:13.5px;color:var(--mut)}
+@media(max-width:900px){.uclist{grid-template-columns:1fr 1fr;gap:12px}.uc img{height:110px}.uc .bd{padding:14px 16px 16px}.uc p{display:none}}
 </style>
 <section class="sec alt" id="usecase"><div class="wrap">
-<div class="sec-head"><span class="kicker">خرید بر اساس نیاز</span><h2 class="t">باتری را برای چه کاری می‌خواهید؟</h2><p class="sub">لازم نیست نوع تکنولوژی را بدانید؛ از مسئله خودتان شروع کنید.</p></div>
-<div class="ucases">
-<a class="ucase" href="https://cafebattery.com/" rel="noopener"><img src="img/usecase-car.jpg" alt="باتری خودرو" loading="lazy"><div><span class="n">۰۱</span><h3>باتری خودرو</h3><p>برای خودرو، موتور و سیستم‌های حمل‌ونقل</p><span class="go">انتخاب باتری خودرو <i>←</i></span></div></a>
-<a class="ucase" href="https://cafebattery.com/" rel="noopener"><img src="img/cat-ups.jpg" alt="برق اضطراری و UPS" loading="lazy"><div><span class="n">۰۲</span><h3>برق اضطراری</h3><p>برای UPS، آسانسور و تجهیزات حساس به قطعی</p><span class="go">انتخاب باتری UPS <i>←</i></span></div></a>
-<a class="ucase" href="https://cafebattery.com/" rel="noopener"><img src="img/cat-solar.jpg" alt="انرژی خورشیدی" loading="lazy"><div><span class="n">۰۳</span><h3>انرژی خورشیدی</h3><p>برای ذخیره برق پنل‌های خورشیدی</p><span class="go">انتخاب باتری خورشیدی <i>←</i></span></div></a>
-<a class="ucase" href="https://cafebattery.com/" rel="noopener"><img src="img/cat-laptop.jpg" alt="لوازم دیجیتال" loading="lazy"><div><span class="n">۰۴</span><h3>لوازم دیجیتال</h3><p>برای موبایل، لپ‌تاپ، دوربین و ابزار شارژی</p><span class="go">انتخاب باتری دیجیتال <i>←</i></span></div></a>
+<div class="sec-head"><span class="kicker">خرید بر اساس نیاز</span><h2 class="t">باتری را برای چه کاری می‌خواهید؟</h2><p class="sub">بدون دانش فنی؛ از مسئله خودتان شروع کنید.</p></div>
+<div class="uclist">
+<a class="uc" href="https://cafebattery.com/" rel="noopener"><img src="img/usecase-car.jpg" alt="باتری خودرو" loading="lazy"><div class="bd"><span class="n">خودرو</span><h3>روشن شدن مطمئن، در هر هوا</h3><p>انتخاب بر اساس آمپراژ و ابعاد باتری فعلی خودروی شما.</p></div></a>
+<a class="uc" href="https://cafebattery.com/" rel="noopener"><img src="img/cat-ups.jpg" alt="برق اضطراری" loading="lazy"><div class="bd"><span class="n">برق اضطراری</span><h3>هیچ قطعی‌ای حس نشود</h3><p>UPS، آسانسور و تجهیزات حساس با محاسبه توان مصرفی.</p></div></a>
+<a class="uc" href="https://cafebattery.com/" rel="noopener"><img src="img/cat-solar.jpg" alt="انرژی خورشیدی" loading="lazy"><div class="bd"><span class="n">انرژی خورشیدی</span><h3>برق روز را برای شب نگه دارید</h3><p>باتری مناسب ظرفیت پنل و مصرف روزانه شما.</p></div></a>
+<a class="uc" href="https://cafebattery.com/" rel="noopener"><img src="img/cat-coin.jpg" alt="تجهیزات پزشکی" loading="lazy"><div class="bd"><span class="n">تجهیزات پزشکی</span><h3>دقت، بدون ریسک</h3><p>سکه‌ای و تخصصی با تاریخ تولید تازه برای دستگاه‌های درمانی.</p></div></a>
+<a class="uc" href="https://cafebattery.com/" rel="noopener"><img src="img/usecase-cam.jpg" alt="دوربین و تجهیزات امنیتی" loading="lazy"><div class="bd"><span class="n">دوربین و امنیت</span><h3>ثبت هیچ لحظه‌ای از دست نرود</h3><p>باتری دوربین، دزدگیر و سیستم‌های نظارتی.</p></div></a>
+<a class="uc" href="https://cafebattery.com/" rel="noopener"><img src="img/cat-laptop.jpg" alt="لوازم الکترونیکی" loading="lazy"><div class="bd"><span class="n">لوازم الکترونیکی</span><h3>شارژدهی مثل روز اول</h3><p>لپ‌تاپ، موبایل، ابزار شارژی و پاوربانک.</p></div></a>
 </div>
 </div></section>

@@ -1,120 +1,110 @@
 </head>
 <body>
-<!-- UTILITY BAR + HEADER -->
+<!-- HEADER -->
 <style>
-.ubar{background:var(--navy);color:#B9C4D8;font-size:12.5px}
-.ubar-in{display:flex;gap:26px;padding:8px var(--padx);max-width:1280px;margin-inline:auto}
-.ubar a:hover{color:#fff}
-.ubar .ph{margin-inline-start:auto;color:#fff;font-weight:700}
-.hdr{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.hdr-in{display:flex;align-items:center;gap:26px;padding:14px var(--padx);max-width:1280px;margin-inline:auto}
-.logo{display:flex;align-items:center;gap:10px;font-weight:900;font-size:19px;color:var(--navy);white-space:nowrap}
-.logo .mk{width:38px;height:38px;border-radius:12px;background:var(--navy);display:grid;place-items:center;flex:none}
+.hdr{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line)}
+.hdr-in{display:flex;align-items:center;gap:28px;padding:14px var(--padx);max-width:1280px;margin-inline:auto}
+.logo{display:flex;align-items:center;gap:10px;font-weight:900;font-size:19px;color:var(--primary);white-space:nowrap}
+.logo .mk{width:38px;height:38px;border-radius:10px;background:var(--primary);display:grid;place-items:center;flex:none}
 .nav{display:flex;gap:24px;font-size:14.5px;font-weight:600;color:var(--ink2)}
-.nav a{padding:6px 2px;position:relative}
-.nav a:hover{color:var(--navy)}
-.nav a.on{color:var(--navy)}
-.nav a.on::after{content:"";position:absolute;bottom:0;right:0;left:0;height:2.5px;background:var(--yellow);border-radius:3px}
-.hsearch{flex:1;display:flex;align-items:center;background:var(--bg);border:1.5px solid var(--line);border-radius:14px;padding:4px 18px 4px 4px;transition:.2s;max-width:520px}
-.hsearch:focus-within{border-color:var(--cyan);background:#fff;box-shadow:0 0 0 4px var(--cyan-soft)}
+.nav a{padding:6px 2px;border-bottom:2px solid transparent}
+.nav a:hover{color:var(--primary);border-color:var(--yl)}
+.hsearch{flex:1;display:flex;align-items:center;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:3px 16px 3px 3px;transition:.2s;max-width:480px}
+.hsearch:focus-within{border-color:var(--teal);background:#fff}
 .hsearch svg{flex:none;margin-left:10px}
-.hsearch input{flex:1;border:0;outline:0;background:transparent;font-family:inherit;font-size:14px;color:var(--ink);min-width:0;padding:9px 0}
-.hsearch button{background:var(--navy);color:#fff;border:0;border-radius:10px;padding:9px 26px;font-family:inherit;font-weight:800;font-size:13.5px;cursor:pointer;white-space:nowrap}
-.hacts{display:flex;align-items:center;gap:6px;margin-inline-start:auto}
-.hact{position:relative;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:11px;color:var(--ink2);padding:8px 12px;border-radius:12px;border:0;background:transparent;font-family:inherit;cursor:pointer}
-.hact:hover{background:var(--bg)}
-.hact .bdg{position:absolute;top:2px;left:6px;background:var(--red);color:#fff;font-size:10px;font-weight:800;min-width:18px;height:18px;border-radius:999px;display:grid;place-items:center;padding:0 5px}
-.msearch{display:none;padding:0 var(--padx) 12px;max-width:1280px;margin-inline:auto}
-@media(max-width:1100px){.nav{display:none}}
+.hsearch input{flex:1;border:0;outline:0;background:transparent;font-family:inherit;font-size:13.5px;color:var(--ink);min-width:0;padding:9px 0}
+.hsearch button{background:var(--primary);color:#fff;border:0;border-radius:8px;padding:8px 24px;font-family:inherit;font-weight:700;font-size:13px;cursor:pointer;white-space:nowrap}
+.hsearch button:hover{background:#1B4E77}
+.hacts{display:flex;align-items:center;gap:4px;margin-inline-start:auto}
+.hact{position:relative;display:flex;align-items:center;gap:8px;font-size:13.5px;font-weight:600;color:var(--ink2);padding:9px 14px;border-radius:10px;border:0;background:transparent;font-family:inherit;cursor:pointer;white-space:nowrap}
+.hact:hover{background:var(--bg);color:var(--primary)}
+.hact .bdg{position:absolute;top:0;left:4px;background:var(--red);color:#fff;font-size:10px;font-weight:800;min-width:18px;height:18px;border-radius:999px;display:grid;place-items:center;padding:0 5px;font-style:normal}
+.burger{display:none;border:1px solid var(--line);background:#fff;border-radius:10px;width:42px;height:42px;cursor:pointer;font-family:inherit}
+.mnav{display:none;border-top:1px solid var(--line);background:#fff;padding:8px var(--padx) 16px}
+.mnav.open{display:block}
+.mnav a{display:block;padding:12px 4px;font-weight:700;border-bottom:1px solid var(--line2);font-size:14.5px}
+.mnav a:last-child{border:0}
+@media(max-width:1100px){.nav{display:none}.burger{display:grid;place-items:center}}
 @media(max-width:900px){
-.hdr-in{flex-wrap:wrap;gap:12px}
+.hdr-in{flex-wrap:wrap;gap:10px}
 .hsearch{order:3;flex-basis:100%;max-width:none}
-.msearch{display:none}
 .hact span{display:none}
-.hact{padding:8px}
-.ubar .ph{display:none}
+.hact{padding:9px}
 }
 </style>
-<div class="ubar"><div class="ubar-in">
-<a href="#contact">پیگیری سفارش</a><a href="#faq">سوالات متداول</a><a href="#contact">تماس با ما</a>
-<span class="ph">شنبه تا چهارشنبه ۱۰:۳۰ تا ۱۵:۳۰ پاسخگوی شما هستیم</span>
-</div></div>
-<header class="hdr"><div class="hdr-in">
-<div class="logo"><span class="mk" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24"><rect x="2" y="7" width="17" height="10" rx="2.5" fill="#fff"/><rect x="19.5" y="10" width="2.5" height="4" rx="1" fill="#fff"/><path d="M12.6 8.4 10 12.2h2.3l-1 3.4 3.9-4.8h-2.4z" fill="#F4C542"/></svg></span>کافه باتری</div>
+<header class="hdr">
+<div class="hdr-in">
+<button class="burger" id="burger" aria-label="باز کردن منو" aria-expanded="false" aria-controls="mnav"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#17212B" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+<div class="logo"><span class="mk" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24"><rect x="2" y="7" width="17" height="10" rx="2.5" fill="#fff"/><rect x="19.5" y="10" width="2.5" height="4" rx="1" fill="#fff"/><path d="M12.6 8.4 10 12.2h2.3l-1 3.4 3.9-4.8h-2.4z" fill="#F4B942"/></svg></span>کافه باتری</div>
 <nav class="nav" aria-label="ناوبری اصلی">
-<a href="#best" class="on">محصولات</a><a href="#cats">دسته‌بندی‌ها</a><a href="#finder">راهنمای خرید</a><a href="#mag">مقالات</a><a href="#contact">درباره ما</a>
+<a href="#best">محصولات</a><a href="#cats">دسته‌بندی‌ها</a><a href="#finder">راهنمای خرید</a><a href="#mag">مقالات</a><a href="#contact">درباره ما</a>
 </nav>
 <form class="hsearch" role="search" action="https://cafebattery.com/" method="get">
-<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#64748B" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6B7785" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
 <input type="search" name="s" placeholder="نام باتری، ولتاژ یا مدل موردنظر را جستجو کنید..." aria-label="جست‌وجوی باتری">
 <button type="submit">جست‌وجو</button>
 </form>
 <div class="hacts">
-<button class="hact" aria-label="حساب کاربری"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#172033" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-3.5 4.5-5 8-5s6.5 1.5 8 5"/></svg><span>حساب کاربری</span></button>
-<button class="hact" id="wishBtn" aria-label="علاقه‌مندی‌ها"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#172033" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20.5C7 16.5 3.5 13.3 3.5 9.6 3.5 7 5.5 5 8 5c1.6 0 3.1.8 4 2.1C12.9 5.8 14.4 5 16 5c2.5 0 4.5 2 4.5 4.6 0 3.7-3.5 6.9-8.5 10.9z"/></svg><span>علاقه‌مندی‌ها</span><em class="bdg" id="wishCount" hidden>۰</em></button>
-<button class="hact" aria-label="سبد خرید"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#172033" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2l2.4 12.2a1.5 1.5 0 0 0 1.5 1.2h8.9a1.5 1.5 0 0 0 1.5-1.2L21 8H6"/><circle cx="10" cy="21" r="1.3"/><circle cx="18" cy="21" r="1.3"/></svg><span>سبد خرید</span><em class="bdg" id="cartCount" hidden>۰</em></button>
+<button class="hact" aria-label="حساب کاربری"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-3.5 4.5-5 8-5s6.5 1.5 8 5"/></svg><span>حساب کاربری</span></button>
+<button class="hact" aria-label="سبد خرید"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2l2.4 12.2a1.5 1.5 0 0 0 1.5 1.2h8.9a1.5 1.5 0 0 0 1.5-1.2L21 8H6"/><circle cx="10" cy="21" r="1.3"/><circle cx="18" cy="21" r="1.3"/></svg><span>سبد خرید</span><em class="bdg" id="cartCount" hidden>۰</em></button>
 </div>
-</div></header>
+</div>
+<nav class="mnav" id="mnav" aria-label="ناوبری موبایل">
+<a href="#best">محصولات</a><a href="#cats">دسته‌بندی‌ها</a><a href="#finder">راهنمای خرید</a><a href="#mag">مقالات</a><a href="#contact">درباره ما</a>
+</nav>
+</header>
 <!-- HERO -->
 <style>
-.hero{padding:64px 0 72px;background:linear-gradient(to bottom,#fff 60%,var(--bg));overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:56px;align-items:center}
-.hero h1{font-size:clamp(34px,4.4vw,56px);font-weight:900;line-height:1.6}
-.hero h1 .cy{color:var(--cyan-d);position:relative}
-.hero .lead{color:var(--mut);font-size:17px;max-width:480px;margin:16px 0 30px}
-.hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
-.hero-mini{display:flex;gap:26px;margin-top:34px;flex-wrap:wrap}
-.hero-mini div{display:flex;align-items:center;gap:8px;font-size:13.5px;font-weight:700;color:var(--ink2)}
-.hero-mini .tk{width:22px;height:22px;border-radius:50%;background:var(--cyan-soft);display:grid;place-items:center;flex:none}
-.hero-fig{position:relative}
-.hero-fig .main{border-radius:28px;overflow:hidden;box-shadow:var(--sh);border:1px solid var(--line)}
-.hero-fig .main img{width:100%;height:480px;object-fit:cover}
-.chip{position:absolute;background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px 18px;font-size:13px;font-weight:800;box-shadow:var(--sh);display:flex;align-items:center;gap:8px}
-.chip .d{width:9px;height:9px;border-radius:50%;background:var(--green)}
-.chip.c1{top:30px;right:-16px}
-.chip.c2{top:46%;left:-24px}
-.chip.c3{bottom:34px;right:8%}
-.chip .yl{width:26px;height:26px;border-radius:8px;background:var(--yellow-soft);display:grid;place-items:center;font-size:14px}
+.hero{padding:72px 0;background:#fff;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:60px;align-items:center}
+.hero h1{font-size:clamp(32px,4.2vw,52px);font-weight:900;line-height:1.65}
+.hero h1 .tx{color:var(--teal-d)}
+.hero .lead{color:var(--mut);font-size:16.5px;max-width:470px;margin:16px 0 30px}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
+.hero-points{margin-top:32px;border-top:1px solid var(--line2);padding-top:24px;display:grid;gap:12px;max-width:470px}
+.hero-points div{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--ink2)}
+.hero-points svg{flex:none;margin-top:7px}
+.hero-fig{border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;background:var(--bg)}
+.hero-fig img{width:100%;height:480px;object-fit:cover}
+.hero-fig figcaption{display:flex;justify-content:space-between;align-items:center;padding:14px 22px;font-size:13px;color:var(--mut);background:#fff;border-top:1px solid var(--line)}
+.hero-fig figcaption b{color:var(--green);font-size:13.5px}
 @media(max-width:900px){
-.hero{padding:40px 0 52px}
+.hero{padding:44px 0}
 .hero-grid{grid-template-columns:1fr;gap:32px}
-.hero-fig .main img{height:280px}
-.chip.c1{right:8px}.chip.c2{left:8px}
+.hero-fig img{height:280px}
 }
 </style>
 <section class="hero"><div class="wrap hero-grid">
 <div>
 <span class="kicker">فروشگاه تخصصی باتری و انرژی</span>
-<h1>انرژی مطمئن<br>برای <span class="cy">هر دستگاه</span></h1>
-<p class="lead">انواع باتری، شارژر و تجهیزات انرژی با تضمین اصالت کالا و مشاوره تخصصی</p>
+<h1>انرژی مطمئن،<br>برای <span class="tx">هر کاربرد</span></h1>
+<p class="lead">انواع باتری و تجهیزات انرژی با تضمین اصالت کالا و مشاوره تخصصی برای انتخاب مناسب.</p>
 <div class="hero-ctas"><a class="btn btn-p" href="#best">مشاهده محصولات</a><a class="btn btn-o" href="#finder">راهنمای انتخاب باتری</a></div>
-<div class="hero-mini">
-<div><span class="tk"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0E9AA8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12 5 5L20 6"/></svg></span>ضمانت اصالت کالا</div>
-<div><span class="tk"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0E9AA8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12 5 5L20 6"/></svg></span>تست واقعی ظرفیت</div>
-<div><span class="tk"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0E9AA8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12 5 5L20 6"/></svg></span>ارسال سراسری</div>
+<div class="hero-points">
+<div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#128489" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12 5 5L20 6"/></svg>تضمین اصالت کالا — فقط سلول اصلی و آکبند</div>
+<div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#128489" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12 5 5L20 6"/></svg>مشاوره تخصصی رایگان قبل و بعد از خرید</div>
+<div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#128489" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12 5 5L20 6"/></svg>ارسال ایمن به سراسر کشور</div>
 </div>
 </div>
 <figure class="hero-fig">
-<div class="main"><img src="img/hero.jpg" alt="سلول‌های باتری لیتیومی 18650 و 21700" fetchpriority="high"></div>
-<div class="chip c1"><span class="d"></span>ظرفیت بالا</div>
-<div class="chip c2"><span class="yl">⚡</span>طول عمر بیشتر</div>
-<div class="chip c3"><span class="d"></span>اصالت کالا</div>
+<img src="img/hero.jpg" alt="سلول‌های باتری لیتیومی 18650 و 21700" fetchpriority="high">
+<figcaption><span>سلول لیتیومی 18650 — موجود در انبار</span><b>● آماده ارسال</b></figcaption>
 </figure>
 </div></section>
-<!-- TRUST BAR -->
+<!-- QUICK ACTIONS -->
 <style>
-.trust{border-block:1px solid var(--line);background:#fff}
-.trust-in{display:grid;grid-template-columns:repeat(4,1fr);padding:6px 0}
-.ti{display:flex;align-items:center;gap:14px;padding:20px 10px;border-inline-start:1px solid var(--line2)}
-.ti:first-child{border-inline-start:0}
-.ti .ic{width:48px;height:48px;border-radius:14px;background:var(--bg);display:grid;place-items:center;flex:none}
-.ti b{display:block;font-size:14.5px}
-.ti small{color:var(--mut);font-size:12.5px}
-@media(max-width:900px){.trust-in{grid-template-columns:repeat(2,1fr)}.ti:nth-child(3){border-inline-start:0}.ti{border-top:1px solid var(--line2)}.ti:nth-child(-n+2){border-top:0}}
+.qa{border-block:1px solid var(--line);background:var(--bg)}
+.qa-in{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;padding:26px 0}
+.qac{display:flex;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:16px 18px;transition:.2s}
+.qac:hover{border-color:var(--teal)}
+.qac .ic{width:44px;height:44px;border-radius:10px;background:var(--teal-soft);display:grid;place-items:center;flex:none}
+.qac b{display:block;font-size:14px}
+.qac small{color:var(--mut);font-size:12px}
+@media(max-width:900px){.qa-in{grid-template-columns:repeat(2,1fr);gap:10px}.qac{padding:12px}.qac small{display:none}}
 </style>
-<div class="trust"><div class="wrap trust-in">
-<div class="ti"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0E9AA8" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5.5v5.6c0 5 3.4 8.6 8 10.4 4.6-1.8 8-5.4 8-10.4V5.5z"/><path d="m8.8 12 2.2 2.2 4.2-4.4"/></svg></span><div><b>ضمانت اصالت کالا</b><small>فقط سلول اصلی و آکبند</small></div></div>
-<div class="ti"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0E9AA8" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h13v10H3zM16 10h4l3 3v4h-7z"/><circle cx="7" cy="19" r="1.8"/><circle cx="17.5" cy="19" r="1.8"/></svg></span><div><b>ارسال به سراسر کشور</b><small>بسته‌بندی ایمن باتری</small></div></div>
-<div class="ti"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0E9AA8" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13a8 8 0 0 1 16 0"/><rect x="2.5" y="13" width="4.5" height="7" rx="2"/><rect x="17" y="13" width="4.5" height="7" rx="2"/><path d="M19.5 20a4 4 0 0 1-4 3h-2"/></svg></span><div><b>مشاوره تخصصی خرید</b><small>شنبه تا چهارشنبه پاسخگو</small></div></div>
-<div class="ti"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0E9AA8" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2.5"/><path d="M3 10.5h18M7 15.5h4"/></svg></span><div><b>پرداخت امن</b><small>درگاه رسمی بانکی</small></div></div>
+<div class="qa"><div class="wrap qa-in">
+<a class="qac" href="https://cafebattery.com/" rel="noopener"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#128489" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h13v10H3zM16 10h4l3 3v4h-7z"/><circle cx="7" cy="19" r="1.8"/><circle cx="17.5" cy="19" r="1.8"/></svg></span><div><b>پیگیری سفارش</b><small>کد پیگیری پیامکی شما</small></div></a>
+<a class="qac" href="#finder"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#128489" stroke-width="1.7" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span><div><b>انتخاب باتری مناسب</b><small>راهنمای ۳ مرحله‌ای</small></div></a>
+<a class="qac" href="#contact"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#128489" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13a8 8 0 0 1 16 0"/><rect x="2.5" y="13" width="4.5" height="7" rx="2"/><rect x="17" y="13" width="4.5" height="7" rx="2"/></svg></span><div><b>مشاوره تخصصی</b><small>گفت‌وگو با کارشناس</small></div></a>
+<a class="qac" href="#mag"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#128489" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19a2 2 0 0 1 2-2h13"/></svg></span><div><b>راهنمای خرید</b><small>دانشنامه باتری</small></div></a>
 </div></div>
