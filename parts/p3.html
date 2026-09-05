@@ -1,61 +1,46 @@
-<!-- PRODUCT DISCOVERY -->
+<!-- CATEGORIES -->
 <style>
-.dgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;background:#fff}
-.pcard{padding:26px 24px 24px;border-inline-start:1px solid var(--line2);border-top:1px solid var(--line2);display:flex;flex-direction:column;transition:background .18s;position:relative}
-.pcard:nth-child(-n+4){border-top:0}
-.pcard:nth-child(4n+1){border-inline-start:0}
-.pcard:hover{background:#FCFCFB}
-.pcard .im{aspect-ratio:1/.85;overflow:hidden;border-radius:var(--r);background:var(--bg);margin-bottom:18px}
-.pcard .im img{width:100%;height:100%;object-fit:cover}
-.brand{font-size:11.5px;font-weight:700;color:var(--acc-d);letter-spacing:.3px}
-.pcard h3{font-size:15px;line-height:1.9;font-weight:700;margin:2px 0}
-.spec{font-size:12.5px;color:var(--mut)}
-.avail{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--green);margin-top:10px;font-weight:600}
-.avail .d{width:7px;height:7px;border-radius:50%;background:currentColor}
-.prow{margin-top:auto;padding-top:14px;display:flex;align-items:center;justify-content:space-between;gap:10px}
-.price{font-size:18px;font-weight:800}
-.price small{font-size:11.5px;color:var(--mut);font-weight:400}
-.addbtn{border:1px solid var(--ink);background:transparent;color:var(--ink);border-radius:var(--r);padding:9px 20px;font-weight:700;font-size:13px;cursor:pointer;transition:.18s;font-family:inherit;white-space:nowrap}
-.addbtn:hover{background:var(--ink);color:#fff}
-.wish{position:absolute;top:14px;left:14px;width:32px;height:32px;border-radius:50%;background:#fff;border:1px solid var(--line);display:grid;place-items:center;cursor:pointer;font-family:inherit;opacity:0;transition:.18s}
-.pcard:hover .wish,.wish.active{opacity:1}
-.wish.active{border-color:var(--red)}
-.wish.active svg path{fill:var(--red);stroke:var(--red)}
-.wish svg{pointer-events:none}
-@media(max-width:1100px){.dgrid{grid-template-columns:repeat(2,1fr)}.pcard:nth-child(-n+4){border-top:1px solid var(--line2)}.pcard:nth-child(-n+2){border-top:0}.pcard:nth-child(odd){border-inline-start:0}.wish{opacity:1}}
+.catgrid{display:grid;grid-template-columns:repeat(7,1fr);gap:14px}
+.catc{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:20px 10px 18px;text-align:center;transition:.2s}
+.catc:hover{border-color:var(--org);box-shadow:var(--sh);transform:translateY(-3px)}
+.catc img{height:86px;width:100%;object-fit:cover;border-radius:12px;margin-bottom:12px;background:var(--bg)}
+.catc b{display:block;font-size:13.5px}
+.catc small{color:var(--org-d);font-size:12px;font-weight:700}
+@media(max-width:1100px){.catgrid{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:900px){.catgrid{grid-template-columns:repeat(3,1fr);gap:10px}.catc img{height:64px}.catc b{font-size:12px}}
 </style>
-<section class="sec plain" id="discover" style="padding-top:72px"><div class="wrap">
-<div class="sec-head split"><div><span class="eyebrow">کاتالوگ</span><h2 class="t">محصولات منتخب</h2></div><a class="tlink" href="https://cafebattery.com/" rel="noopener">مشاهده فروشگاه <i>←</i></a></div>
-<div class="dgrid">
-<article class="pcard"><button class="wish" aria-label="افزودن به علاقه‌مندی‌ها" aria-pressed="false"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#687078" stroke-width="1.8"><path d="M12 20.5C7 16.5 3.5 13.3 3.5 9.6 3.5 7 5.5 5 8 5c1.6 0 3.1.8 4 2.1C12.9 5.8 14.4 5 16 5c2.5 0 4.5 2 4.5 4.6 0 3.7-3.5 6.9-8.5 10.9z"/></svg></button><div class="im"><img src="img/prod-maxcell.jpg" alt="باتری لیتیومی Maxcell 18650" loading="lazy"></div><span class="brand">Maxcell</span><h3>باتری لیتیومی ۱۸۶۵۰ — ۲۰۰۰mAh</h3><div class="spec">3.7V • مناسب پک‌سازی و مصارف عمومی</div><div class="avail"><span class="d"></span>موجود در انبار</div><div class="prow"><span class="price">۳۰۹٬۰۰۰ <small>تومان</small></span><button class="addbtn">افزودن</button></div></article>
-<article class="pcard"><button class="wish" aria-label="افزودن به علاقه‌مندی‌ها" aria-pressed="false"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#687078" stroke-width="1.8"><path d="M12 20.5C7 16.5 3.5 13.3 3.5 9.6 3.5 7 5.5 5 8 5c1.6 0 3.1.8 4 2.1C12.9 5.8 14.4 5 16 5c2.5 0 4.5 2 4.5 4.6 0 3.7-3.5 6.9-8.5 10.9z"/></svg></button><div class="im"><img src="img/prod-aa.jpg" alt="باتری قلمی آلکالاین" loading="lazy"></div><span class="brand">Varta</span><h3>باتری قلمی آلکالاین — بسته ۴تایی</h3><div class="spec">سایز AA • ماندگاری بالای انبار</div><div class="avail"><span class="d"></span>موجود در انبار</div><div class="prow"><span class="price">۱۹۵٬۰۰۰ <small>تومان</small></span><button class="addbtn">افزودن</button></div></article>
-<article class="pcard"><button class="wish" aria-label="افزودن به علاقه‌مندی‌ها" aria-pressed="false"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#687078" stroke-width="1.8"><path d="M12 20.5C7 16.5 3.5 13.3 3.5 9.6 3.5 7 5.5 5 8 5c1.6 0 3.1.8 4 2.1C12.9 5.8 14.4 5 16 5c2.5 0 4.5 2 4.5 4.6 0 3.7-3.5 6.9-8.5 10.9z"/></svg></button><div class="im"><img src="img/cat-coin.jpg" alt="باتری سکه ای CR2032" loading="lazy"></div><span class="brand">Toshiba</span><h3>باتری سکه‌ای CR2032 — بسته اصلی</h3><div class="spec">3V • سمعک، ساعت و ریموت</div><div class="avail"><span class="d"></span>موجود در انبار</div><div class="prow"><span class="price">۸۶٬۰۰۰ <small>تومان</small></span><button class="addbtn">افزودن</button></div></article>
-<article class="pcard"><button class="wish" aria-label="افزودن به علاقه‌مندی‌ها" aria-pressed="false"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#687078" stroke-width="1.8"><path d="M12 20.5C7 16.5 3.5 13.3 3.5 9.6 3.5 7 5.5 5 8 5c1.6 0 3.1.8 4 2.1C12.9 5.8 14.4 5 16 5c2.5 0 4.5 2 4.5 4.6 0 3.7-3.5 6.9-8.5 10.9z"/></svg></button><div class="im"><img src="img/cat-charger.jpg" alt="شارژر هوشمند باتری" loading="lazy"></div><span class="brand">Eveready</span><h3>شارژر باتری قلمی و نیم‌قلمی</h3><div class="spec">۴ کاناله • قطع‌کن خودکار</div><div class="avail"><span class="d"></span>موجود در انبار</div><div class="prow"><span class="price">۱۲۰٬۰۰۰ <small>تومان</small></span><button class="addbtn">افزودن</button></div></article>
-<article class="pcard"><button class="wish" aria-label="افزودن به علاقه‌مندی‌ها" aria-pressed="false"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#687078" stroke-width="1.8"><path d="M12 20.5C7 16.5 3.5 13.3 3.5 9.6 3.5 7 5.5 5 8 5c1.6 0 3.1.8 4 2.1C12.9 5.8 14.4 5 16 5c2.5 0 4.5 2 4.5 4.6 0 3.7-3.5 6.9-8.5 10.9z"/></svg></button><div class="im"><img src="img/prod-module.jpg" alt="ماژول محافظ شارژ باتری" loading="lazy"></div><span class="brand">ماژول صنعتی</span><h3>ماژول محافظ شارژ ۱ سل (BMS)</h3><div class="spec">جریان 3A • مناسب ساخت پک</div><div class="avail"><span class="d"></span>موجود در انبار</div><div class="prow"><span class="price">۵۴٬۰۰۰ <small>تومان</small></span><button class="addbtn">افزودن</button></div></article>
-<article class="pcard"><button class="wish" aria-label="افزودن به علاقه‌مندی‌ها" aria-pressed="false"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#687078" stroke-width="1.8"><path d="M12 20.5C7 16.5 3.5 13.3 3.5 9.6 3.5 7 5.5 5 8 5c1.6 0 3.1.8 4 2.1C12.9 5.8 14.4 5 16 5c2.5 0 4.5 2 4.5 4.6 0 3.7-3.5 6.9-8.5 10.9z"/></svg></button><div class="im"><img src="img/prod-braket3.jpg" alt="براکت نگهدارنده باتری 18650" loading="lazy"></div><span class="brand">ملزومات پک</span><h3>براکت نگهدارنده ۳تایی ۱۸۶۵۰</h3><div class="spec">مونتاژ آسان • مناسب پک‌سازی</div><div class="avail"><span class="d"></span>موجود در انبار</div><div class="prow"><span class="price">۱۸٬۰۰۰ <small>تومان</small></span><button class="addbtn">افزودن</button></div></article>
-<article class="pcard"><button class="wish" aria-label="افزودن به علاقه‌مندی‌ها" aria-pressed="false"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#687078" stroke-width="1.8"><path d="M12 20.5C7 16.5 3.5 13.3 3.5 9.6 3.5 7 5.5 5 8 5c1.6 0 3.1.8 4 2.1C12.9 5.8 14.4 5 16 5c2.5 0 4.5 2 4.5 4.6 0 3.7-3.5 6.9-8.5 10.9z"/></svg></button><div class="im"><img src="img/prod-ayegh.jpg" alt="عایق باتری 18650" loading="lazy"></div><span class="brand">ملزومات پک</span><h3>عایق پلاریته توخالی ۱۸۶۵۰</h3><div class="spec">ضد اتصال • بسته اقتصادی</div><div class="avail"><span class="d"></span>موجود در انبار</div><div class="prow"><span class="price">۳۳۰٬۰۰۰ <small>تومان</small></span><button class="addbtn">افزودن</button></div></article>
-<article class="pcard"><button class="wish" aria-label="افزودن به علاقه‌مندی‌ها" aria-pressed="false"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#687078" stroke-width="1.8"><path d="M12 20.5C7 16.5 3.5 13.3 3.5 9.6 3.5 7 5.5 5 8 5c1.6 0 3.1.8 4 2.1C12.9 5.8 14.4 5 16 5c2.5 0 4.5 2 4.5 4.6 0 3.7-3.5 6.9-8.5 10.9z"/></svg></button><div class="im"><img src="img/prod-aa.jpg" alt="باتری نیم قلمی شارژی" loading="lazy"></div><span class="brand">شارژی Ni-MH</span><h3>باتری نیم‌قلمی شارژی AAA ۸۰۰</h3><div class="spec">۸۰۰mAh واقعی • قابل شارژ</div><div class="avail"><span class="d"></span>موجود در انبار</div><div class="prow"><span class="price">۱۹۵٬۰۰۰ <small>تومان</small></span><button class="addbtn">افزودن</button></div></article>
+<section class="sec"><div class="wrap">
+<div class="shead"><h2>دسته‌بندی محصولات</h2></div>
+<div class="catgrid">
+<a class="catc" href="https://cafebattery.com/" rel="noopener"><img src="img/usecase-car.jpg" alt="باتری خودرو" loading="lazy"><b>باتری خودرو</b><small>‹</small></a>
+<a class="catc" href="https://cafebattery.com/" rel="noopener"><img src="img/moto-batt.jpg" alt="باتری موتورسیکلت" loading="lazy"><b>باتری موتورسیکلت</b><small>‹</small></a>
+<a class="catc" href="https://cafebattery.com/" rel="noopener"><img src="img/auto-tundra.jpg" alt="باتری صنعتی" loading="lazy"><b>باتری صنعتی</b><small>‹</small></a>
+<a class="catc" href="https://cafebattery.com/" rel="noopener"><img src="img/cat-ups.jpg" alt="UPS و برق اضطراری" loading="lazy"><b>UPS و برق اضطراری</b><small>‹</small></a>
+<a class="catc" href="https://cafebattery.com/" rel="noopener"><img src="img/cat-solar.jpg" alt="باتری خورشیدی" loading="lazy"><b>باتری خورشیدی</b><small>‹</small></a>
+<a class="catc" href="https://cafebattery.com/" rel="noopener"><img src="img/prod-aa.jpg" alt="باتری‌های شارژی" loading="lazy"><b>باتری‌های شارژی</b><small>‹</small></a>
+<a class="catc" href="https://cafebattery.com/" rel="noopener"><img src="img/prod-module.jpg" alt="لوازم و متعلقات" loading="lazy"><b>لوازم و متعلقات</b><small>‹</small></a>
 </div>
 </div></section>
-<!-- SMART CATEGORY NAV -->
+<!-- INDUSTRIAL -->
 <style>
-.catnav{border-block:1px solid var(--line2);background:#fff}
-.catnav-in{display:flex;gap:4px;overflow-x:auto;padding:6px var(--padx);max-width:var(--max);margin-inline:auto;scrollbar-width:none}
-.catnav-in::-webkit-scrollbar{display:none}
-.catnav a{font-size:13.5px;font-weight:600;color:var(--mut);padding:12px 16px;white-space:nowrap;border-bottom:2px solid transparent}
-.catnav a:hover{color:var(--ink)}
-.catnav a.on{color:var(--ink);border-color:var(--acc)}
+.indgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.indcard{border-radius:var(--r-lg);overflow:hidden;min-height:340px;position:relative;display:flex;align-items:flex-end;color:#fff;background:var(--navy)}
+.indcard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.indcard::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(4,12,24,.92) 10%,rgba(4,12,24,.3) 55%,transparent)}
+.indcard>div{position:relative;z-index:1;padding:26px}
+.indcard h3{font-size:19px;margin-bottom:6px}
+.indcard h3.o{color:var(--org)}
+.indcard p{font-size:13px;color:#D5DEE9;line-height:2}
+.indcard.dark{border:1px solid rgba(255,106,0,.35)}
+.indcard.dark::after{background:radial-gradient(400px 200px at 80% 100%,rgba(255,106,0,.25),transparent 65%),linear-gradient(160deg,#0E2544,#061426)}
+@media(max-width:1100px){.indgrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:900px){.indgrid{grid-template-columns:1fr}.indcard{min-height:220px}}
 </style>
-<nav class="catnav" aria-label="دسته‌بندی‌ها"><div class="catnav-in" id="cats">
-<a href="https://cafebattery.com/" rel="noopener" class="on">همه</a>
-<a href="https://cafebattery.com/?s=%D9%84%DB%8C%D8%AA%DB%8C%D9%88%D9%85%DB%8C&amp;post_type=product">لیتیومی</a>
-<a href="https://cafebattery.com/?s=%D9%82%D9%84%D9%85%DB%8C&amp;post_type=product">قلمی</a>
-<a href="https://cafebattery.com/?s=%D9%86%DB%8C%D9%85+%D9%82%D9%84%D9%85%DB%8C&amp;post_type=product">نیم‌قلمی</a>
-<a href="https://cafebattery.com/?s=UPS&amp;post_type=product">UPS</a>
-<a href="https://cafebattery.com/?s=%D8%AE%D9%88%D8%AF%D8%B1%D9%88&amp;post_type=product">خودرو</a>
-<a href="https://cafebattery.com/?s=%D8%B5%D9%86%D8%B9%D8%AA%DB%8C&amp;post_type=product">صنعتی</a>
-<a href="https://cafebattery.com/?s=%D9%BE%D8%B2%D8%B4%DA%A9%DB%8C&amp;post_type=product">پزشکی</a>
-<a href="https://cafebattery.com/?s=%D8%AF%D9%88%D8%B1%D8%A8%DB%8C%D9%86&amp;post_type=product">دوربین</a>
-<a href="https://cafebattery.com/?s=%D8%B3%DA%A9%D9%87&amp;post_type=product">سکه‌ای</a>
-<a href="https://cafebattery.com/?s=%D8%B4%D8%A7%D8%B1%DA%98%D8%B1&amp;post_type=product">شارژرها</a>
-</div></nav>
+<section class="sec white" style="padding-top:0"><div class="wrap">
+<div class="indgrid">
+<div class="indcard dark"><div><h3 class="o">گارانتی معتبر</h3><p>تمامی باتری‌ها با گارانتی اصالت و سلامت عرضه می‌شوند.</p></div></div>
+<a class="indcard" href="https://cafebattery.com/" rel="noopener"><img src="img/auto-tundra.jpg" alt="باتری‌های صنعتی" loading="lazy"><div><h3>باتری‌های صنعتی</h3><p>ظرفیت‌های بالا برای مصارف سنگین و دائم‌کار.</p></div></a>
+<a class="indcard" href="https://cafebattery.com/" rel="noopener"><img src="img/auto-black.jpg" alt="باتری کامیون و ماشین‌آلات" loading="lazy"><div><h3>باتری کامیون و ماشین‌آلات</h3><p>استارت قدرتمند در سخت‌ترین شرایط کاری.</p></div></a>
+<a class="indcard" href="https://cafebattery.com/" rel="noopener"><img src="img/cat-ups.jpg" alt="باتری UPS" loading="lazy"><div><h3>باتری UPS</h3><p>برق بدون وقفه برای تجهیزات حساس شما.</p></div></a>
+</div>
+</div></section>

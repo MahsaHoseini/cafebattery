@@ -1,62 +1,31 @@
-# PROJECT_PLAN — CafeBattery Homepage (from-scratch editorial marketplace)
+# PROJECT_PLAN — CafeBattery (automotive premium, navy + orange)
 
 ## 1. Scope
-Complete from-scratch redesign of the CafeBattery homepage as a static,
-single-file RTL Persian page (`index.html`). Search-first product-discovery
-experience, not a marketing landing. All shopping links target the live shop
-(`https://cafebattery.com/` search/category routes + `?s=` queries). No backend,
-no build step, no dependencies.
+Premium Persian RTL ecommerce landing for battery store «کافه باتری» as a
+static single file (`index.html`). Visual language inspired by premium
+automotive battery websites: midnight navy `#061426` + vivid orange `#FF6A00`
+single accent. All shopping CTAs target the live shop (`https://cafebattery.com/`).
 
-## 2. Homepage IA (final)
-A. Minimal Header (logo / nav / account+cart + mobile scroll nav)
-B. Search-first Introduction («باتری مناسب را پیدا کنید.» + big search + 5 real popular-search links)
-C. Product Discovery («محصولات منتخب», 8 real products, hairline divider grid)
-D. Smart Category Navigation (horizontal text nav → live `?s=` search routes)
-E. Featured Collection («برای ساخت پک باتری», asymmetric editorial + 3 items)
-F. Battery Finder (3 paths: device / type / spec → live search links; NO fake engine)
-G. Spec Education (Voltage / Capacity / Chemistry / Size, one line each)
-H. Comparison table (3 real 3.7V cells × real specs/prices; YITH-style compare not faked)
-I. Brand Stories (Maxcell / Varta / Toshiba / Eveready index, photo-verified brands)
-J. Editorial (2 real site posts + real pack-building video series; nothing invented)
-K. Trust (single quiet line) + Minimal Footer (4 link groups + contact/legal)
+## 2. Structure
+1. Dark navy header (logo+tagline / search / phone+track+login+cart / nav)
+2. Cinematic hero (3 blended battery photos + headline + 2 CTAs + 3 benefits)
+3. Floating smart finder card (use-case / car brand / model / year → shop)
+4. Category grid (7 cards with real photos)
+5. Industrial strip (warranty panel + 3 image cards)
+6. Bestsellers (4 product cards + warranty promo card)
+7. Trust bar (5 items), Brands (6), Articles (4), Newsletter, Footer
 
 ## 3. Design system
-- Palette: Ink `#17212B`, BG `#F5F5F2`, Surface `#fff`, Muted `#687078`,
-  Accent `#0E8F87` (sparse), Highlight `#D9A441` (rare) ≈ 80/15/5
-- Font: Vazirmatn + Tahoma; Persian numerals; type-led hierarchy
-- Radius 8/12px; thin warm-gray borders `#E6E3DC`; one shared ProductCard
-  (IMAGE / BRAND / NAME / SPEC / AVAILABILITY / PRICE / ACTION)
-- No gradients, glass, blobs, pills, sliders, promo banners
+- Navy `#061426`, orange `#FF6A00`, bg `#F4F6F9`, ink `#101B29`
+- Vazirmatn; Persian digits; radius 14–24px; subtle shadows + thin borders
+- Product photos local in `img/` (Wikimedia Commons, verified); hero images
+  blended via `multiply` + radial mask
 
-## 4. Content honesty (enforced)
-- Prices/titles from the live shop snapshot; brands photo-verified
-  (Toshiba coin, Varta packs, Eveready charger, Maxcell cell)
-- No ratings, reviews, stats, old-price discounts, scarcity claims, fake articles
-- Availability shown as neutral in-stock default only
+## 4. Interactions
+- Add-to-cart → header badge + toast; wishlist toggle + toast
+- Finder/newsletter → toast feedback, real form targets
+- No backend; front-end demo wired to live URLs
 
-## 5. Interactions (subtle only)
-- Add-to-cart → header badge + toast; wishlist toggle + toast (`aria-pressed`)
-- Finder path/chip selection → builds a REAL `?s=` search URL
-- Focus-visible on all interactive elements
-
-## 6. Responsive (verified via headless Chrome screenshots)
-- 1440: 4-col discovery, 1200px centered measure, asymmetric collection
-- 1024: same grid, comfortable measure
-- 768: 2-col grids, scroll nav, stacked collection
-- 390-class: DOCSW probe = 485/500 → zero overflow; compact header,
-  full-width search, 2-col grids, stacked finder/compare (row labels collapse)
-
-## 7. Accessibility
-Landmarks (header/nav/footer), real buttons/links, labeled search + icon
-buttons, Persian alt text, keyboard-operable finder, visible focus, RTL order,
-comparison uses table roles.
-
-## 8. Validation
-- Static single file → TypeScript / ESLint / build: N/A (no toolchain)
-- Render QA: 1440 full-page + 1024/768/500 + DOM width probe — all pass
-- Regression: no backend surface; all CTAs point at existing live routes
-
-## 9. Limitations
-- Cart/wishlist are front-end feedback demos (badge + toast), wired to live URLs
-- Prices are a snapshot and may drift vs the live shop
-- Google Fonts needs network; photos local in `img/`
+## 5. Validation
+- Render QA headless Chrome: desktop 1440 full-page + mobile 500 — pass
+- Static file → TS/ESLint/build N/A

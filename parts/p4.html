@@ -1,107 +1,67 @@
-<!-- FEATURED COLLECTION -->
+<!-- BESTSELLERS -->
 <style>
-.feat{display:grid;grid-template-columns:.9fr 1.1fr;gap:0;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;background:#fff}
-.feat .ph{min-height:460px}
-.feat .ph img{width:100%;height:100%;object-fit:cover}
-.feat .tx{padding:clamp(28px,4vw,56px);border-inline-start:1px solid var(--line2)}
-.feat .tx h2{font-size:clamp(22px,2.6vw,30px);font-weight:800;line-height:1.7}
-.feat .tx>p{color:var(--mut);font-size:14.5px;margin:10px 0 8px;max-width:420px}
-.fitem{display:flex;gap:16px;align-items:center;padding:16px 0;border-bottom:1px solid var(--line2)}
-.fitem:last-of-type{border:0}
-.fitem img{width:72px;height:72px;object-fit:cover;border-radius:var(--r);flex:none;background:var(--bg)}
-.fitem b{display:block;font-size:14px}
-.fitem small{color:var(--mut);font-size:12.5px}
-.fitem .p{margin-inline-start:auto;font-weight:800;font-size:15.5px;white-space:nowrap}
-.feat .tx .btn{margin-top:22px}
-@media(max-width:900px){.feat{grid-template-columns:1fr}.feat .ph{min-height:0}.feat .ph img{height:230px}.feat .tx{border-inline-start:0;border-top:1px solid var(--line2)}}
+.bestlayout{display:grid;grid-template-columns:280px 1fr;gap:18px;align-items:stretch}
+.promocard{background:linear-gradient(165deg,#0E2544,#061426);border-radius:var(--r-lg);color:#fff;padding:36px 28px;display:flex;flex-direction:column;border:1px solid rgba(255,106,0,.3);position:relative;overflow:hidden}
+.promocard::before{content:"";position:absolute;left:-70px;top:-70px;width:220px;height:220px;border-radius:50%;background:rgba(255,106,0,.16)}
+.promocard h3{color:var(--org);font-size:21px;margin:16px 0 8px;position:relative}
+.promocard p{font-size:13px;color:#C7D2E0;position:relative}
+.promocard .btn{margin-top:auto;position:relative}
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.pcard{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:.2s;position:relative}
+.pcard:hover{box-shadow:var(--sh);transform:translateY(-3px)}
+.pcard .im{background:#fff;aspect-ratio:1/.85;display:grid;place-items:center;overflow:hidden;border-bottom:1px solid var(--line2)}
+.pcard .im img{width:88%;height:88%;object-fit:cover;border-radius:10px}
+.wish{position:absolute;top:10px;left:10px;width:34px;height:34px;border-radius:50%;background:#fff;border:1px solid var(--line);display:grid;place-items:center;cursor:pointer;z-index:2;font-family:inherit;transition:.2s}
+.wish.active{border-color:var(--red)}
+.wish.active svg path{fill:var(--red);stroke:var(--red)}
+.wish svg{pointer-events:none}
+.pcard .bd{padding:16px 16px 18px;display:flex;flex-direction:column;gap:4px;flex:1}
+.brand{font-size:11.5px;font-weight:800;color:var(--org-d);letter-spacing:.3px}
+.pcard h3{font-size:14px;line-height:1.9;font-weight:800}
+.aspec{font-size:12px;color:var(--mut)}
+.rate{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--mut)}
+.rate b{color:var(--ink)}
+.stars{color:var(--gold);letter-spacing:1px;font-size:12px}
+.price{margin-top:auto;padding-top:10px;display:flex;align-items:baseline;gap:6px}
+.price b{font-size:17px;font-weight:900}
+.price small{font-size:11.5px;color:var(--mut)}
+.addrow{display:flex;gap:8px;margin-top:10px}
+.addbtn{flex:1;background:var(--org);color:#fff;border:0;border-radius:11px;padding:10px;font-weight:800;font-size:13px;cursor:pointer;transition:.2s;font-family:inherit;display:flex;align-items:center;justify-content:center;gap:7px}
+.addbtn:hover{background:var(--org-d)}
+@media(max-width:1100px){.bestlayout{grid-template-columns:1fr}.promocard{min-height:0}.pgrid{grid-template-columns:repeat(2,1fr)}}
 </style>
-<section class="sec solid" id="collection"><div class="wrap">
-<div class="feat">
-<div class="ph"><img src="img/cat-drill.jpg" alt="ساخت سفارشی پک باتری" loading="lazy"></div>
-<div class="tx"><span class="eyebrow">کالکشن منتخب</span><h2>برای ساخت پک باتری</h2>
-<p>سلول، برد محافظ و ملزومات نقطه‌جوش؛ همه‌چیز برای ساخت پک هم‌اندازه دستگاه شما.</p>
-<div class="fitem"><img src="img/prod-maxcell.jpg" alt="سلول Maxcell 18650" loading="lazy"><div><b>سلول Maxcell 18650 — ۲۰۰۰mAh</b><small>Maxcell • ظرفیت واقعی تست‌شده</small></div><span class="p">۳۰۹٬۰۰۰ <small style="font-weight:400;color:var(--mut);font-size:11.5px">تومان</small></span></div>
-<div class="fitem"><img src="img/prod-module.jpg" alt="برد محافظ شارژ" loading="lazy"><div><b>ماژول محافظ شارژ ۱ سل</b><small>ماژول صنعتی • جریان 3A</small></div><span class="p">۵۴٬۰۰۰ <small style="font-weight:400;color:var(--mut);font-size:11.5px">تومان</small></span></div>
-<div class="fitem"><img src="img/prod-braket3.jpg" alt="براکت و عایق پک" loading="lazy"><div><b>براکت ۳تایی + عایق پلاریته</b><small>ملزومات پک • مونتاژ آسان</small></div><span class="p">۱۸٬۰۰۰ <small style="font-weight:400;color:var(--mut);font-size:11.5px">تومان</small></span></div>
-<a class="btn btn-p" href="https://cafebattery.com/" rel="noopener">مشاهده ملزومات پک</a></div>
+<section class="sec" id="best" style="padding-top:0"><div class="wrap">
+<div class="shead"><h2>پرفروش‌ترین محصولات</h2><a class="more" href="https://cafebattery.com/" rel="noopener">مشاهده همه ‹</a></div>
+<div class="bestlayout">
+<div class="promocard">
+<svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="#FF6A00" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="position:relative"><path d="M12 2 4 5.5v5.6c0 5 3.4 8.6 8 10.4 4.6-1.8 8-5.4 8-10.4V5.5z"/><path d="m8.8 12 2.2 2.2 4.2-4.4"/></svg>
+<h3>گارانتی معتبر</h3><p>تمامی باتری‌ها با گارانتی اصالت و سلامت عرضه می‌شوند.</p>
+<a class="btn btn-o" href="#services" style="padding:11px 20px;font-size:13px">اطلاعات بیشتر</a>
+</div>
+<div class="pgrid">
+<article class="pcard"><button class="wish" aria-label="افزودن به علاقه‌مندی‌ها" aria-pressed="false"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#64748A" stroke-width="1.8"><path d="M12 20.5C7 16.5 3.5 13.3 3.5 9.6 3.5 7 5.5 5 8 5c1.6 0 3.1.8 4 2.1C12.9 5.8 14.4 5 16 5c2.5 0 4.5 2 4.5 4.6 0 3.7-3.5 6.9-8.5 10.9z"/></svg></button><div class="im"><img src="img/usecase-car.jpg" alt="باتری خودرو صبا 50 آمپر" loading="lazy"></div><div class="bd"><span class="brand">صبا باتری</span><h3>باتری خودرو صبا ۵۰ آمپر</h3><div class="aspec">50AH | قطب راست</div><div class="rate"><span class="stars">★★★★★</span><b>۵.۰</b> (۶۴)</div><div class="price"><b>۲٬۱۲۰٬۵۰۰</b><small>تومان</small></div><div class="addrow"><button class="addbtn">🛒</button></div></div></article>
+<article class="pcard"><button class="wish" aria-label="افزودن به علاقه‌مندی‌ها" aria-pressed="false"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#64748A" stroke-width="1.8"><path d="M12 20.5C7 16.5 3.5 13.3 3.5 9.6 3.5 7 5.5 5 8 5c1.6 0 3.1.8 4 2.1C12.9 5.8 14.4 5 16 5c2.5 0 4.5 2 4.5 4.6 0 3.7-3.5 6.9-8.5 10.9z"/></svg></button><div class="im"><img src="img/auto-tundra.jpg" alt="باتری خودرو بوش 66 آمپر" loading="lazy"></div><div class="bd"><span class="brand">Bosch</span><h3>باتری خودرو بوش ۶۶ آمپر</h3><div class="aspec">66AH | قطب راست</div><div class="rate"><span class="stars">★★★★★</span><b>۴.۹</b> (۷۵)</div><div class="price"><b>۳٬۷۹۵٬۰۰۰</b><small>تومان</small></div><div class="addrow"><button class="addbtn">🛒</button></div></div></article>
+<article class="pcard"><button class="wish" aria-label="افزودن به علاقه‌مندی‌ها" aria-pressed="false"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#64748A" stroke-width="1.8"><path d="M12 20.5C7 16.5 3.5 13.3 3.5 9.6 3.5 7 5.5 5 8 5c1.6 0 3.1.8 4 2.1C12.9 5.8 14.4 5 16 5c2.5 0 4.5 2 4.5 4.6 0 3.7-3.5 6.9-8.5 10.9z"/></svg></button><div class="im"><img src="img/auto-black.jpg" alt="باتری خودرو دلکور 66 آمپر" loading="lazy"></div><div class="bd"><span class="brand">Delkor</span><h3>باتری خودرو دلکور ۶۶ آمپر</h3><div class="aspec">66AH | قطب راست</div><div class="rate"><span class="stars">★★★★★</span><b>۴.۸</b> (۹۸)</div><div class="price"><b>۴٬۶۴۵٬۰۰۰</b><small>تومان</small></div><div class="addrow"><button class="addbtn">🛒</button></div></div></article>
+<article class="pcard"><button class="wish" aria-label="افزودن به علاقه‌مندی‌ها" aria-pressed="false"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#64748A" stroke-width="1.8"><path d="M12 20.5C7 16.5 3.5 13.3 3.5 9.6 3.5 7 5.5 5 8 5c1.6 0 3.1.8 4 2.1C12.9 5.8 14.4 5 16 5c2.5 0 4.5 2 4.5 4.6 0 3.7-3.5 6.9-8.5 10.9z"/></svg></button><div class="im"><img src="img/moto-batt.jpg" alt="باتری خودرو واریان 74 آمپر" loading="lazy"></div><div class="bd"><span class="brand">واریان</span><h3>باتری خودرو واریان ۷۴ آمپر</h3><div class="aspec">74AH | قطب چپ</div><div class="rate"><span class="stars">★★★★☆</span><b>۴.۷</b> (۱۲۰)</div><div class="price"><b>۳٬۷۸۵٬۰۰۰</b><small>تومان</small></div><div class="addrow"><button class="addbtn">🛒</button></div></div></article>
+</div>
 </div>
 </div></section>
-<!-- BATTERY FINDER -->
+<!-- TRUST BAR -->
 <style>
-.finder{border:1px solid var(--line);border-radius:var(--r-lg);background:#fff;padding:clamp(28px,4vw,52px)}
-.finder-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:44px;margin-top:28px}
-.fpath{border:1px solid var(--line);border-radius:var(--r);padding:22px;background:#fff;cursor:pointer;transition:.18s;font-family:inherit;text-align:right;color:var(--ink);display:block;width:100%;margin-bottom:12px}
-.fpath:hover{border-color:var(--ink)}
-.fpath.sel{border-color:var(--acc-d);background:var(--acc-soft)}
-.fpath b{display:block;font-size:15px}
-.fpath small{color:var(--mut);font-size:13px}
-.finder-out{border-inline-start:1px solid var(--line2);padding-inline-start:44px;min-height:280px}
-.finder-out .hint{color:var(--mut);font-size:14px;margin-top:60px}
-.fstep2{margin-top:22px}
-.chips{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0 24px}
-.fchip{font-size:13.5px;font-weight:600;border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 20px;cursor:pointer;transition:.18s;font-family:inherit;color:var(--ink)}
-.fchip:hover{border-color:var(--ink)}
-.fchip.sel{background:var(--ink);color:#fff;border-color:var(--ink)}
-.fres{border:1px solid var(--line);border-radius:var(--r);padding:22px;background:var(--bg);display:none}
-.fres.on{display:block}
-.fres h4{font-size:16px}
-.fres p{font-size:13.5px;color:var(--mut);margin:6px 0 16px}
-.fres .row{display:flex;gap:10px;flex-wrap:wrap}
-@media(max-width:900px){.finder-grid{grid-template-columns:1fr;gap:24px}.finder-out{border-inline-start:0;border-top:1px solid var(--line2);padding-inline-start:0;padding-top:24px;min-height:0}.finder-out .hint{margin-top:8px}}
+.trustbar{background:#fff;border-block:1px solid var(--line)}
+.trust-in{display:grid;grid-template-columns:repeat(5,1fr);max-width:var(--max);margin-inline:auto;padding:8px var(--padx)}
+.ti{display:flex;align-items:center;gap:12px;padding:20px 8px;border-inline-start:1px solid var(--line2)}
+.ti:first-child{border-inline-start:0}
+.ti .ic{width:46px;height:46px;border-radius:14px;background:var(--org-soft);display:grid;place-items:center;flex:none}
+.ti b{display:block;font-size:13.5px}
+.ti small{color:var(--mut);font-size:11.5px}
+@media(max-width:1100px){.trust-in{grid-template-columns:repeat(3,1fr)}.ti:nth-child(4){border-inline-start:0}}
+@media(max-width:900px){.trust-in{grid-template-columns:repeat(2,1fr)}.ti:nth-child(odd){border-inline-start:0}}
 </style>
-<section class="sec plain" id="finder"><div class="wrap">
-<span class="eyebrow">راهنمای خرید</span><h2 class="t">نمی‌دانید کدام باتری مناسب است؟</h2><p class="sub">مسیر خود را انتخاب کنید تا به بخش درست فروشگاه برسید.</p>
-<div class="finder" style="margin-top:32px"><div class="finder-grid">
-<div>
-<button class="fpath sel" data-path="device"><b>دستگاه من مشخص است</b><small>مدل دستگاه را می‌دانم</small></button>
-<button class="fpath" data-path="type"><b>نوع باتری را می‌دانم</b><small>مثل 18650، قلمی، UPS</small></button>
-<button class="fpath" data-path="spec"><b>فقط مشخصات دستگاه را دارم</b><small>ولتاژ، ظرفیت یا ابعاد</small></button>
-</div>
-<div class="finder-out">
-<div id="fout-device">
-<p style="font-size:14.5px"><b>دستگاه خود را انتخاب کنید:</b></p>
-<div class="chips" id="devChips">
-<button class="fchip" data-q="موبایل">موبایل</button>
-<button class="fchip" data-q="لپ تاپ">لپ‌تاپ</button>
-<button class="fchip" data-q="UPS">UPS</button>
-<button class="fchip" data-q="دریل شارژی">ابزار شارژی</button>
-<button class="fchip" data-q="دوچرخه برقی">دوچرخه برقی</button>
-<button class="fchip" data-q="سمعک">سمعک</button>
-</div>
-<div class="fres" id="devRes"><h4 id="devResT">نتیجه</h4><p id="devResD"></p><div class="row"><a class="btn btn-p" id="devGo" href="https://cafebattery.com/">جست‌وجو در فروشگاه</a><a class="btn btn-o" href="#contact">مشاوره رایگان</a></div></div>
-</div>
-<div id="fout-type" hidden>
-<p style="font-size:14.5px"><b>نوع باتری را انتخاب کنید:</b></p>
-<div class="chips">
-<a class="fchip" href="https://cafebattery.com/?s=18650&amp;post_type=product">18650</a>
-<a class="fchip" href="https://cafebattery.com/?s=%D9%82%D9%84%D9%85%DB%8C&amp;post_type=product">قلمی / نیم‌قلمی</a>
-<a class="fchip" href="https://cafebattery.com/?s=UPS&amp;post_type=product">UPS</a>
-<a class="fchip" href="https://cafebattery.com/?s=%D8%B3%DA%A9%D9%87&amp;post_type=product">سکه‌ای</a>
-<a class="fchip" href="https://cafebattery.com/?s=%D8%B4%D8%A7%D8%B1%DA%98%D8%B1&amp;post_type=product">شارژر</a>
-</div>
-</div>
-<div id="fout-spec" hidden>
-<p style="font-size:14.5px"><b>مشخصات را وارد کنید تا مستقیم جست‌وجو شود:</b></p>
-<form class="bigsearch" style="margin-top:14px;box-shadow:none" role="search" action="https://cafebattery.com/" method="get">
-<input type="search" name="s" placeholder="مثلاً 12V 7Ah یا CR2032..." aria-label="جست‌وجو با مشخصات">
-<button type="submit">جست‌وجو</button>
-</form>
-<p style="margin-top:16px"><a class="tlink" href="#contact">یا از کارشناس بپرسید <i>←</i></a></p>
-</div>
-</div>
+<div class="trustbar" id="services"><div class="trust-in">
+<div class="ti"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF6A00" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h13v10H3zM16 10h4l3 3v4h-7z"/><circle cx="7" cy="19" r="1.8"/><circle cx="17.5" cy="19" r="1.8"/></svg></span><div><b>ارسال سریع</b><small>ارسال در سریع‌ترین زمان</small></div></div>
+<div class="ti"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#061426" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5a4 4 0 0 0-5.6 5.1L3 17.5V21h3.5l5.9-5.9a4 4 0 0 0 5.1-5.6L14.5 12l-2.5-2.5z"/></svg></span><div><b>تست در محل</b><small>نصب و تست رایگان در محل</small></div></div>
+<div class="ti"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#061426" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5.5v5.6c0 5 3.4 8.6 8 10.4 4.6-1.8 8-5.4 8-10.4V5.5z"/><path d="m8.8 12 2.2 2.2 4.2-4.4"/></svg></span><div><b>گارانتی معتبر</b><small>از ۱۲ ماه تا ۲۴ ماه</small></div></div>
+<div class="ti"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#061426" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5.5"/><path d="M8.5 13.5 7 21l5-2.5L17 21l-1.5-7.5"/></svg></span><div><b>ضمانت اصالت کالا</b><small>تضمین سلامت فیزیکی کالا</small></div></div>
+<div class="ti"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#061426" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13a8 8 0 0 1 16 0"/><rect x="2.5" y="13" width="4.5" height="7" rx="2"/><rect x="17" y="13" width="4.5" height="7" rx="2"/></svg></span><div><b>مشاوره تخصصی</b><small>پاسخگویی کارشناسان ما</small></div></div>
 </div></div>
-</div></section>
-<script>
-(function(){
-var paths=document.querySelectorAll('.fpath');
-paths.forEach(function(b){b.addEventListener('click',function(){
-paths.forEach(function(x){x.classList.remove('sel')});b.classList.add('sel');
-['device','type','spec'].forEach(function(k){document.getElementById('fout-'+k).hidden=(k!==b.dataset.path)});});});
-document.querySelectorAll('#devChips .fchip').forEach(function(c){c.addEventListener('click',function(){
-document.querySelectorAll('#devChips .fchip').forEach(function(x){x.classList.remove('sel')});c.classList.add('sel');
-var q=c.dataset.q;document.getElementById('devResT').textContent='باتری مناسب «'+q+'»';
-document.getElementById('devResD').textContent='نتایج سازگار با '+q+' در فروشگاه آماده است؛ برای تطبیق دقیق، مدل کامل را جست‌وجو کنید.';
-document.getElementById('devGo').href='https://cafebattery.com/?s='+encodeURIComponent(q)+'&post_type=product';
-document.getElementById('devRes').classList.add('on');});});
-})();
-</script>

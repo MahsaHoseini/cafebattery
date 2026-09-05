@@ -1,47 +1,58 @@
-<!-- SPEC EDUCATION -->
+<!-- BRANDS -->
 <style>
-.specgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;background:#fff}
-.sp{padding:30px 28px;border-inline-start:1px solid var(--line2)}
-.sp:first-child{border-inline-start:0}
-.sp .n{font-size:12px;font-weight:800;color:var(--acc-d);letter-spacing:1px}
-.sp h3{font-size:17px;margin:8px 0 6px}
-.sp p{font-size:13.5px;color:var(--mut)}
-@media(max-width:900px){.specgrid{grid-template-columns:1fr 1fr}.sp:nth-child(3){border-inline-start:0}.sp{border-top:1px solid var(--line2)}.sp:nth-child(-n+2){border-top:0}}
+.brandrow{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.brandc{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:26px 10px;text-align:center;font-weight:900;font-size:17px;letter-spacing:.5px;transition:.2s;color:var(--navy)}
+.brandc:hover{border-color:var(--org);box-shadow:var(--sh);transform:translateY(-3px)}
+.brandc small{display:block;font-weight:400;font-size:11.5px;color:var(--mut);letter-spacing:0;margin-top:4px}
+@media(max-width:1100px){.brandrow{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:900px){.brandrow{grid-template-columns:repeat(2,1fr)}}
 </style>
-<section class="sec solid" id="specs"><div class="wrap">
-<div class="sec-head"><span class="eyebrow">دانش فنی</span><h2 class="t">قبل از خرید این مشخصات را بررسی کنید</h2></div>
-<div class="specgrid">
-<div class="sp"><span class="n">۰۱ / VOLTAGE</span><h3>ولتاژ (V)</h3><p>ولتاژ باتری باید دقیقاً با نیاز دستگاه یکی باشد؛ ولتاژ اشتباه به دستگاه آسیب می‌زند.</p></div>
-<div class="sp"><span class="n">۰۲ / CAPACITY</span><h3>ظرفیت (mAh / Ah)</h3><p>ظرفیت بالاتر یعنی شارژدهی طولانی‌تر؛ در همان ولتاژ و ابعاد، ظرفیت بیشتر بهتر است.</p></div>
-<div class="sp"><span class="n">۰۳ / CHEMISTRY</span><h3>شیمی باتری</h3><p>لیتیومی، سربی یا نیکل؛ هر شیمی شارژر و شرایط نگهداری خودش را می‌خواهد.</p></div>
-<div class="sp"><span class="n">۰۴ / SIZE</span><h3>سایز و ابعاد</h3><p>کدهایی مثل 18650، AA یا CR2032 همان ابعادند؛ باتری باید دقیقاً در جای خود بنشیند.</p></div>
+<section class="sec white" id="brands"><div class="wrap">
+<div class="shead"><h2>برندهای معتبر</h2></div>
+<div class="brandrow">
+<a class="brandc" href="https://cafebattery.com/" rel="noopener" style="color:#E1251B">BOSCH<small>آلمان</small></a>
+<a class="brandc" href="https://cafebattery.com/" rel="noopener" style="color:#0B2A5B">VARTA<small>آلمان</small></a>
+<a class="brandc" href="https://cafebattery.com/" rel="noopener" style="color:#FF6A00">Delkor<small>کره جنوبی</small></a>
+<a class="brandc" href="https://cafebattery.com/" rel="noopener">صبا باتری<small>ایران</small></a>
+<a class="brandc" href="https://cafebattery.com/" rel="noopener">سپاهان باتری<small>ایران</small></a>
+<a class="brandc" href="https://cafebattery.com/" rel="noopener">AtlasBX<small>کره جنوبی</small></a>
 </div>
 </div></section>
-<!-- COMPARISON -->
+<!-- ARTICLES -->
 <style>
-.cmp{border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;background:#fff}
-.cmprow{display:grid;grid-template-columns:1.1fr 1fr 1fr 1fr}
-.cmprow>div{padding:20px 24px;border-inline-start:1px solid var(--line2);border-top:1px solid var(--line2);font-size:14px}
-.cmprow>div:first-child{border-inline-start:0;color:var(--mut);font-size:13px}
-.cmprow.head>div{border-top:0;padding:24px}
-.cmprow.head img{height:120px;object-fit:cover;width:100%;border-radius:var(--r);margin-bottom:14px;background:var(--bg)}
-.cmprow.head b{display:block;font-size:14.5px;line-height:1.9}
-.cmprow.head small{color:var(--mut);font-size:12.5px}
-.cmprow .pr{font-weight:800;font-size:16.5px;color:var(--ink)}
-.cmprow .pr small{font-weight:400;color:var(--mut);font-size:11.5px}
-@media(max-width:900px){.cmprow{grid-template-columns:1fr 1fr 1fr}.cmprow>div{padding:12px;font-size:12.5px}.cmprow>div:first-child{display:none}.cmprow.head img{height:80px}}
+.agrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.acard{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:.2s}
+.acard:hover{box-shadow:var(--sh);transform:translateY(-3px)}
+.acard .ph{position:relative}
+.acard .ph img{height:170px;object-fit:cover;width:100%}
+.abadge{position:absolute;top:12px;right:12px;background:var(--org);color:#fff;font-size:11px;font-weight:800;padding:4px 14px;border-radius:8px}
+.acard .bd{padding:18px 18px 20px;display:flex;flex-direction:column;gap:8px;flex:1}
+.acard h3{font-size:14.5px;line-height:2}
+.acard time{margin-top:auto;padding-top:10px;border-top:1px solid var(--line2);font-size:12px;color:var(--mut)}
+@media(max-width:1100px){.agrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:900px){.agrid{grid-template-columns:1fr}.acard .ph img{height:190px}}
 </style>
-<section class="sec plain" id="compare"><div class="wrap">
-<div class="sec-head split"><div><span class="eyebrow">تصمیم آگاهانه</span><h2 class="t">مقایسه قبل از خرید</h2><p class="sub">سه سلول پرتکرار 3.7 ولتی، کنار هم؛ از روی مشخصات واقعی.</p></div><a class="tlink" href="https://cafebattery.com/" rel="noopener">جزئیات در فروشگاه <i>←</i></a></div>
-<div class="cmp" role="table" aria-label="مقایسه سه باتری لیتیومی">
-<div class="cmprow head" role="row"><div></div>
-<div role="columnheader"><img src="img/prod-maxcell.jpg" alt="باتری Maxcell 18650" loading="lazy"><b>Maxcell 18650 — ۲۰۰۰mAh</b><small>مصارف عمومی</small></div>
-<div role="columnheader"><img src="img/hero.jpg" style="object-position:50% 20%" alt="باتری 18650 پرتخلیه" loading="lazy"><b>۱۸۶۵۰ پرتخلیه — 15C</b><small>ابزار و دوچرخه</small></div>
-<div role="columnheader"><img src="img/cat-laptop.jpg" alt="باتری لیتیومی تخت" loading="lazy"><b>لیتیومی تخت 3.7V</b><small>پاوربانک و پروژه</small></div></div>
-<div class="cmprow" role="row"><div>ظرفیت</div><div>۲۰۰۰mAh</div><div>۲۰۰۰mAh</div><div>—</div></div>
-<div class="cmprow" role="row"><div>ولتاژ</div><div>3.7V</div><div>3.7V</div><div>3.7V</div></div>
-<div class="cmprow" role="row"><div>ویژگی شاخص</div><div>تعادل قیمت و کارایی</div><div>دشارژ 15C پیوسته</div><div>فرم تخت کم‌حجم</div></div>
-<div class="cmprow" role="row"><div>بهترین کاربرد</div><div>پک‌سازی عمومی</div><div>مصارف پرمصرف</div><div>پاوربانک</div></div>
-<div class="cmprow" role="row"><div>قیمت</div><div class="pr">۳۰۹٬۰۰۰ <small>تومان</small></div><div class="pr">۳۷۴٬۰۰۰ <small>تومان</small></div><div class="pr">۲۷۹٬۰۰۰ <small>تومان</small></div></div>
+<section class="sec" id="mag" style="padding-top:0"><div class="wrap">
+<div class="shead"><h2>آخرین مقالات</h2><a class="more" href="https://cafebattery.com/" rel="noopener">مشاهده همه مقالات ‹</a></div>
+<div class="agrid">
+<article class="acard"><div class="ph"><img src="img/auto-black.jpg" alt="تعویض به موقع باتری خودرو" loading="lazy"><span class="abadge">مقاله</span></div><div class="bd"><h3>چرا باتری خودرو را باید به‌موقع تعویض کنیم؟</h3><time>📅 ۱۰ تیر ۱۴۰۴</time></div></article>
+<article class="acard"><div class="ph"><img src="img/usecase-car.jpg" alt="روشن کردن خودرو با باتری به باتری" loading="lazy"><span class="abadge">مقاله</span></div><div class="bd"><h3>روش صحیح روشن کردن خودرو با باتری به باتری</h3><time>📅 ۵ تیر ۱۴۰۴</time></div></article>
+<article class="acard"><div class="ph"><img src="img/auto-tundra.jpg" alt="تاثیر دما روی باتری" loading="lazy"><span class="abadge">مقاله</span></div><div class="bd"><h3>تأثیر سرما و گرما روی عملکرد باتری</h3><time>📅 ۲۸ خرداد ۱۴۰۴</time></div></article>
+<article class="acard"><div class="ph"><img src="img/prod-module.jpg" alt="تست باتری با مولتی‌متر" loading="lazy"><span class="abadge">مقاله</span></div><div class="bd"><h3>آموزش تست باتری خودرو با مولتی‌متر</h3><time>📅 ۲۰ خرداد ۱۴۰۴</time></div></article>
+</div>
+</div></section>
+<!-- NEWSLETTER -->
+<style>
+.news{background:linear-gradient(150deg,#0E2544,#061426);border-radius:28px;padding:clamp(32px,4vw,56px);display:flex;align-items:center;gap:32px;flex-wrap:wrap;color:#fff;position:relative;overflow:hidden;border:1px solid rgba(255,106,0,.25)}
+.news::before{content:"";position:absolute;left:-80px;top:-80px;width:260px;height:260px;border-radius:50%;background:rgba(255,106,0,.14)}
+.news h2{font-size:clamp(20px,2.6vw,28px);font-weight:900;position:relative}
+.news p{color:#C7D2E0;font-size:14px;position:relative}
+.news form{display:flex;background:#fff;border-radius:14px;padding:5px;margin-inline-start:auto;min-width:min(420px,100%);position:relative}
+.news input{flex:1;border:0;outline:0;background:transparent;font-family:inherit;font-size:14px;padding:11px 18px;min-width:0;color:var(--ink)}
+</style>
+<section style="padding-bottom:76px"><div class="wrap">
+<div class="news">
+<div><h2>از جدیدترین تخفیف‌ها و محصولات باخبر شوید</h2><p>عضویت در خبرنامه کافه باتری — بدون اسپم، فقط پیشنهادهای واقعی.</p></div>
+<form action="https://cafebattery.com/" method="get" onsubmit="return nlSubmit(this)"><input type="email" name="email" required placeholder="آدرس ایمیل شما..." aria-label="ایمیل"><button class="btn btn-o" type="submit">عضویت</button></form>
 </div>
 </div></section>

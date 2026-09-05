@@ -1,65 +1,61 @@
-<!-- BRAND STORIES -->
+<!-- FOOTER -->
 <style>
-.brands{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.brandc{border:1px solid var(--line);border-radius:var(--r-lg);background:#fff;padding:26px;transition:.18s}
-.brandc:hover{border-color:var(--ink)}
-.brandc .lg{display:inline-block;background:var(--ink);color:#fff;font-weight:900;font-size:15px;letter-spacing:2px;padding:8px 22px;border-radius:7px;margin-bottom:12px}
-.brandc p{font-size:13.5px;color:var(--mut);margin-bottom:18px}
-.bitem{display:flex;gap:12px;align-items:center;padding:10px 0;border-top:1px solid var(--line2);font-size:13.5px}
-.bitem img{width:52px;height:52px;object-fit:cover;border-radius:7px;flex:none;background:var(--bg)}
-.bitem b{display:block;font-size:13px}
-.bitem small{color:var(--mut);font-size:12px}
-.brandc .go{display:inline-block;margin-top:16px;font-size:13px;font-weight:700;border-bottom:1px solid var(--line);padding-bottom:2px}
-.brandc .go:hover{border-color:var(--ink)}
-@media(max-width:1100px){.brands{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:900px){.brands{grid-template-columns:1fr 1fr;gap:12px}.brandc{padding:18px}}
+footer{background:var(--navy);color:#B9C6D8}
+.foot{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr 1.2fr;gap:28px;max-width:var(--max);margin-inline:auto;padding:60px var(--padx) 40px}
+.foot .logo b{color:#fff}
+.foot .ab{font-size:13px;color:#8E9BB8;max-width:280px;margin-top:10px}
+.foot h4{color:#fff;font-size:14px;margin-bottom:14px}
+.foot a{display:block;font-size:13.5px;padding:5px 0;color:#B9C6D8}
+.foot a:hover{color:var(--org)}
+.foot .ci{display:flex;gap:9px;align-items:flex-start;font-size:13px}
+.soc{display:flex;gap:9px;margin-top:16px}
+.soc a{width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,.08);display:grid;place-items:center;font-size:15px;padding:0}
+.soc a:hover{background:var(--org);color:#fff}
+.copy{border-top:1px solid rgba(255,255,255,.12);text-align:center;font-size:12px;padding:18px;color:#8E9BB8}
+.fab{position:fixed;bottom:24px;left:24px;z-index:50;display:flex;flex-direction:column;gap:10px}
+.fab a{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;box-shadow:var(--sh);background:#fff;border:1px solid var(--line)}
+.fab svg{width:24px;height:24px}
+.mbar{display:none;position:fixed;bottom:0;right:0;left:0;z-index:49;background:#fff;padding:10px 14px calc(10px + env(safe-area-inset-bottom));gap:10px;border-top:1px solid var(--line)}
+.mbar a{flex:1;text-align:center;border-radius:12px;padding:12px;font-weight:800;font-size:14px}
+.mbar .c{background:var(--org);color:#fff}
+.mbar .s{border:1px solid var(--line);color:var(--ink)}
+@media(max-width:1100px){.foot{grid-template-columns:1fr 1fr 1fr}}
+@media(max-width:900px){.mbar{display:flex}.fab{bottom:88px}body{padding-bottom:72px}.foot{grid-template-columns:1fr 1fr;padding:44px var(--padx) 30px}}
 </style>
-<section class="sec solid" id="brands"><div class="wrap">
-<div class="sec-head"><span class="eyebrow">کاتالوگ برند</span><h2 class="t">برندهای منتخب</h2></div>
-<div class="brands">
-<div class="brandc"><span class="lg">Maxcell</span><p>سلول لیتیومی با ظرفیت واقعی تست‌شده.</p>
-<a class="bitem" href="https://cafebattery.com/" rel="noopener"><img src="img/prod-maxcell.jpg" alt="Maxcell 18650" loading="lazy"><div><b>لیتیومی ۱۸۶۵۰ — ۲۰۰۰mAh</b><small>۳۰۹٬۰۰۰ تومان</small></div></a>
-<a class="go" href="https://cafebattery.com/" rel="noopener">محصولات Maxcell ←</a></div>
-<div class="brandc"><span class="lg">Varta</span><p>آلکالاین ماندگار برای مصارف روزمره.</p>
-<a class="bitem" href="https://cafebattery.com/" rel="noopener"><img src="img/prod-aa.jpg" alt="Varta AA" loading="lazy"><div><b>قلمی آلکالاین — ۴تایی</b><small>۱۹۵٬۰۰۰ تومان</small></div></a>
-<a class="go" href="https://cafebattery.com/" rel="noopener">محصولات Varta ←</a></div>
-<div class="brandc"><span class="lg">Toshiba</span><p>سکه‌ای‌های دقیق برای ساعت و سمعک.</p>
-<a class="bitem" href="https://cafebattery.com/" rel="noopener"><img src="img/cat-coin.jpg" alt="Toshiba CR2032" loading="lazy"><div><b>سکه‌ای CR2032</b><small>۸۶٬۰۰۰ تومان</small></div></a>
-<a class="go" href="https://cafebattery.com/" rel="noopener">محصولات Toshiba ←</a></div>
-<div class="brandc"><span class="lg">Eveready</span><p>شارژ و انرژی قابل اتکا برای خانه.</p>
-<a class="bitem" href="https://cafebattery.com/" rel="noopener"><img src="img/cat-charger.jpg" alt="شارژر Eveready" loading="lazy"><div><b>شارژر قلمی و نیم‌قلمی</b><small>۱۲۰٬۰۰۰ تومان</small></div></a>
-<a class="go" href="https://cafebattery.com/" rel="noopener">محصولات Eveready ←</a></div>
+<footer id="contact">
+<div class="foot">
+<div><div class="logo"><div><b>کافه باتری</b><small>مرجع تخصصی خرید باتری</small></div><span class="mk" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24"><rect x="2" y="7" width="17" height="10" rx="2.5" fill="#fff"/><rect x="19.5" y="10" width="2.5" height="4" rx="1" fill="#fff"/><path d="M12.6 8.4 10 12.2h2.3l-1 3.4 3.9-4.8h-2.4z" fill="#FF6A00"/></svg></span></div>
+<p class="ab">مرجع تخصصی فروش انواع باتری خودرو، موتورسیکلت، صنعتی و UPS با گارانتی معتبر و خدمات پس از فروش حرفه‌ای.</p>
+<div class="soc"><a href="https://www.instagram.com/cafebattery/" aria-label="اینستاگرام">◈</a><a href="https://cafebattery.com/" aria-label="تلگرام">➤</a><a href="https://wa.me/message/EVUFYBSEXDVXM1" aria-label="واتساپ">✆</a></div></div>
+<div><h4>دسترسی سریع</h4><a href="#best">محصولات</a><a href="#brands">برندها</a><a href="#mag">مقالات</a><a href="#contact">درباره ما</a></div>
+<div><h4>خدمات مشتریان</h4><a href="https://cafebattery.com/" rel="noopener">پیگیری سفارش</a><a href="#services">گارانتی و خدمات</a><a href="https://cafebattery.com/" rel="noopener">ثبت شکایت و پیشنهاد</a></div>
+<div><h4>راهنمای خرید</h4><a href="#finder">راهنمای انتخاب باتری</a><a href="https://cafebattery.com/" rel="noopener">قوانین ارسال</a><a href="#contact">تماس با ما</a></div>
+<div><h4>اطلاعات تماس</h4>
+<div class="ci">📞 <a href="tel:+982166711243"><bdi>021-66711243</bdi></a></div>
+<div class="ci">✉️ <span dir="ltr">info@cafebattery.com</span></div>
+<div class="ci">📍 <span>تهران، خیابان جمهوری، پاساژ امجد، پلاک ۳۹ — شنبه تا پنجشنبه ۸ تا ۱۸</span></div>
 </div>
-</div></section>
-<!-- EDITORIAL -->
-<style>
-.agrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.acard{border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;background:#fff;display:flex;flex-direction:column;transition:.18s}
-.acard:hover{border-color:var(--ink)}
-.acard img{height:200px;object-fit:cover;width:100%}
-.acard .bd{padding:22px 24px 24px;display:flex;flex-direction:column;gap:8px;flex:1}
-.acat{font-size:11.5px;font-weight:800;color:var(--acc-d);letter-spacing:.3px}
-.acard h3{font-size:16px;line-height:1.9}
-.acard p{font-size:13.5px;color:var(--mut)}
-.ameta{margin-top:auto;padding-top:12px;border-top:1px solid var(--line2);font-size:13px;font-weight:700}
-.ameta a:hover{color:var(--acc-d)}
-@media(max-width:900px){.agrid{grid-template-columns:1fr}.acard img{height:170px}}
-/* TRUST */
-.trustline{display:flex;gap:0;border-block:1px solid var(--line2);margin-top:72px;flex-wrap:wrap}
-.trustline div{flex:1;min-width:200px;display:flex;align-items:center;gap:10px;font-size:13px;color:var(--mut);padding:16px 4px}
-.trustline b{color:var(--ink);font-weight:700}
-</style>
-<section class="sec plain" id="mag"><div class="wrap">
-<div class="sec-head split"><div><span class="eyebrow">محتوای آموزشی</span><h2 class="t">راهنمای انتخاب</h2><p class="sub">مطالبی که به تصمیم خرید کمک می‌کنند.</p></div><a class="tlink" href="https://cafebattery.com/" rel="noopener">همه مقالات <i>←</i></a></div>
-<div class="agrid">
-<article class="acard"><img src="img/pack.jpg" alt="باتری‌های لیتیومی" loading="lazy"><div class="bd"><span class="acat">بررسی تخصصی</span><h3>باتری‌های لیتیومی در سال ۲۰۲۵؛ چه چیزی تغییر کرد؟</h3><p>مروری بر بهبود چگالی انرژی و ایمنی نسل جدید سلول‌ها و اثر آن بر انتخاب شما.</p><div class="ameta"><a href="https://cafebattery.com/" rel="noopener">خواندن در مجله کافه باتری ←</a></div></div></article>
-<article class="acard"><img src="img/cat-ups.jpg" alt="باتری UPS" loading="lazy"><div class="bd"><span class="acat">برق اضطراری</span><h3>باتری UPS؛ قلب تپنده برق اضطراری شما</h3><p>نقش باتری در عملکرد یو‌پی‌اس و نشانه‌های زمان تعویض آن.</p><div class="ameta"><a href="https://cafebattery.com/" rel="noopener">خواندن در مجله کافه باتری ←</a></div></div></article>
-<article class="acard"><img src="img/cat-drill.jpg" alt="آموزش ساخت پک باتری" loading="lazy"><div class="bd"><span class="acat">آموزش تصویری</span><h3>کلیپ‌های آموزش ساخت پک باتری</h3><p>مراحل عملی ساخت پک با نقطه‌جوش و برد محافظ، قدم‌به‌قدم و تصویری.</p><div class="ameta"><a href="https://cafebattery.com/" rel="noopener">تماشای آموزش‌ها ←</a></div></div></article>
 </div>
-<div class="trustline">
-<div><b>اصالت کالا</b> — تست واقعی ظرفیت</div>
-<div><b>ارسال سراسری</b> — بسته‌بندی ایمن</div>
-<div><b>مشاوره تخصصی</b> — شنبه تا چهارشنبه</div>
-<div><b>پرداخت امن</b> — درگاه رسمی بانکی</div>
+<div class="copy">تمامی حقوق این وب‌سایت متعلق به فروشگاه کافه باتری می‌باشد.</div>
+</footer>
+<div class="fab">
+<a href="https://wa.me/message/EVUFYBSEXDVXM1" aria-label="چت واتساپ"><svg viewBox="0 0 24 24" fill="#25D366"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.4 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5s.8 1.9.8 2c.1.1.1.3 0 .5-.3.6-.6.8-.4 1.1.6 1.1 1.4 1.8 2.5 2.4.3.1.4 0 .6-.2l.7-.8c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.4 0 .1 0 .7-.4 1.4z"/></svg></a>
+<a href="tel:+982166711243" aria-label="تماس"><svg viewBox="0 0 24 24" fill="none" stroke="#061426" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.5 2.9.7a2 2 0 0 1 1.6 2z"/></svg></a>
 </div>
-</div></section>
+<nav class="mbar" aria-label="دسترسی سریع موبایل"><a class="c" href="tel:+982166711243">📞 تماس فوری</a><a class="s" href="#best">مشاهده فروشگاه</a></nav>
+<div id="toast" role="status"></div>
+<script>
+function fa(n){return String(n).replace(/\d/g,function(d){return '۰۱۲۳۴۵۶۷۸۹'[d]})}
+function toast(m){var t=document.getElementById('toast');t.textContent=m;t.classList.add('show');clearTimeout(t._x);t._x=setTimeout(function(){t.classList.remove('show')},2200)}
+var CN=0;
+document.querySelectorAll('.addbtn').forEach(function(b){b.addEventListener('click',function(){
+CN++;var c=document.getElementById('cartCount');if(c){c.hidden=false;c.textContent=fa(CN)}
+toast('محصول به سبد خرید اضافه شد');});});
+document.querySelectorAll('.wish').forEach(function(b){b.addEventListener('click',function(){
+var on=b.classList.toggle('active');b.setAttribute('aria-pressed',on);
+toast(on?'به علاقه‌مندی‌ها اضافه شد':'از علاقه‌مندی‌ها حذف شد');});});
+function goFinder(f){var q=f.f1.value+' '+f.f3.value;toast('در حال جست‌وجوی باتری مناسب: '+q);return true}
+function nlSubmit(f){toast('عضویت شما در خبرنامه ثبت شد');f.reset();return false}
+</script>
+</body>
+</html>
