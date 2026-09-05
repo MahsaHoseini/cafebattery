@@ -49,6 +49,11 @@
 .shead a.more{font-size:13.5px;font-weight:800;color:var(--org-d);white-space:nowrap}
 .pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 @media(max-width:1100px){.pgrid{grid-template-columns:repeat(2,1fr)}}
+.promo{background:linear-gradient(165deg,#0E2544,#061426);border-radius:16px;color:#fff;padding:22px 20px;display:flex;flex-direction:column;border:1px solid rgba(255,106,0,.3);position:relative;overflow:hidden}
+.promo::before{content:"";position:absolute;left:-60px;top:-60px;width:180px;height:180px;border-radius:50%;background:rgba(255,106,0,.16)}
+.promo h3{color:#FF6A00;font-size:17px;margin:12px 0 6px;position:relative}
+.promo p{font-size:12.5px;color:#C7D2E0;position:relative;line-height:2}
+.promo .btn{margin-top:auto;position:relative;padding:9px 18px;font-size:12.5px}
 /* trust */
 .trustline{display:grid;grid-template-columns:repeat(5,1fr);gap:0;background:#fff;border-block:1px solid var(--line)}
 .tl{display:flex;gap:12px;align-items:center;padding:18px 14px;border-inline-start:1px solid var(--line2)}
@@ -187,8 +192,9 @@ h+='<a class="catc" href="products.html?cat='+encodeURIComponent(n)+'">'+img+'<b
 box.innerHTML=h;
 }
 function renderBest(){
-var picks=[].concat(PRODUCTS).filter(function(p){return p.stock&&p.img}).sort(function(a,b){return (b.reviews||0)-(a.reviews||0)}).slice(0,4);
-document.getElementById('bestgrid').innerHTML=picks.map(prodCard).join('')||'<div class="empty">محصولی یافت نشد</div>';
+var picks=[].concat(PRODUCTS).filter(function(p){return p.stock&&p.img}).sort(function(a,b){return (b.reviews||0)-(a.reviews||0)}).slice(0,3);
+var promo='<div class="promo"><svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="#FF6A00" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="position:relative"><path d="M12 2 4 5.5v5.6c0 5 3.4 8.6 8 10.4 4.6-1.8 8-5.4 8-10.4V5.5z"/><path d="m8.8 12 2.2 2.2 4.2-4.4"/></svg><h3>ضمانت اصالت</h3><p>تمامی باتری‌ها با گارانتی اصالت و سلامت عرضه می‌شوند.</p><a class="btn btn-o" href="products.html">مشاهده محصولات</a></div>';
+document.getElementById('bestgrid').innerHTML=promo+picks.map(prodCard).join('')||'<div class="empty">محصولی یافت نشد</div>';
 }
 function nl(f){toast('عضویت شما در خبرنامه ثبت شد');f.reset();return false}
 document.addEventListener('DOMContentLoaded',function(){pickCat();renderCats();renderBest()});
