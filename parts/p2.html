@@ -2,25 +2,27 @@
 <body>
 <!-- HEADER -->
 <header class="hdr">
-<div class="hdr-top">
-<div class="hacts">
-<button class="hact" aria-label="ورود یا ثبت نام"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-3.5 4.5-5 8-5s6.5 1.5 8 5"/></svg>ورود / ثبت‌نام</button>
-<button class="hact" aria-label="سبد خرید"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2l2.4 12.2a1.5 1.5 0 0 0 1.5 1.2h8.9a1.5 1.5 0 0 0 1.5-1.2L21 8H6"/><circle cx="10" cy="21" r="1.3"/><circle cx="18" cy="21" r="1.3"/></svg>سبد خرید<em class="bdg" id="cartCount" hidden>۰</em></button>
-</div>
-<form class="hsearch" role="search" action="https://cafebattery.com/" method="get">
-<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#64748A" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-<input type="search" name="s" placeholder="مدل باتری یا نام خودرو را جستجو کنید..." aria-label="جست‌وجوی باتری">
-<button type="submit">جست‌وجو</button>
-</form>
-<div class="logo"><div><b>کافه باتری</b><small>مرجع تخصصی خرید باتری</small></div><span class="mk" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24"><rect x="2" y="7" width="17" height="10" rx="2.5" fill="#fff"/><rect x="19.5" y="10" width="2.5" height="4" rx="1" fill="#fff"/><path d="M12.6 8.4 10 12.2h2.3l-1 3.4 3.9-4.8h-2.4z" fill="#FF6A00"/></svg></span></div>
-<div class="hacts">
-<a class="hact tel" href="tel:+982166711243"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.5 2.9.7a2 2 0 0 1 1.6 2z"/></svg><div>تماس با ما<bdi><b>021-66711243</b></bdi></div></a>
-<a class="hact" href="https://cafebattery.com/" rel="noopener"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h13v10H3zM16 10h4l3 3v4h-7z"/><circle cx="7" cy="19" r="1.8"/><circle cx="17.5" cy="19" r="1.8"/></svg>پیگیری سفارش</a>
-</div>
-</div>
-<nav class="hnav" aria-label="ناوبری اصلی"><div class="hnav-in">
+<div class="hdr-in">
+<div class="logo"><span class="mk" aria-hidden="true"><svg width="23" height="23" viewBox="0 0 24 24"><rect x="2" y="7" width="17" height="10" rx="2.5" fill="#fff"/><rect x="19.5" y="10" width="2.5" height="4" rx="1" fill="#fff"/><path d="M12.6 8.4 10 12.2h2.3l-1 3.4 3.9-4.8h-2.4z" fill="#FF6A00"/></svg></span><div><b>کافه باتری</b><small>مرجع تخصصی خرید باتری</small></div></div>
+<nav class="hnav" aria-label="ناوبری اصلی">
 <a href="#" class="on">صفحه اصلی</a><a href="#best">محصولات</a><a href="#brands">برندها</a><a href="#services">خدمات</a><a href="#finder">راهنما و آموزش</a><a href="#mag">مقالات</a><a href="#contact">درباره ما</a>
-</div></nav>
+</nav>
+<div class="hacts">
+<button class="hicon" id="searchBtn" aria-label="جست‌وجو" aria-expanded="false"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
+<button class="hicon" aria-label="حساب کاربری"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-3.5 4.5-5 8-5s6.5 1.5 8 5"/></svg></button>
+<button class="hicon" aria-label="سبد خرید"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2l2.4 12.2a1.5 1.5 0 0 0 1.5 1.2h8.9a1.5 1.5 0 0 0 1.5-1.2L21 8H6"/><circle cx="10" cy="21" r="1.3"/><circle cx="18" cy="21" r="1.3"/></svg><em class="bdg" id="cartCount" hidden>۰</em></button>
+<button class="hicon burger" id="burger" aria-label="باز کردن منو" aria-expanded="false"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+</div>
+</div>
+<div class="searchdrop" id="searchdrop">
+<form role="search" action="https://cafebattery.com/" method="get">
+<input type="search" name="s" placeholder="مدل باتری یا نام خودرو را جستجو کنید..." aria-label="جست‌وجوی باتری" id="hsearch">
+<button class="btn btn-o" type="submit" style="padding:11px 30px">جست‌وجو</button>
+</form>
+</div>
+<nav class="mnav" id="mnav" aria-label="ناوبری موبایل">
+<a href="#">صفحه اصلی</a><a href="#best">محصولات</a><a href="#brands">برندها</a><a href="#services">خدمات</a><a href="#finder">راهنما و آموزش</a><a href="#mag">مقالات</a><a href="#contact">درباره ما</a>
+</nav>
 </header>
 <!-- HERO -->
 <style>
