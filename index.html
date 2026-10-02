@@ -13,7 +13,12 @@
 <link rel="stylesheet" href="assets/site.css">
 <style>
 /* hero */
-.hero{background:radial-gradient(800px 400px at 85% 15%,rgba(38,132,255,.18),transparent 60%),radial-gradient(700px 380px at 15% 85%,rgba(255,106,0,.12),transparent 60%),linear-gradient(180deg,#0A1E38,#061426);color:#fff;overflow:hidden}
+.hero{position:relative;background:radial-gradient(700px 420px at 82% 18%,rgba(38,132,255,.08),transparent 60%),linear-gradient(180deg,#09152A,#0E192A);color:#fff;overflow:hidden}
+.hero-art{position:absolute;left:0;top:0;bottom:0;width:min(63%,900px);background:url('img/hero-bg.jpg') left center/100% auto no-repeat;z-index:1;-webkit-mask-image:linear-gradient(270deg,transparent 0,#000 22%),linear-gradient(180deg,transparent 0,#000 8%,#000 92%,transparent 100%);-webkit-mask-composite:source-in;mask-image:linear-gradient(270deg,transparent 0,#000 22%),linear-gradient(180deg,transparent 0,#000 8%,#000 92%,transparent 100%);mask-composite:intersect}
+.hero-in{position:relative;z-index:2}
+.bigbolt{position:absolute;top:34px;right:7.5%;width:64px;z-index:4;filter:drop-shadow(0 0 20px rgba(255,106,0,.9));pointer-events:none}
+.smallbolt{position:absolute;left:26px;top:56%;width:42px;z-index:4;filter:drop-shadow(0 0 16px rgba(255,106,0,.85));pointer-events:none}
+.hspacer{min-height:420px}
 .hero-in{display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:center;max-width:1280px;margin-inline:auto;padding:56px var(--padx) 110px}
 .hero h1{font-size:clamp(32px,4.2vw,54px);font-weight:900;line-height:1.6}
 .hero h1 .o{color:#FF6A00}
@@ -22,12 +27,7 @@
 .hero .btnsm{display:flex;gap:26px;flex-wrap:wrap}
 .hero .btnsm div{display:flex;align-items:center;gap:9px;font-size:13.5px;font-weight:700;color:#E6EDF5}
 .hero .btnsm .ic{width:36px;height:36px;border-radius:11px;background:rgba(255,106,0,.14);border:1px solid rgba(255,106,0,.4);display:grid;place-items:center;flex:none}
-.hfig{position:relative;min-height:0}
-.hframe{position:relative;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.22);box-shadow:0 30px 60px -28px rgba(0,0,0,.6)}
-.hframe img{width:100%;height:400px;object-fit:cover;display:block}
-.hframe figcaption{position:absolute;bottom:12px;right:12px;left:12px;background:rgba(6,20,38,.85);backdrop-filter:blur(6px);border-radius:12px;padding:10px 18px;font-size:12.5px;display:flex;align-items:center;justify-content:space-between;gap:10px;color:#E6EDF5;flex-wrap:wrap}
-.hframe figcaption b{color:#fff}
-.hframe .d{width:9px;height:9px;border-radius:50%;background:#22C55E;display:inline-block;margin-left:6px}
+.hfig{position:relative;min-height:520px;display:grid;place-items:center}
 /* finder */
 .finder-card{background:#fff;border-radius:24px;box-shadow:0 24px 50px -28px rgba(6,20,38,.28);border:1px solid var(--line);max-width:1280px;margin:-76px auto 0;position:relative;z-index:5;padding:26px clamp(18px,3vw,40px) 30px}
 .finder-card h2{font-size:18px;font-weight:900;text-align:center;margin-bottom:20px}
@@ -35,34 +35,41 @@
 .fld label{display:block;font-size:12px;font-weight:700;color:var(--ink2);margin-bottom:6px}
 .fld select{width:100%;border:1px solid var(--line);border-radius:12px;padding:11px 13px;font-family:inherit;font-size:13px;background:var(--bg);color:var(--ink);outline:0}
 .fld select:focus{border-color:var(--org)}
-@media(max-width:900px){.hero-in{grid-template-columns:1fr;padding:40px var(--padx) 130px}.hfig img{height:260px}.finder-form{grid-template-columns:1fr 1fr}.finder-form .btn{grid-column:1/-1}}
+@media(max-width:900px){.hero-in{grid-template-columns:1fr;padding:40px var(--padx) 130px}.hero-art,.hfig,.hspacer{min-height:0;display:none}.bigbolt{width:40px;top:18px;right:6%}.smallbolt{display:none}.finder-form{grid-template-columns:1fr 1fr}.finder-form .btn{grid-column:1/-1}}
 /* cats */
-.catgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
-.catc{background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px 8px 12px;text-align:center;transition:.2s;display:block}
-.catc:hover{border-color:var(--org);box-shadow:var(--sh);transform:translateY(-3px)}
-.catc img{height:70px;width:100%;object-fit:cover;border-radius:10px;margin-bottom:9px;background:var(--bg)}
-.catc b{display:block;font-size:12.5px;line-height:1.9}
-.catc small{color:var(--mut);font-size:11px}
-@media(max-width:1100px){.catgrid{grid-template-columns:repeat(4,1fr)}}
-@media(max-width:900px){.catgrid{grid-template-columns:repeat(3,1fr);gap:9px}.catc img{height:58px}}
+.catgrid{display:grid;grid-template-columns:repeat(8,1fr);gap:14px}
+.catc{background:#fff;border-radius:14px;box-shadow:0 2px 10px rgba(0,0,0,.06);padding:16px 10px 12px;text-align:center;display:flex;flex-direction:column;align-items:center;transition:.22s;text-decoration:none}
+.catc:hover{box-shadow:0 10px 24px rgba(0,0,0,.1);transform:translateY(-3px)}
+.catc .ph{height:94px;width:100%;display:grid;place-items:center;position:relative;margin-bottom:8px}
+.catc .ph::after{content:"";position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:62%;height:11px;background:radial-gradient(ellipse at center,rgba(20,30,45,.16),transparent 70%);border-radius:50%;z-index:1}
+.catc .ph img{max-height:84px;max-width:86%;object-fit:contain;position:relative;z-index:2}
+.catc .ph img.i-s{max-height:76px}
+.catc .ph img.i-m{max-height:88px}
+.catc .ph img.i-l{max-height:94px;max-width:78%}
+.catc .ph img.i-sh{filter:drop-shadow(0 4px 5px rgba(20,30,45,.28))}
+.catc b{font-size:12.5px;font-weight:600;color:#333;line-height:1.9}
+.catc .ch{color:#9aa4b2;font-size:14px;font-weight:700;line-height:1;margin-top:4px;transition:.2s}
+.catc:hover .ch{color:var(--org);transform:translateX(-3px)}
+@media(max-width:1100px){.catgrid{grid-template-columns:repeat(6,1fr)}}
+@media(max-width:900px){.catgrid{grid-template-columns:repeat(3,1fr);gap:10px}.catc .ph{height:72px}.catc .ph img{max-height:72px}.catc b{font-size:11.5px}}
 .shead{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:26px;flex-wrap:wrap}
 .shead h2{font-size:clamp(20px,2.4vw,27px);font-weight:900;display:flex;align-items:center;gap:12px}
 .shead h2::before{content:"";width:24px;height:4px;border-radius:4px;background:var(--org);flex:none}
 .shead a.more{font-size:13.5px;font-weight:800;color:var(--org-d);white-space:nowrap}
 .pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 @media(max-width:1100px){.pgrid{grid-template-columns:repeat(2,1fr)}}
-.promo{background:linear-gradient(165deg,#0E2544,#061426);border-radius:16px;color:#fff;padding:22px 20px;display:flex;flex-direction:column;border:1px solid rgba(255,106,0,.3);position:relative;overflow:hidden}
-.promo::before{content:"";position:absolute;left:-60px;top:-60px;width:180px;height:180px;border-radius:50%;background:rgba(255,106,0,.16)}
-.promo h3{color:#FF6A00;font-size:17px;margin:12px 0 6px;position:relative}
-.promo p{font-size:12.5px;color:#C7D2E0;position:relative;line-height:2}
-.promo .btn{margin-top:auto;position:relative;padding:9px 18px;font-size:12.5px}
+.promo{background:linear-gradient(165deg,#0E2544,#061426);border-radius:16px;color:#fff;padding:28px 24px;display:flex;flex-direction:column;border:1px solid rgba(255,106,0,.3);position:relative;overflow:hidden}
+.promo::before{content:"";position:absolute;left:-60px;top:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,106,0,.16)}
+.promo h3{color:#FF6A00;font-size:23px;font-weight:900;margin:16px 0 8px;position:relative}
+.promo p{font-size:15px;color:#C7D2E0;position:relative;line-height:2.1}
+.promo .btn{margin-top:auto;position:relative;padding:13px 20px;font-size:14.5px}
 /* trust */
 .trustline{display:grid;grid-template-columns:repeat(5,1fr);gap:0;background:#fff;border-block:1px solid var(--line)}
-.tl{display:flex;gap:12px;align-items:center;padding:18px 14px;border-inline-start:1px solid var(--line2)}
+.tl{display:flex;gap:14px;align-items:center;padding:22px 16px;border-inline-start:1px solid var(--line2)}
 .tl:first-child{border-inline-start:0}
-.tl .ic{width:42px;height:42px;border-radius:12px;background:var(--org-soft);display:grid;place-items:center;flex:none}
-.tl b{font-size:13px;display:block}
-.tl small{color:var(--mut);font-size:11px}
+.tl .ic{width:52px;height:52px;border-radius:14px;background:var(--org-soft);display:grid;place-items:center;flex:none;font-size:24px}
+.tl b{font-size:15.5px;font-weight:900;display:block}
+.tl small{color:var(--mut);font-size:13px;font-weight:600}
 @media(max-width:900px){.trustline{grid-template-columns:repeat(2,1fr)}.trustline{grid-template-columns:repeat(2,1fr)}.tl:nth-child(odd){border-inline-start:0}}
 /* brand */
 .spot{background:#fff;border:1px solid var(--line);border-radius:22px;padding:clamp(22px,3vw,40px);display:flex;align-items:center;gap:26px;flex-wrap:wrap}
@@ -92,14 +99,18 @@
 <nav class="mnav" id="mnav" aria-label="ناوبری موبایل"><a href="index.html">صفحه اصلی</a><a href="products.html">محصولات</a><a href="categories.html">دسته‌بندی‌ها</a><a href="#finder">راهنمای خرید</a><a href="#contact">درباره ما</a></nav>
 </header>
 
-<section class="hero"><div class="hero-in">
+<section class="hero">
+<div class="hero-art" aria-hidden="true"></div>
+<span class="bigbolt" aria-hidden="true"><svg viewBox="0 0 24 24" fill="#FF6A00"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg></span>
+<span class="smallbolt" aria-hidden="true"><svg viewBox="0 0 24 24" fill="#FF8A33"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg></span>
+<div class="hero-in">
 <div>
 <h1>باتری مناسب،<br><span class="o">همین‌جا پیدا کن!</span></h1>
 <p class="sub">فروش انواع باتری خودرو، موتورسیکلت، صنعتی، UPS، لیتیومی و شارژر<br>قیمت واقعی، موجودی انبار و گارانتی معتبر</p>
 <div class="hero-ctas"><a class="btn btn-o" href="products.html">🚗 خرید باتری</a><a class="btn btn-g" href="categories.html">▦ مشاهده دسته‌بندی‌ها</a></div>
 <div class="btnsm"><div><span class="ic">✓</span>گارانتی معتبر</div><div><span class="ic">✓</span>ارسال سریع</div><div><span class="ic">✓</span>مشاوره تخصصی</div></div>
 </div>
-<div class="hfig"><figure class="hframe"><img src="img/auto-black.jpg" alt="باتری خودرو — کافه باتری"><figcaption><span><span class="d"></span>موجود در انبار</span><span>استعلام: <b dir="ltr">021-66711243</b></span></figcaption></figure></div>
+<div class="hspacer" aria-hidden="true"></div>
 </div></section>
 
 <div class="wrap"><div class="finder-card" id="finder">
@@ -114,7 +125,7 @@
 </div></div>
 
 <section style="padding:64px 0 30px"><div class="wrap">
-<div class="shead"><h2>دسته‌بندی محصولات</h2><a class="more" href="categories.html">مشاهده همه ‹</a></div>
+<div class="shead"><h2>دسته‌بندی محصولات</h2></div>
 <div class="catgrid" id="catgrid"></div>
 </div></section>
 
@@ -178,27 +189,34 @@ location.href='products.html'+(u.toString()?'?'+u.toString():'');
 return false;
 }
 function renderCats(){
-var names=['ماژول','باتری','باتری قابل شارژ','18650','شارژر','باتری سرب اسید','باتری لیتیوم ایون li-ion','باتری لیتیوم فسفات','باتری حافظه back up بک آپ','باتری برق اضطراری (UPS)','باتری چراغ قوه','باتری PLC','ملزومات ساخت پک باتری','باتری تجهیزات پزشکی','4ولت'];
-var short={'ماژول':'ماژول','باتری':'باتری','باتری قابل شارژ':'قابل شارژ','18650':'باتری 18650','شارژر':'شارژر','باتری سرب اسید':'سرب اسید','باتری لیتیوم ایون li-ion':'لیتیوم‌یون','باتری لیتیوم فسفات':'لیتیوم فسفات','باتری حافظه back up بک آپ':'بک‌آپ و حافظه','باتری برق اضطراری (UPS)':'UPS','باتری چراغ قوه':'چراغ قوه','باتری PLC':'PLC','ملزومات ساخت پک باتری':'ملزومات پک','باتری تجهیزات پزشکی':'پزشکی','4ولت':'4 ولت'};
-var pool=['img/usecase-car.jpg','img/moto-batt.jpg','img/auto-tundra.jpg','img/auto-black.jpg','img/auto-car.jpg','img/cat-ups.jpg','img/cat-solar.jpg','img/cat-coin.jpg','img/cat-drill.jpg','img/cat-laptop.jpg','img/prod-maxcell.jpg','img/prod-module.jpg','img/prod-braket3.jpg','img/prod-ayegh.jpg','img/prod-aa.jpg'];
-var box=document.getElementById('catgrid'),h='',used={},pi=0;
-names.forEach(function(n){
-var c=CATS.find(function(x){return x.name===n});
-var img='';
-if(c&&c.img && !used[c.img]){img=c.img}
-else{
-while(pi<pool.length&&used[pool[pi]])pi++;
-img=pool[pi]||'img/noimg.svg';pi++;
-}
-used[img]=1;
-if(!c)return;
-h+='<a class="catc" href="products.html?cat='+encodeURIComponent(n)+'">'+'<img src="'+img+'" alt="'+short[n]+'" loading="lazy">'+'<b>'+short[n]+'</b><small>'+fa(c.count)+' کالا</small></a>';
+var meta=[
+['ماژول','ماژول','module',''],
+['باتری','باتری','batt',''],
+['باتری قابل شارژ','قابل شارژ','rech',''],
+['18650','باتری ۱۸۶۵۰','c18650',''],
+['شارژر','شارژر','chrgr',''],
+['باتری سرب اسید','سرب اسید','sla',''],
+['باتری لیتیوم ایون li-ion','لیتیوم‌یون','liion','i-sh'],
+['باتری لیتیوم فسفات','لیتیوم فسفات','lifepo4',''],
+['باتری حافظه back up بک آپ','بک‌آپ و حافظه','backup',''],
+['باتری برق اضطراری (UPS)','UPS','ups',''],
+['سولار صفحه خورشیدی','صفحه خورشیدی','solar',''],
+['باتری چراغ قوه','چراغ قوه','torch',''],
+['باتری PLC','PLC','plc',''],
+['ملزومات ساخت پک باتری','ملزومات پک','pack',''],
+['باتری تجهیزات پزشکی','پزشکی','med','i-sh'],
+['4ولت','۴ ولت','v4','']
+];
+var box=document.getElementById('catgrid'),h='';
+meta.forEach(function(m){
+var c=CATS.find(function(x){return x.name===m[0]});if(!c||!c.count)return;
+h+='<a class="catc" href="products.html?cat='+encodeURIComponent(m[0])+'">'+'<span class="ph"><img class="'+m[3]+'" src="img/icon/'+m[2]+'.png" alt="'+m[1]+'" loading="lazy"></span><b>'+m[1]+'</b><span class="ch">‹</span></a>';
 });
 box.innerHTML=h;
 }
 function renderBest(){
 var picks=[].concat(PRODUCTS).filter(function(p){return p.stock&&p.img}).sort(function(a,b){return (b.reviews||0)-(a.reviews||0)}).slice(0,3);
-var promo='<div class="promo"><svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="#FF6A00" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="position:relative"><path d="M12 2 4 5.5v5.6c0 5 3.4 8.6 8 10.4 4.6-1.8 8-5.4 8-10.4V5.5z"/><path d="m8.8 12 2.2 2.2 4.2-4.4"/></svg><h3>ضمانت اصالت</h3><p>تمامی باتری‌ها با گارانتی اصالت و سلامت عرضه می‌شوند.</p><a class="btn btn-o" href="products.html">مشاهده محصولات</a></div>';
+var promo='<div class="promo"><svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#FF6A00" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="position:relative"><path d="M12 2 4 5.5v5.6c0 5 3.4 8.6 8 10.4 4.6-1.8 8-5.4 8-10.4V5.5z"/><path d="m8.8 12 2.2 2.2 4.2-4.4"/></svg><h3>ضمانت اصالت</h3><p>تمامی باتری‌ها با گارانتی اصالت و سلامت عرضه می‌شوند.</p><a class="btn btn-o" href="products.html">مشاهده محصولات</a></div>';
 document.getElementById('bestgrid').innerHTML=promo+picks.map(prodCard).join('')||'<div class="empty">محصولی یافت نشد</div>';
 }
 function nl(f){toast('عضویت شما در خبرنامه ثبت شد');f.reset();return false}

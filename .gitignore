@@ -1,2 +1,5 @@
 .hermes-tmp.*/
 *.pyc
+preview-*.png
+preview-*.html
+img/cut/

@@ -16,7 +16,7 @@ document.querySelectorAll('.wish[data-w="'+id+'"]').forEach(function(b){b.classL
 toast(i<0?'به علاقه‌مندی‌ها اضافه شد':'از علاقه‌مندی‌ها حذف شد')}
 function paintWishes(){document.querySelectorAll('.wish[data-w]').forEach(function(b){var on=isWish(+b.dataset.w);b.classList.toggle('active',on);b.setAttribute('aria-pressed',on)})}
 var HEART='<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#64748A" stroke-width="1.8"><path d="M12 20.5C7 16.5 3.5 13.3 3.5 9.6 3.5 7 5.5 5 8 5c1.6 0 3.1.8 4 2.1C12.9 5.8 14.4 5 16 5c2.5 0 4.5 2 4.5 4.6 0 3.7-3.5 6.9-8.5 10.9z"/></svg>';
-function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;')}
+function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;')}
 function IB(){return window.IMGBASE||''}
 function PB(){return (window.PRODBASE==null?'product/':window.PRODBASE)}
 function prodCard(p){
@@ -27,7 +27,7 @@ var price=p.price>0?('<div class="price"><b>'+fmtP(p.price)+'</b><small>توما
 var stock=p.stock?'<div class="instock">● موجود در انبار</div>':'<div class="nostock">● ناموجود</div>';
 return '<article class="pcard"><button class="wish" data-w="'+p.id+'" aria-label="افزودن به علاقه‌مندی‌ها" aria-pressed="false" onclick="event.preventDefault();toggleWish('+p.id+',this)">'+HEART+'</button>'
 +'<a class="im" href="'+PB()+'p-'+p.id+'.html" aria-label="'+esc(p.name)+'">'+img+'</a>'
-+'<div class="bd"><span class="brand">'+esc(p.brand||'')+'</span><a href="'+PB()+'p-'+p.id+'.html"><h3>'+esc(p.name)+'</h3></a>'
++'<div class="bd"><span class="brand">'+esc(p.brand||'')+'</span><a href="'+PB()+'p-'+p.id+'.html" title="'+esc(p.name)+'"><h3>'+esc(p.name)+'</h3></a>'
 +rate+stock+price+'</div></article>';
 }
 function prodById(id){return (window.PRODUCTS||[]).find(function(p){return p.id===id})}

@@ -62,8 +62,9 @@ footer{background:var(--navy);color:#B9C6D8;margin-top:0}
 .pcard .im{background:#fff;aspect-ratio:1/.85;display:grid;place-items:center;overflow:hidden;border-bottom:1px solid var(--line2)}
 .pcard .im img{width:88%;height:88%;object-fit:cover;border-radius:10px}
 .pcard .bd{padding:15px 15px 17px;display:flex;flex-direction:column;gap:4px;flex:1}
+.pcard .bd>a{display:block;min-width:0}
 .brand{font-size:11px;font-weight:800;color:var(--org-d);letter-spacing:.3px}
-.pcard h3{font-size:13.5px;line-height:1.9;font-weight:800}
+.pcard h3{font-size:13.5px;line-height:1.9;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
 .aspec{font-size:11.5px;color:var(--mut)}
 .rate{display:flex;align-items:center;gap:6px;font-size:11.5px;color:var(--mut)}
 .rate b{color:var(--ink)}
